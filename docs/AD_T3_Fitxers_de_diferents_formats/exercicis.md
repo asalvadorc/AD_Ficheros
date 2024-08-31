@@ -1,8 +1,6 @@
 # Exercicis
 
-![](icon_activity.gif)
-
-## Exercici 3_1
+## ![](icon_activity.gif) Exercici 3_1
 
 En el projecte anomenat **Tema3** , crea't un paquet anomenat **exercicis** on
 col·locarem tot el relatiu als exercicis d'aquest tema. Copia't dins del
@@ -28,7 +26,7 @@ Fes un programa (amb **fun main()**) en el fitxer Kotlin
 **Ex3_1_LlegirRutesSerial.kt** que agafe les dades del fitxer (hi ha 2 rutes,
 però ho heu de fer genèric per a un número indeterminat de rutes) i les traga
 per pantalla amb aquest aspecte:
-
+```
 Ruta: Pujada a Penyagolosa  
 Desnivell: 530  
 Desnivell acumulat: 530  
@@ -50,12 +48,10 @@ Punt 4: Riu Sec (40.006765,-0.02237)
 Punt 5: Sant Roc (40.017906,-0.02289)  
 Punt 6: Explanada (40.034048,-0.00633)  
 Punt 7: La Magdalena (40.034519,-0.005856)
+```
+## ![](icon_activity.gif) Exercici 3_2
 
-![](icon_activity.gif)
-
-## Exercici 3_2
-
-****Construeix les següents classes:
+Construeix les següents classes:
 
 **Coordenades** , que derivarà de **Serializable** (i que és convenient posar-
 li el número de versió per defecte: **private const val serialVersionUID: Long
@@ -69,9 +65,7 @@ Contindrà:
 
 No caldrà contructor, ni getters ni setters, ja que Kotlin els genera
 automàticament  
-
-* * *
-
+***
 **PuntGeo** , que derivarà de **Serializable** (i que és convenient posar-li
 el número de versió per defecte: **private const val serialVersionUID: Long =
 1**). Podeu consultar la classe Ruta que us passe per veure la manera de
@@ -105,7 +99,7 @@ Observa com per a més comoditat té els mètodes:
 L'únic que has de fer en aquesta classe és:
 
   * Fes un mètode nou en la classe **Ruta** anomenat **mostraRuta()** , que mostre el contingut de la ruta amb aquest aspecte:
-
+```
 Ruta: Pujada a Penyagolosa  
 Desnivell: 530  
 Desnivell Acumulat: 530  
@@ -115,7 +109,7 @@ Punt 2: Encreuament (40.25156,-0.352507)
 Punt 3: Barranc de la Pegunta (40.247318,-0.351713)  
 Punt 4: El Corralico (40.231708,-0.348859)  
 Punt 5: Penyagolosa (40.222632,-0.350339)
-
+```
 * * *
 
 En un fitxer Kotlin anomenat **Ex3_2_PassarRutesSerialObj.kt** , fes el
@@ -130,50 +124,31 @@ guardades en el fitxer **Rutes.obj** i mostra-les per pantalla utilitzant el
 mètode **mostraRuta()****  
 **
 
-![](icon_activity.gif)
-
-## Exercici 3_3
+## ![](icon_activity.gif) Exercici 3_3
 
 Fes un programa en el fitxer **Ex3_3_PassarRutesObjXML.kt** (amb main) que
 passe el fitxer **Rutes.obj** a un fitxer XML anomenat **Rutes.xml** amb
 aquest aspecte. Els punts suspensius indiquen que hi ha més d'un punt en cada
 ruta, i que hi ha més d'una ruta
-
+```
 <rutes>
-
-<ruta>
-
-<nom>Pujada a Penyagolosa</nom>
-
-<desnivell>530</desnivell>
-
-<desnivellAcumulat>530</desnivellAcumulat>
-
-<punts>
-
-<punt num="1">
-
-<nom>Sant Joan</nom>
-
-<latitud>...</latitud>
-
-<longitud>...</longitud>
-
-</punt>
-
-...
-
-</punts>
-
-</ruta>
-
-...
-
+	<ruta>
+		<nom>Pujada a Penyagolosa</nom>
+		<desnivell>530</desnivell>
+		<desnivellAcumulat>530</desnivellAcumulat>
+		<punts>
+			<punt num="1">
+				<nom>Sant Joan</nom>
+				<latitud>...</latitud>
+				<longitud>...</longitud>
+			</punt>
+		...
+		</punts>
+	</ruta>
+	...
 </rutes>
-
-![](icon_activity.gif)
-
-## Exercici 3_4
+```
+## ![](icon_activity.gif) Exercici 3_4
 
 Fer una aplicació gràfica que llegirà el fitxer **Rutes.xml** per a que
 apareguen els noms de les rutes en un JComboBox. Quan se seleccione una, ha
@@ -245,14 +220,12 @@ L'esquelet del programa seria aquest. Copieu-lo en un fitxer Kotlin anomenat
     }
     
 
-![](icon_activity.gif)
-
-## Exercici 3_5
+## ![](icon_activity.gif) Exercici 3_5
 
 Fer un programa en el fitxer Kotlin **Ex3_5_PassarRutesObjJSON.kt** que passe
 el fitxer **Rutes.obj** a un fitxer JSON **Rutes.json** amb aquest aspecte:
 
-    
+```    
     
     {
       "rutes": [
@@ -274,18 +247,16 @@ el fitxer **Rutes.obj** a un fitxer JSON **Rutes.json** amb aquest aspecte:
         ...  
        ]  
     }
-
+```
 Com que ja tenim creades les classes **Ruta** , **PuntGeo** i **Coord** , el
 més còmode serà utilitzar **Moshi**. Tan sols ens farà falta una classe que ho
 englobe tot:
 
-    
+```    
     
     class Rutes(var rutes: MutableList<Ruta> = mutableListOf<Ruta>())
-
-![](icon_activity.gif)
-
-## Exercici 3_6
+```
+## ![](icon_activity.gif) Exercici 3_6
 
 Replicar l'exercici 3_4, però ara llegint del fitxer **Rutes.json** , en
 compte de **Rutes.xml**
@@ -358,9 +329,7 @@ Kotlin anomenat **Ex3_6_VisRutaJSON.kt** :
     	}
     }
 
-![](icon_activity.gif)
-
-## Exercici 3_7 (voluntari)
+## ![](icon_activity.gif) Exercici 3_7 (voluntari)
 
 Per a practicar un poquet més, anem a fer un altre exercici per a construir un
 fitxer JSON però ara amb la llibreria **org.json**
@@ -371,111 +340,110 @@ No tenim creades les classes dels cotxes, i per això utilitzarem la llibreria
 **org.json**.
 
 Aquest és el fitxer **cotxes.xml** :
-
+```
 <oferta>  
-<vehiculo>  
-<marca>ford</marca>  
-<modelo color="gris">focus</modelo>  
-<motor combustible="gasolina">duratorc 1.4</motor>  
-<matricula>1234AAA</matricula>  
-<kilometros>12500</kilometros>  
-<precio_inicial>12000</precio_inicial>  
-<precio_oferta>10000</precio_oferta>  
-<extra valor="250">pintura metalizada</extra>  
-<extra valor="300">llantas</extra>  
-<foto>11325.jpg</foto>  
-<foto>11326.jpg</foto>  
-</vehiculo>  
-<vehiculo>  
-<marca>ford</marca>  
-<modelo color="gris">focus</modelo>  
-<motor combustible="diesel">duratorc 2.0</motor>  
-<matricula>1235AAA</matricula>  
-<kilometros>125000</kilometros>  
-<precio_inicial>10000</precio_inicial>  
-<precio_oferta>9000</precio_oferta>  
-<extra valor="250">pintura metalizada</extra>  
-<extra valor="200">spoiler trasero</extra>  
-<extra valor="500">climatizador</extra>  
-<foto>11327.jpg</foto>  
-<foto>11328.jpg</foto>  
-</vehiculo>  
+	<vehiculo>  
+		<marca>ford</marca>  
+		<modelo color="gris">focus</modelo>  
+		<motor combustible="gasolina">duratorc 1.4</motor>  
+		<matricula>1234AAA</matricula>  
+		<kilometros>12500</kilometros>  
+		<precio_inicial>12000</precio_inicial>  
+		<precio_oferta>10000</precio_oferta>  
+		<extra valor="250">pintura metalizada</extra>  
+		<extra valor="300">llantas</extra>  
+		<foto>11325.jpg</foto>  
+		<foto>11326.jpg</foto>  
+	</vehiculo>  
+	<vehiculo>  
+		<marca>ford</marca>  
+		<modelo color="gris">focus</modelo>  
+		<motor combustible="diesel">duratorc 2.0</motor>  
+		<matricula>1235AAA</matricula>  
+		<kilometros>125000</kilometros>  
+		<precio_inicial>10000</precio_inicial>  
+		<precio_oferta>9000</precio_oferta>  
+		<extra valor="250">pintura metalizada</extra>  
+		<extra valor="200">spoiler trasero</extra>  
+		<extra valor="500">climatizador</extra>  
+		<foto>11327.jpg</foto>  
+		<foto>11328.jpg</foto>  
+	</vehiculo>  
 </oferta>
-
+```
 I aquest ha de ser l'aspecte de **cotxes.json** :
-
+```
 {  
-"oferta": {  
-"vehiculos": [  
-{  
-"marca": "ford",  
-"modelo": {  
-"color": "gris",  
-"nombre_modelo": "focus"  
-},  
-"motor": {  
-"combustible": "gasolina",  
-"nombre_motor": "duratorc 1.4"  
-},  
-"matricula": "1234AAA",  
-"kilometros": "12500",  
-"precio_inicial": "12000",  
-"precio_oferta": "10000",  
-"extra": [  
-{  
-"valor": "250",  
-"nombre_extra": "pintura metalizada"  
-},  
-{  
-"valor": "300",  
-"nombre_extra": "llantas"  
-}  
-],  
-"foto": [  
-"11325.jpg",  
-"11326.jpg"  
-]  
-},  
-{  
-"marca": "ford",  
-"modelo": {  
-"color": "gris",  
-"nombre_modelo": "focus"  
-},  
-"motor": {  
-"combustible": "diesel",  
-"nombre_motor": "duratorc 2.0"  
-},  
-"matricula": "1235AAA",  
-"kilometros": "125000",  
-"precio_inicial": "10000",  
-"precio_oferta": "9000",  
-"extra": [  
-{  
-"valor": "250",  
-"nombre_extra": "pintura metalizada"  
-},  
-{  
-"valor": "200",  
-"nombre_extra": "spoiler trasero"  
-},  
-{  
-"valor": "500",  
-"nombre_extra": "climatizador"  
-}  
-],  
-"foto": [  
-"11327.jpg",  
-"11328.jpg"  
-]  
-}  
-]  
-}  
+	"oferta": {  
+		"vehiculos": 
+		[  
+			{  
+				"marca": "ford",  
+				"modelo": {  
+					"color": "gris",  
+					"nombre_modelo": "focus"  
+						},  
+				"motor": {  
+					"combustible": "gasolina",  
+					"nombre_motor": "duratorc 1.4"  
+						},  
+				"matricula": "1234AAA",  
+				"kilometros": "12500",  
+				"precio_inicial": "12000",  
+				"precio_oferta": "10000",  
+				"extra": [  
+					{  
+						"valor": "250",  
+						"nombre_extra": "pintura metalizada"  
+					},  
+					{  
+						"valor": "300",  
+						"nombre_extra": "llantas"  
+					}  
+						],  
+				"foto": [  
+					"11325.jpg",  
+					"11326.jpg"  
+						]  
+			},  
+			{  
+				"marca": "ford",  
+				"modelo": {  
+				"color": "gris",  
+				"nombre_modelo": "focus"  
+					},  
+				"motor": {  
+				"combustible": "diesel",  
+				"nombre_motor": "duratorc 2.0"  
+					},  
+				"matricula": "1235AAA",  
+				"kilometros": "125000",  
+				"precio_inicial": "10000",  
+				"precio_oferta": "9000",  
+				"extra": [  
+					{  
+						"valor": "250",  
+						"nombre_extra": "pintura metalizada"  
+					},  
+					{  
+						"valor": "200",  
+						"nombre_extra": "spoiler trasero"  
+					},  
+					{  
+						"valor": "500",  
+						"nombre_extra": "climatizador"  
+					}  
+						],  
+				"foto": [  
+							"11327.jpg",  
+							"11328.jpg"  
+						]  
+			}  
+		]  
+	}  
 }
-
-![](icon_activity.gif)
-
-## Exercici 3.8 (voluntari)
+```
+## ![](icon_activity.gif) Exercici 3.8 (voluntari)
 
 Visualitzar en un programa gràfic l'estat actual de Bicicas, agafant-lo
 directament de la pàgina <http://gestiona.bicicas.es/apps/apps.php>.
