@@ -1,0 +1,65 @@
+site_url : https://asalvadorc.github.io/AD_Ficheros
+
+site_name: AD - Accés a Dades
+
+extra_css:
+  - css/extra.css
+
+theme: 
+  name: readthedocs
+  highlightjs: true
+  logo: assets/logocaminas.png
+
+nav:
+- Gestió del Sistema de fitxers:
+  - Objectius: AD_T1_Sistema_de_fitxers/objectius.md
+  ## - Instal.lació de IntelliJ Idea Ultimate: AD_T1_Sistema_de_fitxers/Idea.md
+  - 1. Introducció: AD_T1_Sistema_de_fitxers/1_introducci.md
+  - 2. La classe File. Generalitats.:  AD_T1_Sistema_de_fitxers/2_la_classe_file_generalitats.md
+  - 3. Funcionalitat de la classe File: AD_T1_Sistema_de_fitxers/3_funcionalitat_de_la_classe_file.md
+  - Exercici: AD_T1_Sistema_de_fitxers/exercici.md
+- Gestió del contingut de fitxers:
+    - Objectius: AD_T2_Gesti_del_contingut_de_fitxers/objectius.md 
+    - 1 - Magatzems i fluxos de dades: AD_T2_Gesti_del_contingut_de_fitxers/1__magatzems_i_fluxos_de_dades.md 
+    - 2 - Manipulació dels fluxos de dades: 
+      - AD_T2_Gesti_del_contingut_de_fitxers/2__manipulaci_dels_fluxos_de_dades.md
+      - 2.1 - Fluxos orientats a bytes: 
+        - AD_T2_Gesti_del_contingut_de_fitxers/21__fluxos_orientats_a_bytes.md 
+        - 2.1.1 - Mètodes del InputStream: AD_T2_Gesti_del_contingut_de_fitxers/211__mtodes_del_inputstream.md 
+        - 2.1.2 - Mètodes del OutputStream: AD_T2_Gesti_del_contingut_de_fitxers/212__mtodes_del_outputstream.md 
+      - 2.2 - Fluxos orientats a caràcters: 
+         - AD_T2_Gesti_del_contingut_de_fitxers/22__fluxos_orientats_a_carcters.md   
+         - 2.2.1 - Mètodes del Reader: AD_T2_Gesti_del_contingut_de_fitxers/221__mtodes_del_reader.md 
+         - 2.2.2 - Mètodes del Writer: AD_T2_Gesti_del_contingut_de_fitxers/222__mtodes_del_writer.md 
+    - 3 - Fluxos decoradors: 
+      - AD_T2_Gesti_del_contingut_de_fitxers/3__fluxos_decoradors.md
+      - 3.1 - Decoradors de InputStream i OtputStream: AD_T2_Gesti_del_contingut_de_fitxers/31__decoradors_de_inputstream_i_otputstream.md 
+      - 3.2 - Decoradors de Reader i Writer: AD_T2_Gesti_del_contingut_de_fitxers/32__decoradors_de_reader_i_writer.md 
+      - 3.3 - ConversorsInputStreamReader i OutputStreamWriter: AD_T2_Gesti_del_contingut_de_fitxers/33__conversors_inputstreamreader_i_outputstreamwriter.md 
+    - 4 - Simplificació en Kotlin: AD_T2_Gesti_del_contingut_de_fitxers/4__simplificaci_en_kotlin.md 
+    - Exercicis: AD_T2_Gesti_del_contingut_de_fitxers/exercicis.md  
+- Fitxers de diferents formats:
+    - Objectius: AD_T3_Fitxers_de_diferents_formats/objectius.md
+    - 1.- Fitxers binaris amb formats específics: AD_T3_Fitxers_de_diferents_formats/1_fitxers_binaris_amb_formats_especfics.md
+    - 2.- Accés directe a fitxers: AD_T3_Fitxers_de_diferents_formats/2_accs_directe_a_fitxers.md
+    - 3.- Seriació d'objectes: AD_T3_Fitxers_de_diferents_formats/3_seriaci_dobjectes.md
+    - 4.- Documents XML: 
+       - AD_T3_Fitxers_de_diferents_formats/4_documents_xml.md 
+       - 4.1 - Parser o analitzador XML: AD_T3_Fitxers_de_diferents_formats/41__parser_o_analitzador_xml.md
+       - 4.2 - L'estructura DOM: 
+         - AD_T3_Fitxers_de_diferents_formats/42__lestructura_dom.md 
+         - 4.2.1 Lectura: AD_T3_Fitxers_de_diferents_formats/421_lectura.md
+         - 4.2.2 Escriptura: AD_T3_Fitxers_de_diferents_formats/422_escriptura.md
+       ##- 4.3 - Binding: AD_T3_Fitxers_de_diferents_formats/43__binding.md
+    - 5.- Documents JSON: 
+       - AD_T3_Fitxers_de_diferents_formats/5_documents_json.md 
+       - 5.1 - Estructura JSON: AD_T3_Fitxers_de_diferents_formats/51__estructura_json.md
+       - 5.2 Driver org.json: 
+         - AD_T3_Fitxers_de_diferents_formats/52_driver_orgjson.md 
+         - 5.2.1 - Lectura: AD_T3_Fitxers_de_diferents_formats/521__lectura.md
+         - 5.2.2 - Escriptura: AD_T3_Fitxers_de_diferents_formats/522__escriptura.md
+       - 5.3 Driver Moshi: 
+          - AD_T3_Fitxers_de_diferents_formats/53_driver_moshi.md 
+          - 5.3.1 Lectura: AD_T3_Fitxers_de_diferents_formats/531_lectura.md
+          - 5.3.2 Escriptura: AD_T3_Fitxers_de_diferents_formats/532_escriptura.md
+    - Exercicis: AD_T3_Fitxers_de_diferents_formats/exercicis.md     
