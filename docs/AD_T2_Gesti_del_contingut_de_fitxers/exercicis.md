@@ -1,7 +1,7 @@
 # Exercicis
 
 
-## ![](icon_activity.gif) Exercici 2_1
+## ![](icon_activity.gif) Exercici T2_1
 
 Aquest primer exercicis és per a tractament de bytes, ja que es tractarà de
 modificar una imatge. Per a poder provar-lo podeu utilitzar la imatge
@@ -104,7 +104,7 @@ dreta:
   
 
 
-## ![](icon_activity.gif) Exercici 2_2
+## ![](icon_activity.gif) Exercici T2_2
 
 Aquest programa serà el primer que utilitzarà components gràfics.
 
@@ -200,7 +200,7 @@ mètodes **addActionListener** dels botons **obrir** i **guardar**
 
 
 
-## ![](icon_activity.gif) Exercici 2_3. Voluntari
+## ![](icon_activity.gif) Exercici T2_3. Voluntari
 
 Com a exercici voluntari us propose una altra versió del Editor de Text de
 l'anterior exercici.

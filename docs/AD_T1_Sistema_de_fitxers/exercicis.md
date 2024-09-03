@@ -1,5 +1,7 @@
+# Exercicis
 
-## ![](icon_activity.gif) Exercici 1
+
+## ![](icon_activity.gif) Exercici T1_1
 
 Realitza un programa en un fitxer anomenat **Exercici_1.kt** en el paquet
 **exercicis** , que permeta navegar pels directoris de la unitat principal del
@@ -22,7 +24,7 @@ La següent imatge mostra el resultat:
 
 ![](T1_Ex_1_1.png)
 
-## ![](icon_activity.gif) Voluntari
+## ![](icon_activity.gif) Exercici T1_2
 
 Modifica l'anterior per a que també ens proporcione dades sobre si és un
 directori, els permisos, grandària i data de modificació a l'estil de Linux

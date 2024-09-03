@@ -9,7 +9,7 @@ i al **JSONArray**.
 
 **<b>Nota</b>**
 <div style="background-color: #d6eaf8; color: black; padding: 5px;">
-La major part de drivers utilitzen **add(element)** per a afegir un element a
+La major part de drivers utilitzen <b>add(element)<b> per a afegir un element a
 un JSONArray, en compte de <b>put</b>
 </div>
 <p></p>

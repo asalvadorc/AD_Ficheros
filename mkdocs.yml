@@ -11,14 +11,14 @@ theme:
   logo: assets/logocaminas.png
 
 nav:
-- Gestió del Sistema de fitxers:
+- T1. Gestió del Sistema de fitxers:
   - Objectius: AD_T1_Sistema_de_fitxers/objectius.md
   ## - Instal.lació de IntelliJ Idea Ultimate: AD_T1_Sistema_de_fitxers/Idea.md
   - 1. Introducció: AD_T1_Sistema_de_fitxers/1_introducci.md
   - 2. La classe File. Generalitats.:  AD_T1_Sistema_de_fitxers/2_la_classe_file_generalitats.md
   - 3. Funcionalitat de la classe File: AD_T1_Sistema_de_fitxers/3_funcionalitat_de_la_classe_file.md
-  - Exercici: AD_T1_Sistema_de_fitxers/exercici.md
-- Gestió del contingut de fitxers:
+  - Exercicis: AD_T1_Sistema_de_fitxers/exercicis.md
+- T2. Gestió del contingut de fitxers:
     - Objectius: AD_T2_Gesti_del_contingut_de_fitxers/objectius.md 
     - 1 - Magatzems i fluxos de dades: AD_T2_Gesti_del_contingut_de_fitxers/1__magatzems_i_fluxos_de_dades.md 
     - 2 - Manipulació dels fluxos de dades: 
@@ -38,7 +38,7 @@ nav:
       - 3.3 - ConversorsInputStreamReader i OutputStreamWriter: AD_T2_Gesti_del_contingut_de_fitxers/33__conversors_inputstreamreader_i_outputstreamwriter.md 
     - 4 - Simplificació en Kotlin: AD_T2_Gesti_del_contingut_de_fitxers/4__simplificaci_en_kotlin.md 
     - Exercicis: AD_T2_Gesti_del_contingut_de_fitxers/exercicis.md  
-- Fitxers de diferents formats:
+- T3. Fitxers de diferents formats:
     - Objectius: AD_T3_Fitxers_de_diferents_formats/objectius.md
     - 1.- Fitxers binaris amb formats específics: AD_T3_Fitxers_de_diferents_formats/1_fitxers_binaris_amb_formats_especfics.md
     - 2.- Accés directe a fitxers: AD_T3_Fitxers_de_diferents_formats/2_accs_directe_a_fitxers.md
