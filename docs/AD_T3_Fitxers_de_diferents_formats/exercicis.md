@@ -328,6 +328,7 @@ Kotlin anomenat **Ex3_6_VisRutaJSON.kt** :
     		FinestraJSON().isVisible = true
     	}
     }
+<!--	
 
 ## ![](icon_activity.gif) Exercici T3_7 (voluntari)
 
@@ -540,7 +541,7 @@ Aquest és l'esquelet. Copieu-lo en un fitxer Kotlin anomenat
     
 
 ``
-
+-->
 Llicenciat sota la  [Llicència Creative Commons Reconeixement NoComercial
 CompartirIgual 2.5](http://creativecommons.org/licenses/by-nc-sa/2.5/)
 

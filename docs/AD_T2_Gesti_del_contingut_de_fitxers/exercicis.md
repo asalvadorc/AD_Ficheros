@@ -198,7 +198,7 @@ mètodes **addActionListener** dels botons **obrir** i **guardar**
     	EventQueue.invokeLater(::crearMostrarFinestra)
     }
 
-
+<!--
 
 ## ![](icon_activity.gif) Exercici T2_3. Voluntari
 
@@ -307,7 +307,7 @@ JFrame. El podeu guardar per exemple en **Exercici_2_3.kt** :
     fun main(args: Array<String>) {
     	EventQueue.invokeLater( { Exercici_2_3().isVisible = true })
     }  
-    
+ -->   
 
 Llicenciat sota la  [Llicència Creative Commons Reconeixement NoComercial
 CompartirIgual 2.5](http://creativecommons.org/licenses/by-nc-sa/2.5/)

@@ -24,13 +24,14 @@ La següent imatge mostra el resultat:
 
 ![](T1_Ex_1_1.png)
 
+<!--
 ## ![](icon_activity.gif) Exercici T1_2
 
 Modifica l'anterior per a que també ens proporcione dades sobre si és un
 directori, els permisos, grandària i data de modificació a l'estil de Linux
 quan fas **ls -l** . L'aspecte podria ser aquest:
 
-![](T1_Ex_1_2.png)
+![](T1_Ex_1_2.png)-->
 
 Llicenciat sota la  [Llicència Creative Commons Reconeixement NoComercial
 CompartirIgual 2.5](http://creativecommons.org/licenses/by-nc-sa/2.5/)
