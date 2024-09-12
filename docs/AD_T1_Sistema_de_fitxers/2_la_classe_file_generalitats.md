@@ -113,13 +113,15 @@ de Kotlin amb el nom del tema. en aquest cas l'anomenarem <b>Tema1</b>. Els
 exemples els col·locarem en un paquet anomenat <b>exemple</b> i els exercicis en
 un paquet anomenat <b>exercicis</b>.
 <p></p>
-En l'apartat Instala.lació de <b>IntelliJ IDEA Ultimate</b> d'aquest tema, hi ha un vídeo
-que explica la instal·lació de l'entorn de programació, i
+
+<!--
+En l'apartat Instala.lació de <b>IntelliJ IDEA Ultimate</b> d'aquest tema, hi ha un vídeo que explica la instal·lació de l'entorn de programació, i
 al final d'aquest vídeo s'explica com crear el projecte, els paquets exemples
 i exercicis i com copiar els programes en un fitxer Kotlin.
+--->
+
 </div>
 ---
-
 Mirem un exemple. Anem a fer un programa per a traure la llista de fitxers i
 directoris del directori actual. Per a fer referència al directori actual,
 utilitzarem ".", que ens serveix per a tots els Sistemes. Per defecte, el
