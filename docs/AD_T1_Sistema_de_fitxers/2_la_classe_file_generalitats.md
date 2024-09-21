@@ -44,12 +44,14 @@ fer programes que funcionen en qualsevol plataforma, i la primera referència
 no funcionarà en Windows, i la segona no funcionarà en Linux. Al llarg del
 tema aprendrem com fer les referències de manera que funcionen en qualsevol
 plataforma.
+</div>
 <p></p>
+
 Per una altra banda, observeu com hem utilitzat la paraula reservada <b>val</b>
 per a crear una constant. Quasi sempre la utilitzarem per als File, ja que
 només en algunes ocasions voldrem reutilitzar la variable assignant-li un
 altre valor
-</div>
+
 ---
 
 Per a fer referència a un directori s'utilitza la mateixa tècnica, com ja
@@ -72,6 +74,8 @@ subdirectoris i fitxers no existisquen. No és cap contradicció, ja que podria
 ser que férem referència en un File a un fitxer o directori justament per a
 crear-lo. Més avant veurem que tenim mètodes per a detectar l'existència real
 </div>
+<p></p>
+
 ---
   * **File(String _directori_ , String _fitxer_)**: en el primer paràmetre (String) indiquem el directori amb ruta, i en el segon el fitxer (sense ruta). Farà referència a un fitxer amb el nom com el segon paràmetre col·locat en el directori referenciat en el primer paràmetre. Observeu com el segon paràmetre podria ser també un directori, i per tant seria una referència a un subdirectori del directori referenciat en el primer paràmetre. 
 ~~~
@@ -112,6 +116,7 @@ Tots els exemples i exercicis de cada tema els col·locarem en un únic projecte
 de Kotlin amb el nom del tema. en aquest cas l'anomenarem <b>Tema1</b>. Els
 exemples els col·locarem en un paquet anomenat <b>exemple</b> i els exercicis en
 un paquet anomenat <b>exercicis</b>.
+
 <p></p>
 
 <!--
