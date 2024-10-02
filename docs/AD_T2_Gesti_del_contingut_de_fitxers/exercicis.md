@@ -188,6 +188,11 @@ mètodes **addActionListener** dels botons **obrir** i **guardar**
     	}
     }
     
+	 private fun crearMostrarFinestra() {
+    
+    	val frame = Exercici_2_2_Pantalla()
+    	frame.isVisible = true
+    }
        
     fun main(args: Array<String>) {
     	EventQueue.invokeLater(::crearMostrarFinestra)
