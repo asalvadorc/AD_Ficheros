@@ -105,12 +105,12 @@ caràcters, farem una altra versió del Exemple_2_61.kt. Copieu el següent com
 
 En ocasions és possible que no tinguem un mètode directament en File que ens
 vinga bé. Un exemple són els mètodes print (print, println, printf).
-Aleshores, senzillament a partir del File la classe que ens convinga de la
+Aleshores, senzillament obtenim a partir del File la classe que ens convinga de la
 jerarquia de InputStream/OutputStream o Reader/Writer. Són mètodes que ens
 tornen la classe desitjada:
 
-  * **inputStream()** : construeix in un InputStream que apunta al File, i el torna
-  * **inputStream()** : el mateix amb un OutputStream
+  * **inputStream()** : construeix un InputStream que apunta al File, i el torna
+  * **outputStream()** : el mateix amb un OutputStream
   * **reader(_charset_ : Charset)**: el mateix amb un Reader, tenint la possibilitat d'especificar el joc de caràcters (si no s'especifica serà UTF-8)
   * **writer(_charset_ : Charset)**: el mateix amb un Writer
   * **bufferedReader(_charset_ : Charset)**: el mateix amb un BufferedReader
@@ -157,7 +157,7 @@ la ruta (llevar possibles redundàncies), i altre més.
 Es poden consultar totes les extensions que proporciona Kotline a la classe
 File en:
 
-https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/
+[https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
 
 
 Llicenciat sota la  [Llicència Creative Commons Reconeixement NoComercial

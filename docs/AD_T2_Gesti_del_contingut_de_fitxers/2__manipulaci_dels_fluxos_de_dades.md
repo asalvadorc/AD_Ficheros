@@ -453,8 +453,8 @@ especificaran quina serà la font de dades:
 Classe | Explicació  
 ---|---  
 **FileReader** | Per a llegir caràcters d'un fitxer  
-****PipedReader**** | Per a llegir des d'una tuberia (és a dir informació que ve d'un altre programa)   
-**CharArray**Reader**** | L'entrada serà un array de caràcters  
+**PipedReader** | Per a llegir des d'una tuberia (és a dir informació que ve d'un altre programa)   
+**CharArrayReader** | L'entrada serà un array de caràcters  
 **StringReader** | L'entrada serà un string  
   
 Evidentment ens centrarem en la primera, que és la que més ens interessa per a
@@ -466,8 +466,8 @@ Els fluxos d'eixida són molt molt pareguts, tots ells heretaran de **Writer**
 Classe | Explicació  
 ---|---  
 **FileWriter** | Per a guardar caràcters en un fitxer  
-**Piped**Writer**** | Per a traure cap a una tuberia (és a dir informació que anirà a un altre programa)   
-**CharArray**Writer**** | L'eixida serà un array de caràcters  
+**Piped** | Per a traure cap a una tuberia (és a dir informació que anirà a un altre programa)   
+**CharArrayWriter** | L'eixida serà un array de caràcters  
 **StringWriter** | L'eixida serà un string   
   
 Hem de fer constar que les classes d’emmagatzematge intern (utilitzem Java o
@@ -517,7 +517,7 @@ preocupar pel format en què està guardat, i de i ocupa un o dos bytes. Sempre
 el llegirà bé, siga quina siga la codificació utilitzada, com ja havíem
 comentat abans:
 
-  * int **read()** : llig el següent caràcter del flux d'entrada i el retorna com un enter. Si no hi ha cap caràcter disponible perquè s’ha assolit el final de la seqüència, es retornarà -1. Si no es pot llegir el següent caràcter per alguna causa (per exemple si després d'arribar al final intentem llegir un altre caràcter, o perquè es produeix un error en llegir l'entrada) es llançarà una excepció del tipus ** _IOException_**. Es tracta d’un mètode abstracte, que les classes especifiques sobreescriuran adaptant-lo a una font de dades concreta (un fitxer, un array de caràcters, ...).
+  * int **read()** : llig el següent caràcter del flux d'entrada i el retorna com un enter. Si no hi ha cap caràcter disponible perquè s’ha assolit el final de la seqüència, es retornarà -1. Si no es pot llegir el següent caràcter per alguna causa (per exemple si després d'arribar al final intentem llegir un altre caràcter, o perquè es produeix un error en llegir l'entrada) es llançarà una excepció del tipus **_IOException_**. Es tracta d’un mètode abstracte, que les classes especifiques sobreescriuran adaptant-lo a una font de dades concreta (un fitxer, un array de caràcters, ...).
 
 Abans de veure altres mètodes, mirem un exemple que és idèntic al primer
 exemple del InputStream, però canviant FileInputStream per FileReader. Llegirà

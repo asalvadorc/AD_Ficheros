@@ -47,7 +47,7 @@ afegeixen a qualsevol altre Stream la capacitat de seriar qualsevol objecte
 Serializable. El stream d'eixida disposarà del mètode **writeObject**. i el
 stream d’entrada, el mètode de lectura **readObject**.
 
-El mètode readObject només permet recuperar instàncies que siguen de la
+El mètode **readObject** només permet recuperar instàncies que siguen de la
 mateixa classe que la que es va guardar. En cas contrari, es llançaria una
 excepció de tipus **ClassCastExeception**. A més, cal que l’aplicació dispose
 del codi compilat de la classe; si no fóra així, l’excepció llançada seria
@@ -63,13 +63,14 @@ El primer pas serà construir la classe **Empleat** , que contindrà la mateixa
 informació que en els altres apartats: número d'empleat, nom, departament,
 edat i sou.
 
-    
-    
+   
     package exemples
-    
+     
+
     import java.io.Serializable
     
     class Empleat (var num: Int, var nom: String, var departament: Int, var edat: Int, var sou: Double): Serializable
+    
 
 Anem a intentar construir el fitxer de dades amb els objectes guardats. El
 flux de dades serà un **ObjectOutputStream** per a poder escriure

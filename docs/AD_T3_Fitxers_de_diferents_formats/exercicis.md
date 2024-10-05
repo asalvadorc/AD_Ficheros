@@ -92,7 +92,7 @@ Observa com per a més comoditat té els mètodes:
   * **addPunt(PuntGeo)** , que afegirà un nou PuntGeo a la llista
   * **getPunt(int)** , al qual se li passa l'índex del punt que es vol i torna tot aquest punt
   * **getPuntNom(int)** , al qual se li passa l'índex del punt que es vol i tornarà el seu nom
-  * **getPuntLatitud(int)******, al qual se li passa l'índex del punt que es vol i tornarà la seua latitud
+  * **getPuntLatitud(int)**, al qual se li passa l'índex del punt que es vol i tornarà la seua latitud
   * **getPuntLongitud(int)** , al qual se li passa l'índex del punt que es vol i tornarà la seua longitud
   * **size()** , que ens dóna el número de punts guardats en la llista.
 

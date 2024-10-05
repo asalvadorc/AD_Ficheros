@@ -23,7 +23,7 @@ representen els números amb BCD i altres que utilitzen complement a 2).
 Per tant, quan vulguem guardar dades que puguen ser llegides per aplicacions
 fetes en diferents llenguatges i/o executades en diferents plataformes, ens
 farà falta un format estàndar que tots el puguen entendre i reconéixer, i
-millor si és autoexplicatiu com és el cas dels**llenguatges de marques**.
+millor si és autoexplicatiu com és el cas dels **llenguatges de marques**.
 
 El llenguatge de marques més conegut i més utilitzat és el **XML**
 (_**eXtensible Markup Language**_)
@@ -237,7 +237,7 @@ un **String** com a paràmetre:
     
     ...
     
-        val doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse("cotxes.xml")
+    val doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse("cotxes.xml")
 
 Però, i si el procés que necessitem és l'invers? És a dir, i si el que volem
 és guardar una estructura DOM en un fitxer XML?
@@ -257,7 +257,7 @@ buit i guardar-lo en un fitxer. Podem construir un document nou a partir del
     
     ...
     
-        val doc1 = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument()
+      val doc1 = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument()
 
 Per a escriure la informació continguda al DOM a un fitxer, es pot fer
 utilitzant una altra utilitat de Java anomenada **_Transformer_**. Es tracta
@@ -359,14 +359,14 @@ per a situar-se en una determinada posició (element, atribut, element de text,
 a traure el contingut. **Element** és un classe derivada de **Node** (per tant
 hereta tots els seus mètodes), i proporciona algunes coses més, sobretot per a
 accedir còmodament a les seues parts. Mirem els mètodes més importants, tant
-de**Node** com de **Element** i **Document**
+de **Node** com de **Element** i **Document**
 
 **Mètodes de NODE**
 
 Valor tornat | Mètode | Descripció  
 ---|---|---  
 String | **getNodeName()** | torna el nom d'aquest node  
-short | **getNodeType()** | torna el tipus d'aquest node (ELEMENT_NODE, ATTRIBUTE_NODE, TEXT_NODE, ...  
+short | **getNodeType()** | torna el tipus d'aquest node (ELEMENT_NODE, ATTRIBUTE_NODE, <br> TEXT_NODE, ...  
 String | **getNodeValue()** | torna el valor del node, si en té  
 NodeList | **getChildNodes()** | torna una llista amb els nodes fills  
 Node | **getFirstChild()** | torna el primer fill  
@@ -382,7 +382,7 @@ Mètodes d' **ELEMENT**
 Valor tornat | Mètode | Descripció  
 ---|---|---  
 String | **getAttribute(** String nom**)** | torna el valor de l'atribut que té aquest nom  
-NodeList | **getElementsByTagName(** String nom**)** | torna una llista de nodes amb tots els descendents que tenen aquest nom  
+NodeList | **getElementsByTagName(** String nom**)** | torna una llista de nodes amb tots els descendents que tenen<br>  aquest nom  
 boolean | **hasAttribute(** String nom**)** | torna cert si l'element té aquest atribut  
   
 **Mètodes de DOCUMENT**
@@ -390,7 +390,7 @@ boolean | **hasAttribute(** String nom**)** | torna cert si l'element té aquest
 Valor tornat | Mètode | Descripció  
 ---|---|---  
 Element | **getDocumentElement()** | torna l'element arrel del document  
-NodeList | **getElementsByTagName(** String nom**)** | torna una llista de nodes amb tots els descendents que tenen aquest nom  
+NodeList | **getElementsByTagName(** String nom**)** | torna una llista de nodes amb tots els descendents que tenen <br> aquest nom  
   
 <u>**Nota**</u>
 <div style="background-color: #d6eaf8; color: black; padding: 5px;">
@@ -400,7 +400,7 @@ propietat <b>nodeName</b>. Podeu substituir per la propietat o deixar el mètode
 el que vulgueu.
 </div>
 <p></p>
-Sempre que tinguem una**llista de nodes** , podrem accedir a cadascun dels
+Sempre que tinguem una **llista de nodes**, podrem accedir a cadascun dels
 membres de la llista amb el mètode **item** especificant el número d'ordre.
 Així, si volem accedir al primer posarem **item(0)**
 
@@ -409,11 +409,11 @@ document: crear fills, crear atributs, posar contingut, ...
 
 El DOM resultant obtingut des d’un XML acaba sent un còpia exacta del fitxer,
 però disposat de diferent manera. Tant al XML com al DOM hi haurà informació
-no visible, com ara els _retorns de carro_ , que cal tenir en compte per tal
+no visible, com ara els **_retorns de carro_** , que cal tenir en compte per tal
 de saber processar correctament el contingut i evitar sorpreses poc
 comprensibles.
 
-Per a il·lustrar el problema que poden suposar els retorn de carro, imaginem
+Per a il·lustrar el problema que poden suposar els **retorn de carro**, imaginem
 que disposem d’un document XML amb el següent contingut:
 ```xml
 <table>
@@ -474,11 +474,11 @@ document **cotxes.xml** esmentat en la pregunta 4.1
 
 **<u>Nota</u>**
 <div style="background-color: #d6eaf8; color: black; padding: 5px;">
-Aneu amb compte, perquè en el document **cotxes.xml** davant de la primera
-etiqueta no pot haver ni retorn de carro ni un espai en blanc ni res
+Aneu amb compte, perquè en el document <b>cotxes.xml</b> davant de la primera
+etiqueta no pot haver ni retorn de carro ni un espai en blanc ni res.
 </div>
 <p></p>
-Coieu el següent codi en un fitxer Kotlin anomenat
+Copieu el següent codi en un fitxer Kotlin anomenat
 **Exemple_3_4_1_XMLMirar.kt**
    
     
@@ -503,8 +503,8 @@ null
 ```
 Anem a comprovar ara que el primer fill de **oferta** no és **vehiculo** sinó
 el retorn de carro. Els element **vehiculo** són el segon i el quart (índex 1
-i 3). Copieu el següent codi enun fitxer Kotlin anomenat
-**Exemple_3_4_2_XMLMirar2.kt******
+i 3). Copieu el següent codi en un fitxer Kotlin anomenat
+**Exemple_3_4_2_XMLMirar2.kt**
    
     
     package exemples
@@ -538,7 +538,7 @@ Per tant, hem d'anar molt en compte amb els _**retorns de carro**_.
 
   * Per a poder esquivar els _retorn de carro_ podríem mirar el tipus de cada node ( **getNodeType()** ), menysprear els els de tipus  _**TEXT_NODE**_ i considerar només els de tipus  _**ELEMENT_NODE**_.
 
-  * Però normalment l'accés que farem serà un poc més directe i més fàcil. Agafarem la llista de tots els element que tinguen un determinat nom amb **getElementsByTagName(_nom_)** .**** Evidentment en la llista no estaran els retorns de carro**** i així no tindrem problemes amb ells.
+  * Però normalment l'accés que farem serà un poc més directe i més fàcil. Agafarem la llista de tots els element que tinguen un determinat nom amb **getElementsByTagName(_nom_)**. Evidentment en la llista no estaran els **retorns de carro** i així no tindrem problemes amb ells.
 
 En el següent exemple recorrerem tots els element **vehiculo**. De cadascun
 agafarem el contingut dels elements **marca** i **matricula**. També agafem el
@@ -653,7 +653,7 @@ Els principals mètodes per anar construint l'estructura són:
 
 Valor tornat | Mètode | Descripció  
 ---|---|---  
-Element | **createElement(** String nom**)** | crea un nou element amb el nom indicat (s'haurà de penjar en l'estructura)  
+Element | **createElement(** String nom**)** | crea un nou element amb el nom indicat (s'haurà de penjar en <br>l'estructura)  
 Text | **createTextNode(** String dades**)** | crea un nou element de text (amb contingut)  
 Node | **appendChild(** Node nou**)** | afegeix el node nou, que serà l'arrel  
   
@@ -670,7 +670,7 @@ Valor tornat | Mètode | Descripció
 ---|---|---  
 void | **setAttribute(** String nom,String valor**)** | afegeix un nou atribut a l'element, amb el nom i valor indicats  
 void | **removeAttribute(** String nom**)** | lleva l'atribut de l'element  
-void | **setTextContent(** String dades**)** | afegeix un fill que serà de text, amb el contingut passat com a paràmetre  
+void | **setTextContent(** String dades**)** | afegeix un fill que serà de text, amb el contingut passat com <br>a paràmetre  
   
 Anem a fer directament ja l'exemple dels empleats. Totes les dades seran
 elements, excepte el número d'empleat, que farem que siga un atribut d'empleat
