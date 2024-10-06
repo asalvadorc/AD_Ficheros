@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://asalvadorc.github.io/AD_Ficheros/AD_T3_Fitxers_de_diferents_formats/5_documents_json/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>5.- Documents JSON - AD - Accés a Dades</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "5.- Documents JSON";
+        var mkdocs_page_input_path = "AD_T3_Fitxers_de_diferents_formats/5_documents_json.md";
+        var mkdocs_page_url = "/AD_Ficheros/AD_T3_Fitxers_de_diferents_formats/5_documents_json/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../assets/logocaminas.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">T1. Gestió del Sistema de fitxers</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T1_Sistema_de_fitxers/objectius/">Objectius</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T1_Sistema_de_fitxers/1_introducci/">1. Introducció</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T1_Sistema_de_fitxers/2_la_classe_file_generalitats/">2. La classe File. Generalitats.</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T1_Sistema_de_fitxers/3_funcionalitat_de_la_classe_file/">3. Funcionalitat de la classe File</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T1_Sistema_de_fitxers/exercicis/">Exercicis</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">T2. Gestió del contingut de fitxers</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T2_Gesti_del_contingut_de_fitxers/objectius/">Objectius</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T2_Gesti_del_contingut_de_fitxers/1__magatzems_i_fluxos_de_dades/">1 - Magatzems i fluxos de dades</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T2_Gesti_del_contingut_de_fitxers/2__manipulaci_dels_fluxos_de_dades/">2 - Manipulació dels fluxos de dades</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T2_Gesti_del_contingut_de_fitxers/3__fluxos_decoradors/">3 - Fluxos decoradors</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T2_Gesti_del_contingut_de_fitxers/4__simplificaci_en_kotlin/">4 - Simplificació en Kotlin</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T2_Gesti_del_contingut_de_fitxers/exercicis/">Exercicis</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">T3. Fitxers de diferents formats</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../objectius/">Objectius</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1_fitxers_binaris_amb_formats_especfics/">1.- Fitxers binaris amb formats específics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_accs_directe_a_fitxers/">2.- Accés directe a fitxers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3_seriaci_dobjectes/">3.- Seriació d'objectes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_documents_xml/">4.- Documents XML</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">5.- Documents JSON</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#51-estructura-json">5.1 - Estructura JSON</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#52-driver-orgjson">5.2 Driver org.json</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#521-lectura">5.2.1 - Lectura</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#522-escriptura">5.2.2 - Escriptura</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#53-driver-moshi">5.3 Driver Moshi</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#531-lectura">5.3.1 Lectura</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#532-escriptura">5.3.2 Escriptura</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../exercicis/">Exercicis</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">AD - Accés a Dades</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">T3. Fitxers de diferents formats</li>
+      <li class="breadcrumb-item active">5.- Documents JSON</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="5-documents-json">5.- Documents JSON</h1>
+<p><strong>JSON</strong> vol dir <strong>J</strong> ava<strong>S</strong> cript <strong>O</strong> bject <strong>N</strong><strong>otation</strong> , és a dir
+Notació d'Objectes de JavaScript. És una manera de representar objectes
+inicialment per a JavaScript, però per la seua senzillesa, i com és en text
+pla, serveix per a qualsevol entorn. Permet representar estructures de dades
+d'una determinada complexitat, com el XML, però pesa molt menys que aquest, i
+per això està convertint-se en un estàndar d'intercanvi de dades, sobretot
+entre un servidor i una aplicació web.</p>
+<p>L'extensió d'un fitxer JSON és <strong>.json</strong></p>
+<h2 id="51-estructura-json">5.1 - Estructura JSON</h2>
+<p>Amb JSON podrem representar:</p>
+<ul>
+<li><strong>Valors</strong> , de tipus <strong>caràcter</strong> (entre cometes dobles), <strong>numèric</strong> (sense cometes) , <strong>booleà</strong> (true o false) o <strong>null</strong>.</li>
+<li><strong>Parelles clau valor</strong> , és a dir un nom simbòlic acompanyat d'un valor associat.. Es representen així: <strong>"nom" : valor</strong></li>
+<li><strong>Objectes</strong> , que és una col·lecció de membres, cadascú dels quals pot ser una parella clau valor, o altres objectes (fins i tot arrays): es representen entre claus, i amb els elements separats per comes: <strong>{ "nom1" : "valor1" , "nom2": valor2 , valor 3 , ... }</strong></li>
+<li><strong>Arrays</strong> , que són llistes d'elements. Els elements no tenen per què tenir la mateixa estructura, però nosaltres intentarem que sí que la tinguen per coherència. Cada element pot ser un valor , una parella clau valor, un objecte o un array.</li>
+</ul>
+<p>Veja'm algun exemples:</p>
+<pre><code>{ &quot;p1&quot; : 2 , &quot;p2&quot; : 4 , &quot;p3&quot; : 6 , &quot;p4&quot; : 8 , &quot;p5&quot; : 10 }
+</code></pre>
+<p>en aquest cas tenim un objecte, l'arrel, que té 5 membres, tots ells parelles
+clau-valor.</p>
+<pre><code>{  
+&quot;num&quot;: 1 ,  
+&quot;nom&quot;: &quot;Andreu&quot; ,  
+&quot;departament&quot;: 10 ,  
+&quot;edat&quot;: 32 ,  
+&quot;sou&quot;: 1000.0  
+}
+</code></pre>
+<p>ara un objecte, l'arrel, també amb 5 membres que són parelles clau-valor.
+Observeu com la clau sempre la posem entre cometes, i el valor quan és un
+string també, però quan és numèric, no.</p>
+<pre><code>{ &quot;empleat&quot; :  
+  { &quot;num&quot;: 1 ,  
+    &quot;nom&quot;: &quot;Andreu&quot; ,  
+    &quot;departament&quot;: 10 ,  
+    &quot;edat&quot;: 32 ,  
+    &quot;sou&quot;: 1000.0  
+  }  
+}
+</code></pre>
+<p>en aquest cas tenim un objecte, l'arrel que consta d'un únic objecte,
+<strong>empleat</strong> , el qual consta de 5 membres clau-valor.</p>
+<p>Mirem ara un exemple amb un array:</p>
+<pre><code>{ &quot;notes&quot; :  
+  [ 5 , 7 , 8 , 7 ]  
+}
+</code></pre>
+<p>on tenim l'element arrel que consta d'un únic membre, notes, que és un array.</p>
+<p>També seria correcte d'aquesta manera, per veure que l'element arrel no té
+perquè ser un objecte, sinó també un array</p>
+<pre><code>[ 5 , 7 , 8 , 7 ]
+</code></pre>
+<p>I ara un més complet amb la mateixa estructura que el fitxer XML que havíem
+vist en la pregunta 4. Tindrem un objecte arrel, amb només un objecte,
+<strong>empresa</strong> , que té un únic element <strong>empleat</strong> que és un array amb 4
+elements, cadascun dels empleats:</p>
+<pre><code>{ &quot;empresa&quot;:  
+  { &quot;empleat&quot;:  
+    [ {  
+        &quot;num&quot;: &quot;1&quot;,  
+        &quot;nom&quot;: &quot;Andreu&quot;,  
+        &quot;departament&quot;: &quot;10&quot;,  
+        &quot;edat&quot;: &quot;32&quot;,  
+        &quot;sou&quot;: &quot;1000.0&quot;  
+      },  
+      {  
+        &quot;num&quot;: &quot;2&quot;,  
+        &quot;nom&quot;: &quot;Bernat&quot;,  
+        &quot;departament&quot;: &quot;20&quot;,  
+        &quot;edat&quot;: &quot;28&quot;,  
+        &quot;sou&quot;: &quot;1200.0&quot;  
+      },  
+      {  
+        &quot;num&quot;: &quot;3&quot;,  
+        &quot;nom&quot;: &quot;Clàudia&quot;,  
+        &quot;departament&quot;: &quot;10&quot;,  
+        &quot;edat&quot;: &quot;26&quot;,  
+        &quot;sou&quot;: &quot;1100.0&quot;  
+      },  
+      {  
+        &quot;num&quot;: &quot;4&quot;,  
+        &quot;nom&quot;: &quot;Damià&quot;,  
+        &quot;departament&quot;: &quot;10&quot;,  
+        &quot;edat&quot;: &quot;40&quot;,  
+        &quot;sou&quot;: &quot;1500.0&quot;  
+      }  
+    ]  
+  }  
+}
+</code></pre>
+<p>Anem a veure un parell de casos més reals. Aquesta és la contestació que fa el
+WebService de <strong>Bicicas</strong> en sol·licitar l'estat actual de bicicletes en els
+diferents punts (en el moment de fer els apunts es consulta en l'adreça
+<a href="http://gestiona.bicicas.es/apps/apps.php">http://gestiona.bicicas.es/apps/apps.php</a>):</p>
+<pre><code>[  
+  {&quot;ocupacion&quot;:  
+    [  
+      {&quot;id&quot;:&quot;01&quot;,&quot;punto&quot;:&quot;UJI -
+FCHS&quot;,&quot;puestos&quot;:27,&quot;ocupados&quot;:12,&quot;latitud&quot;:&quot;39.99533&quot;,&quot;longitud&quot;:&quot;-0.06999&quot;,
+&quot;porcentajeAltaOcupacion&quot;:&quot;80&quot;,&quot;porcentajeBajaOcupacion&quot;:&quot;20&quot;},  
+      {&quot;id&quot;:&quot;02&quot;,&quot;punto&quot;:&quot;ESTACIÓN DE FERROCARRIL Y
+AUTOBUSES&quot;,&quot;puestos&quot;:24,&quot;ocupados&quot;:7,&quot;latitud&quot;:&quot;39.98765&quot;,&quot;longitud&quot;:&quot;-0.05281&quot;,
+&quot;porcentajeAltaOcupacion&quot;:&quot;80&quot;,&quot;porcentajeBajaOcupacion&quot;:&quot;20&quot;},  
+      {&quot;id&quot;:&quot;03&quot;,&quot;punto&quot;:&quot;PLAZA DE
+PESCADERÍA&quot;,&quot;puestos&quot;:28,&quot;ocupados&quot;:4,&quot;latitud&quot;:&quot;39.98580&quot;,&quot;longitud&quot;:&quot;-0.03798&quot;,
+&quot;porcentajeAltaOcupacion&quot;:&quot;80&quot;,&quot;porcentajeBajaOcupacion&quot;:&quot;20&quot;},  
+      ...  
+    ]  
+  }  
+]
+</code></pre>
+<p>Com podeu comprovar, l'arrel no és un objecte, sinó un <strong>Array</strong>. En l'array
+només ens interessa el primer element que és un objecte amb un únic membre,
+<strong>ocupacion</strong> (en l'exemple no hi ha més elements, però en poden haver més en
+un moment determinat, quan volen fer avisos). I <strong>ocupacion és un array</strong> ,
+amb <strong>un objecte per cada estació de bicicas</strong> , amb les parelles clau valor
+<strong>id</strong> , <strong>punto</strong> , <strong>puestos</strong> (les bicicletes que caben), <strong>ocupados</strong>
+(quantes bicicletes hi ha col·locades en aquest moment), <strong>latitud</strong> i
+<strong>longitud</strong> (les coordenades), ...</p>
+<p><strong>Nota</strong></p>
+<div style="background-color: #d6eaf8; color: black; padding: 5px;">
+En realitat ens apareixerà tota la informació molt més apegada, perquè
+realment està en una única línia.
+
+Per a poder observar millor l'estructura podem utilitzar un <b>visor</b> de json.
+Normalment el navegador Firefox els visualitza bé, encara que també depén de
+la versió. Si tenim instal·lada una versió que admet la visualització de JSON,
+ho intentarà interpretar, encara que segurament la millor manera de veure el
+format JSON és,tiar les opcions <b>Dades sense processar -- > Format
+d'impressió</b>, que és la que veiem a la dreta:
+</div>
+<p></p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../T3_5_1_0_1.png" /></th>
+<th><img alt="" src="../T3_5_1_0_2.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div style="background-color: #d6eaf8; color: black; padding: 5px;">  
+Si la versió nostra de Firefox no visualitza el format JSON, podem buscar un
+visor dels molts que hi ha per internet. En la figura n'hem utilitzat un, i es
+pot observar com facilita molt la lectura.
+</div>
+<p></p>
+<p><img alt="" src="../T3_5_1_1.png" /></p>
+<p>Un altre exemple. Un WebService de GeoNames (una Base de Dade geogràfica
+gratuïta i accessible a través d'Internet) ens proporciona informació dels
+llocs que troba dins d'un rectangle delimitat per un latitud al nord i al sud,
+i una longitud a l'esti a l'oest (en l'exemple: nord 40.01, sud 39.9, est 0.1
+i oest -0.1). Per exemple,
+<a href="https://maps.googleapis.com/maps/api/geocode/json?latlng=40,0">http://api.geonames.org/citiesJSON?north=40.01&amp;south=39.99&amp;east=0.01&amp;west=-0.01&amp;lang=ES&amp;username=demo</a>
+torna el següent:</p>
+<pre><code>
+    {
+      &quot;geonames&quot;: [
+        {
+          &quot;lng&quot;: -0.04935,
+          &quot;geonameId&quot;: 2519752,
+          &quot;countrycode&quot;: &quot;ES&quot;,
+          &quot;name&quot;: &quot;Castelló de la Plana&quot;,
+          &quot;fclName&quot;: &quot;city, village,...&quot;,
+          &quot;toponymName&quot;: &quot;Castelló de la Plana&quot;,
+          &quot;fcodeName&quot;: &quot;seat of a second-order administrative division&quot;,
+          &quot;wikipedia&quot;: &quot;en.wikipedia.org/wiki/Castell%C3%B3n_de_la_Plana&quot;,
+          &quot;lat&quot;: 39.98567,
+          &quot;fcl&quot;: &quot;P&quot;,
+          &quot;population&quot;: 180005,
+          &quot;fcode&quot;: &quot;PPLA2&quot;
+        },
+        {
+          &quot;lng&quot;: -0.06313,
+          &quot;geonameId&quot;: 2521909,
+          &quot;countrycode&quot;: &quot;ES&quot;,
+          &quot;name&quot;: &quot;Almazora&quot;,
+          &quot;fclName&quot;: &quot;city, village,...&quot;,
+          &quot;toponymName&quot;: &quot;Almassora&quot;,
+          &quot;fcodeName&quot;: &quot;populated place&quot;,
+          &quot;wikipedia&quot;: &quot;en.wikipedia.org/wiki/Almassora&quot;,
+          &quot;lat&quot;: 39.94729,
+          &quot;fcl&quot;: &quot;P&quot;,
+          &quot;population&quot;: 24963,
+          &quot;fcode&quot;: &quot;PPL&quot;
+        },
+        ...
+        ]
+    }
+</code></pre>
+<p>A partir de l'arrel (que ara sí que és un objecte), tenim un membre:
+<strong>geonames</strong>, que és un array (un element per cada "lloc" trobat), on cada
+element té informació diversa, com el nom del lloc, les coordenades, la
+població, ...</p>
+<p><strong><u>Nota</u></strong></p>
+<div style="background-color: #d6eaf8; color: black; padding: 5px;">  
+De fa uns mesos que Google limita el servei anterior, i ha de ser amb un
+usuari validat. No valdrà la pena, per al poc profit que li trauríem. Mostrem
+en què consisteix el servei únicament a nivell il·lustratiu
+</div>
+<p></p>
+
+<h2 id="52-driver-orgjson">5.2 Driver org.json</h2>
+<p>Hi ha més d'una llibreria per a poder accedir i analitzar els documents json.</p>
+<p>Per exemple, es comenten prou per Internet són <strong>GSON</strong> (de Google) i
+<strong>Jackson</strong>.</p>
+<p>Però nosaltres anem a utilitzar dues altres llibreries</p>
+<ul>
+<li>Una, la del grup <strong>org.json</strong> que en principi serà la mateixa que s'utilitzarà en Android</li>
+<li>Una altra, la de <strong>Moshi</strong> , que ens permetrà elaborar més el resultat ja que podrem fer una conversió entre Json i objectes de Java o de Kotlin</li>
+</ul>
+<p>Pel que fa a la primera, en el moment de fer aquestos apunts l'última versió
+estable és la <strong>20240303</strong> , és a dir, de març de 2024. En aquest enllaç
+teniu d'on us la podeu baixar: <a href="https://jar-download.com/artifacts/org.json/json">https://jar-download.com/artifacts/org.json/json</a>. Una vegada baixada l'haurem
+d'incorporar al nostre projecte (sobre el projecte <strong>F4 -- &gt; Modules --&gt;
+pestanya dependencies --&gt; +</strong>)</p>
+<p>En ella trobem el més bàsic:</p>
+<ul>
+<li><strong>JSONObject</strong> : equivaldrà a un objecte</li>
+<li><strong>JSONArray</strong> : equivaldrà a un array</li>
+<li><strong>JSONTokener</strong> :ens permetrà analitzar el document Json, i tornarà l'objecte arrel. El mètode que utilitzarem serà sempre <strong>nextValue()</strong>.</li>
+</ul>
+<h3 id="521-lectura">5.2.1 - Lectura</h3>
+<p><code>JSONTokener</code></p>
+<p>El primer que haurem de fer serà analitzar el document per a obtenir l'element
+arrel (que com hem vist normalment serà un objecte, però de vegades pot ser un
+array).</p>
+<p>El constructor de <strong>JSONTokener</strong> admet un <strong>String</strong> , amb la qual cosa
+analitzarem una cadena que posem directament, o també un <strong>InputStream</strong> o un
+<strong>Reader</strong> , amb la qual cosa podrem analitzar directament el contingut d'un
+fitxer</p>
+<p>El mètode <strong>nextValue()</strong> de <strong>JSONTokener</strong> tornarà l'arrel del document
+Json, i només haurem de fer un cast a l'ojecte que és l'arrel: un
+<strong>JSONObject</strong> o un <strong>JSONArray</strong></p>
+<p>En el següent exemple agafem el json directament d'un <strong>string</strong> , on teníem
+els números parells.</p>
+<pre><code>{ &quot;p1&quot; : 2 , &quot;p2&quot; : 4 , &quot;p3&quot; : 6 , &quot;p4&quot; : 8 , &quot;p5&quot; : 10 }
+</code></pre>
+<p>Observeu com per a la definició del String ens ha tocat escapar les dobles
+cometes. Copieu el següent codi en el fitxer
+Kotlin<strong>Exemple_3_5_11_JSONAnalitzarCadena.kt</strong></p>
+<pre><code>package exemples
+
+import org.json.JSONTokener
+import org.json.JSONObject
+
+fun main(args: Array&lt;String&gt;) {
+
+    val cadena = "{ \"p1\" : 2 , \"p2\" : 4 , \"p3\" : 6 , \"p4\" : 8 , \"p5\" : 10 }"
+
+    val arrel = JSONTokener(cadena).nextValue() as JSONObject
+
+    println(arrel.get("p1"))
+}
+</code></pre>
+<p>Mentre que en aquest exemple accedim al fitxer <strong>parelles.json</strong> (que
+assumirem que té el mateix contingut). Podríem passar el contingut del fitxer
+a una cadena, però és molt més còmode passar el <strong>Reader</strong> com paràmetre en el
+constructor, i ell s'encarrega de llegir-lo tot. Copieu el següent codi en el
+fitxer <strong>Exemple_3_5_12_JSONAnalitzarFitxer.kt</strong> :</p>
+<pre><code>package exemples
+
+import org.json.JSONTokener
+import org.json.JSONObject
+import java.io.FileReader
+
+fun main(args: Array&lt;String&gt;) {
+
+    val r_json = FileReader("parelles.json")
+
+    val arrel = JSONTokener(r_json).nextValue() as JSONObject
+
+    println(arrel.get("p3"));
+}
+</code></pre>
+<p><code>JSONObject</code></p>
+<p>Contindrà un <strong>objecte json</strong>. Recordeu que l'<strong>objecte</strong> es delimita amb les
+claus: <strong>{ }</strong></p>
+<p>El mètode més important serà <strong>get(<em>clau</em>)</strong> al qual li passem la clau del
+membre que volem obtenir. Si el membre és una parella clau-valor, obtindrem
+directament el valor. Si és un altre objecte, doncs obtindrem l'objecte o
+també podria ser un array. El cas que siga una parella clau-valor, ja l'hem
+vist en l'exemple anterior.</p>
+<p>En el següent exemple, en el fitxer <strong>Empleat.json</strong> tindrem un empleat</p>
+<pre><code>{ &quot;empleat&quot; :  
+    { &quot;num&quot;: 1 ,  
+      &quot;nom&quot;: &quot;Andreu&quot; ,  
+      &quot;departament&quot;: 10 ,  
+      &quot;edat&quot;: 32 ,  
+      &quot;sou&quot;: 1000.0  
+    }  
+}
+</code></pre>
+<p>Observeu com ara de l'element arrel hem d'agafar <strong>empleat</strong> , que és un
+objecte amb les parelles clau-valor <strong>num</strong> , <strong>nom</strong> , ....</p>
+<p>Copieu el segúent codi en el fitxer Kotlin
+<strong>Exemple_3_5_13_JSONAnalitzarEmpleat.kt</strong> :</p>
+<pre><code>package exemples
+
+import org.json.JSONTokener
+import org.json.JSONObject
+import java.io.FileReader
+
+fun main(args: Array&lt;String&gt;) {
+
+    val r_json = FileReader("Empleat.json")
+
+    val arrel = JSONTokener(r_json).nextValue() as JSONObject
+
+    val empleat = arrel.get("empleat") as JSONObject
+
+    println("" + empleat.get("nom") + " (" + empleat.get("sou") + ")")
+}
+</code></pre>
+<p>També podem utilitzar els mètodes <strong>getJSONObject()</strong> , <strong>getJSONArray</strong> ,
+<strong>getInt()</strong> , <strong>getString()</strong> , ..., que directament ens ho dóna en el tipus
+especificat, i no cal fer cast.</p>
+<p><code>JSONArray</code></p>
+<p>Serà l'array, que recordem que ve limitat per els claudàtors: <strong>[ ]</strong></p>
+<p>Per a obtenir els elements de l'array utilitzarem el mètode <strong>get(<em>index</em>)</strong>,
+on l'índex és el<strong>número d'ordre</strong> de l'element que volem obtenir.</p>
+<p>També tindrem els mètodes <strong>getJSONObject(<em>index</em>)</strong>,
+<strong>getJSONArray(<em>index</em>)</strong>, <strong>getInt(<em>index</em>)</strong>, ..., que tornen directament el
+tipus especificat</p>
+<p>Posem el primer exemple sobre un json que només té un array els elements del
+qual són valors:</p>
+<pre><code>[ 5 , 7 , 8 , 7 ]
+</code></pre>
+<p>Observeu com ara l'arrel és un Array, i ens muntem un bucle per obtenir tots
+els elements. Copieu el següent codi en el fitxer
+<strong>Exemple_3_5_14_JSONAnalitzarArray.kt</strong></p>
+<pre><code>package exemples
+
+import org.json.JSONTokener
+import org.json.JSONArray
+
+fun main(args: Array&lt;String&gt;) {
+
+    val cadena = "[ 5 , 7 , 8 , 7 ]"
+
+    val arrel = JSONTokener(cadena).nextValue() as JSONArray
+
+    for (i in arrel)
+        println(i)
+}
+</code></pre>
+<p>Com veieu podem fer servir els bucles foreach, però lamentablement no podem
+obtenir directament un JsonObject, i per tant l'hem de reconvertir. Ho
+mostrarem en el següent exemple en el qual agafem tots els empleats de
+l'empresa, on <strong>Empresa.json</strong> és així:</p>
+<pre><code>{ &quot;empresa&quot; :  
+    { &quot;empleats&quot;:  
+      [  
+        { &quot;num&quot;:1, &quot;nom&quot;: &quot;Andreu&quot;, &quot;departament&quot;: 10, &quot;edat&quot;: 32, &quot;sou&quot;: 1000.0} ,  
+        { &quot;num&quot;:2, &quot;nom&quot;: &quot;Bernat&quot;, &quot;departament&quot;: 20, &quot;edat&quot;: 28, &quot;sou&quot;: 1200.0} ,  
+        { &quot;num&quot;:3, &quot;nom&quot;: &quot;Clàudia&quot;, &quot;departament&quot;: 10, &quot;edat&quot;: 26, &quot;sou&quot;: 1100.0} ,  
+        { &quot;num&quot;:4, &quot;nom&quot;: &quot;Damià&quot;, &quot;departament&quot;: 10, &quot;edat&quot;: 40, &quot;sou&quot;: 1500.0}  
+       ]  
+    }     
+}
+</code></pre>
+<p>Tindrem un objecte arrel, amb només un objecte, <strong>empresa</strong> , que té un únic
+membre empleat que és un array amb 4 elements, cadascun dels empleats. Copieu
+el següent exemple en el fitxer kotlin
+<strong>Exemple_3_5_15_JSONAnalitzarEmpresa.kt</strong></p>
+<pre><code>package exemples
+
+import org.json.JSONTokener
+import org.json.JSONObject
+import java.io.FileReader
+
+fun main(args: Array&lt;String&gt;) {
+
+    val r_json = FileReader("Empresa.json")
+
+    val arrel = JSONTokener(r_json).nextValue() as JSONObject
+    val empresa = arrel.getJSONObject("empresa")
+
+    for (e in empresa.getJSONArray("empleats")){
+        val emp = e as JSONObject
+        println("" + emp.get("nom") + " (" + emp.get("sou") + ")")
+    }
+}
+</code></pre>
+<p>Mireu com ens hem estalviat un pas, i no hem definit la variable <strong>empleats</strong>
+, sinó que ho especifiquem en el bucle. També podríem haver estalviat la
+variable <strong>empresa</strong> si en el bucle haguérem posat :</p>
+<pre><code>    for (e in arrel.getJSONObject(&quot;empresa&quot;).getJSONArray(&quot;empleats&quot;)){
+</code></pre>
+<p><code>Exemple més complet</code></p>
+<p>Mirem algun exemple ja més elaborat, on ens tocarà analitzar amb detall
+l'estructura json. Fem-lo sobre l'exemple de <strong>BICICAS</strong>. Podeu tornar a fer
+la consulta de l'estat actual en aquest moment a la pàgina
+<a href="http://gestiona.bicicas.es/apps/apps.php">http://gestiona.bicicas.es/apps/apps.php</a> , seleccionar-ho tot i guardar-lo
+en el fitxer <strong>Bicicas.json</strong>. És molt possible que tinguem problemes amb els
+caràcers especials, com les vocals accentuades, a causa de que el navegador
+utilitzat no les reconega, i en copiar-les al fitxer no tinguem ja la
+codificació correcta. No li donarem importància en aquest moment. Recordem ací
+l'estructura:</p>
+<pre><code>[  
+    {&quot;ocupacion&quot;:  
+        [{&quot;id&quot;:&quot;01&quot;,&quot;punto&quot;:&quot;UJI - FCHS&quot;,&quot;puestos&quot;:28,&quot;ocupados&quot;:11,&quot;latitud&quot;:&quot;39.99533&quot;,       &quot;longitud&quot;:&quot;-0.06999&quot;, &quot;porcentajeAltaOcupacion&quot;:&quot;80&quot;,&quot;porcentajeBajaOcupacion&quot;:&quot;20&quot;},  
+         {&quot;id&quot;:&quot;02&quot;,&quot;punto&quot;:&quot;ESTACIÓN DE FERROCARRIL Y AUTOBUSES&quot;,&quot;puestos&quot;:28,&quot;ocupados&quot;:8,&quot;latitud&quot;:&quot;39.98765&quot;, &quot;longitud&quot;:&quot;-0.05281&quot;,&quot;porcentajeAltaOcupacion&quot;:&quot;80&quot;,  porcentajeBajaOcupacion&quot;:&quot;20&quot;},  
+         {&quot;id&quot;:&quot;03&quot;,&quot;punto&quot;:&quot;PLAZA DE PESCADERÍA&quot;,&quot;puestos&quot;:28,&quot;ocupados&quot;:13,&quot;latitud&quot;:&quot;39.98580&quot;,&quot;longitud&quot;:&quot;-0.03798&quot;, porcentajeAltaOcupacion&quot;:&quot;80&quot;,&quot;porcentajeBajaOcupacion&quot;:&quot;20&quot;},  
+    ...  
+        ]  
+    }  
+]
+</code></pre>
+<p>Com podem observar, comença per un <strong>array</strong> , no per un objecte, com sol ser
+habitual. L'únic que ens interessa és el <strong>primer element</strong> de l'array, ja que
+en posteriors anirien en tot cas missatges. El primer element és un
+<strong>objecte</strong> que té un únic membre <strong>ocupacion</strong> (o si en té més no ens
+interessen), que és un <strong>array</strong> amb totes les estacions. Cada estació és un
+objecte amb la informació que ens interessa.</p>
+<p>Copieu el següent codi en el fitxer Kotlin
+<strong>Exemple_3_5_16_JSONAnalitzarBicicas.kt</strong> :</p>
+<pre><code>package exemples
+
+import org.json.JSONTokener
+import org.json.JSONObject
+import org.json.JSONArray
+import java.io.FileReader
+
+fun main(args: Array&lt;String&gt;) {
+
+    val r_json = FileReader("Bicicas.json")
+
+    val arrel = JSONTokener(r_json).nextValue() as JSONArray
+
+    val estacions = arrel.getJSONObject(0).getJSONArray("ocupacion")
+
+    for (e in estacions){
+        val est = e as JSONObject
+        println("" + e.get("id") + ".- " + e.get("punto") + " (" + e.get("ocupados") + "/" + e.get("puestos") + ")")
+    }
+}
+</code></pre>
+<p>Hem agafat l'array, d'ell hem agafat el primer objecte i d'ell l'array. I hem
+utilitzat un bucle <strong>for</strong> , per a tots els valors de l'array</p>
+<h3 id="522-escriptura">5.2.2 - Escriptura</h3>
+<p>Ens falta veure com escriure un document JSON. És molt fàcil anar creant
+l'estructura JSON. Només hem de recordar la manera d'afegir al <strong>JSONObject</strong>
+i al <strong>JSONArray</strong>.</p>
+<ul>
+<li><strong>put("nom", element)</strong> per afegir un nou membre a un <strong>JSONObject</strong></li>
+<li><strong>put(element)</strong> per afegir un nou element a un <strong>JSONArray</strong></li>
+</ul>
+<p><strong><b>Nota</b></strong></p>
+<div style="background-color: #d6eaf8; color: black; padding: 5px;">
+La major part de drivers utilitzen <b>add(element)</b> per a afegir un element a
+un JSONArray, en compte de <b>put</b>
+</div>
+<p></p>
+
+<p>Una vegada tinguem l'estructura, podrem passar-la a un <strong>string</strong> amb el
+mètode <strong>toString</strong> , i la podrem guardar directament en un fitxer, per
+exemple.</p>
+<p>Farem més d'un exemple, per poder practicar.</p>
+<p>En el primer exemple generarem un JSON a partir de dades definides en el
+mateix programa, per mig de vectors. Intentarem generar aquest fitxer JSON:</p>
+<pre><code>{ &quot;empresa&quot;:  
+    { &quot;empleat&quot;:  
+        [ {  
+                &quot;num&quot;: &quot;1&quot;,  
+                &quot;nom&quot;: &quot;Andreu&quot;,  
+                &quot;departament&quot;: &quot;10&quot;,  
+                &quot;edat&quot;: &quot;32&quot;,  
+                &quot;sou&quot;: &quot;1000.0&quot;  
+           },  
+           {  
+                &quot;num&quot;: &quot;2&quot;,  
+                &quot;nom&quot;: &quot;Bernat&quot;,  
+                &quot;departament&quot;: &quot;20&quot;,  
+                &quot;edat&quot;: &quot;28&quot;,  
+                &quot;sou&quot;: &quot;1200.0&quot;  
+            },  
+            {     
+                &quot;num&quot;: &quot;3&quot;,  
+                &quot;nom&quot;: &quot;Clàudia&quot;,  
+                &quot;departament&quot;: &quot;10&quot;,  
+                &quot;edat&quot;: &quot;26&quot;,  
+                &quot;sou&quot;: &quot;1100.0&quot;  
+            },  
+            {  
+                &quot;num&quot;: &quot;4&quot;,  
+                &quot;nom&quot;: &quot;Damià&quot;,  
+                &quot;departament&quot;: &quot;10&quot;,  
+                &quot;edat&quot;: &quot;40&quot;,  
+                &quot;sou&quot;: &quot;1500.0&quot;  
+            }  
+        ]  
+    }  
+}
+</code></pre>
+<p>Analitzem l'estructura. Tenim un objecte arrel, que consta d'un únic membre,
+empresa, que és un objecte. Aquest objecte té un únic membre que és un array.
+Cada element de l'array és un objecte, i els seus membres ja són clau-valor.</p>
+<p>Copieu el següent codi en el fitxer kotlin
+<strong>Exemple_3_5_17_JSONEscriureEmpleats.kt</strong> :</p>
+<pre><code>import org.json.JSONObject
+import org.json.JSONArray
+import java.io.FileWriter
+
+fun main(args: Array&lt;String&gt;) {
+    val noms = arrayOf("Andreu", "Bernat", "Clàudia", "Damià")
+    val departaments = arrayOf( 10, 20, 10, 10 )
+    val edats = arrayOf( 32, 28, 26, 40 )
+    val sous = arrayOf( 1000.0, 1200.0, 1100.0, 1500.0)
+
+    val arrel = JSONObject()
+    val empresa = JSONObject()
+    arrel.put("empresa", empresa)
+    val empleats = JSONArray()
+    empresa.put("empleat", empleats)
+
+    for (i in 0..3){
+        val emp = JSONObject()
+        emp.put("num", i + 1)
+        emp.put("nom", noms[i])
+        emp.put("departament", departaments[i])
+        emp.put("edat", edats[i])
+        emp.put("sou", sous[i])
+        empleats.put(emp)
+    }
+
+    val f = FileWriter("Empleats.json")
+    f.write(arrel.toString(4))
+    f.close()
+}
+</code></pre>
+<p>Hem posat en el moment de passar el JSONObject a String el paràmetre 4, per a
+que idente en diferents linies a 4 espais. Com veureu el resultat és quasi
+perfecte</p>
+<pre><code>
+    {&quot;empresa&quot;: {&quot;empleat&quot;: [
+        {
+            &quot;num&quot;: 1,
+            &quot;sou&quot;: 1000,
+            &quot;nom&quot;: &quot;Andreu&quot;,
+            &quot;edat&quot;: 32,
+            &quot;departament&quot;: 10
+        },
+        {
+            &quot;num&quot;: 2,
+            &quot;sou&quot;: 1200,
+            &quot;nom&quot;: &quot;Bernat&quot;,
+            &quot;edat&quot;: 28,
+            &quot;departament&quot;: 20
+        },
+        {
+            &quot;num&quot;: 3,
+            &quot;sou&quot;: 1100,
+            &quot;nom&quot;: &quot;Clàudia&quot;,
+            &quot;edat&quot;: 26,
+            &quot;departament&quot;: 10
+        },
+        {
+            &quot;num&quot;: 4,
+            &quot;sou&quot;: 1500,
+            &quot;nom&quot;: &quot;Damià&quot;,
+            &quot;edat&quot;: 40,
+            &quot;departament&quot;: 10
+        }
+    ]}}
+</code></pre>
+<p>Tenim el problema aparent que els membres de cada empleat estan
+<strong>desordenats</strong>. No és que haja eixit malament, perquè hem de recordar que un
+objecte JSON és un conjunt no ordenat de membres.</p>
+<p><code>Exemple BICICAS</code></p>
+<p>Un altre exemple, el de <strong>Bicicas</strong> , i el que farem per a practicar tant la
+lectura com l'escriptura, serà donar-li una altra estructura. Per tant
+llegirem l'original, i anirem construint la següent estructura en què està la
+informació més resumida:</p>
+<pre><code>{ &quot;bicicas&quot;:  
+  [ {&quot;num&quot;:&quot;01&quot;,&quot;nom&quot;:&quot;UJI - FCHS&quot;,&quot;llocs&quot;:28,&quot;ocupats&quot;:11,&quot;lliures&quot;:17},  
+    {&quot;num&quot;:&quot;02&quot;,&quot;nom&quot;:&quot;ESTACIÓN DE FERROCARRIL Y AUTOBUSES&quot;,&quot;llocs&quot;:28,&quot;ocupats&quot;:8,&quot;lliures&quot;:20},  
+    {&quot;num&quot;:&quot;03&quot;,&quot;nom&quot;:&quot;PLAZA DE PESCADERÍA&quot;,&quot;llocs&quot;:28,&quot;ocupats&quot;:13,&quot;lliures&quot;:15},  
+        ...  
+  ]  
+}
+</code></pre>
+<p>Tindrem per una banda les estacions d'origen, i per una altra les de destí .</p>
+<p>Copieu el següent codi en el fitxer Kotlin
+<strong>Exemple_3_5_18_JSONEscriureBicicas.kt</strong> :</p>
+<pre><code>import org.json.JSONTokener
+import org.json.JSONObject
+import org.json.JSONArray
+import java.io.FileReader
+import java.io.FileWriter
+
+fun main(args: Array&lt;String&gt;) {
+
+    val r_json = FileReader("Bicicas.json")
+    val arrel = JSONTokener(r_json).nextValue() as JSONArray
+    val estacions = arrel.getJSONObject(0).getJSONArray("ocupacion")
+
+    val destEstacions = JSONArray()
+
+    for (e in estacions){
+        e as JSONObject
+        val destE = JSONObject();
+        destE.put("num", e.get("id"));
+        destE.put("nom", e.get("punto"));
+        destE.put("llocs", e.get("puestos"));
+        destE.put("ocupats", e.get("ocupados"));
+        val lliures = e.get("puestos") as Int - e.get("ocupados") as Int
+        destE.put("lliures", lliures)
+        destEstacions.put(destE)
+    }
+
+    val bicicas = JSONObject()
+    bicicas.put("bicicas", destEstacions)
+
+    val w_json = FileWriter("Bicicas2.json");
+    w_json.write(bicicas.toString(4));
+    w_json.close();
+}
+</code></pre>
+<p>El resultat seria aquest (observeu que havíem posat una tabulació de 4):</p>
+<pre><code>
+    {&quot;bicicas&quot;: [
+        {
+            &quot;num&quot;: &quot;01&quot;,
+            &quot;ocupats&quot;: 23,
+            &quot;llocs&quot;: 28,
+            &quot;nom&quot;: &quot;UJI - FCHS&quot;,
+            &quot;lliures&quot;: 5
+        },
+        {
+            &quot;num&quot;: &quot;02&quot;,
+            &quot;ocupats&quot;: 0,
+            &quot;llocs&quot;: 28,
+            &quot;nom&quot;: &quot;ESTACIÃ³N DE FERROCARRIL Y AUTOBUSES&quot;,
+            &quot;lliures&quot;: 28
+        },
+    ...
+    ]}
+</code></pre>
+<h2 id="53-driver-moshi">5.3 Driver Moshi</h2>
+<p>El driver anterior tenia un funcionament molt senzill, però que obliga a
+seguir en tot moment l'estructura que té el fitxer Json, buscar entre els
+objectes i arrays cada vegada que es fa un accés.</p>
+<p>Si són relativament pocs els accessos, és molt còmode, però si s'ha de fer un
+accés continuat pot resultar més pesat.</p>
+<p>Existeix una altra llibreria, que ens permet passar d'un fitxer Json a
+objectes de Java o Kotlin, la qual cosa ens anirà bé quan siguen molts els
+accessos, perquè en definitiva tindrem les dades en l'entorn natural del
+nostre llenguatge: els objectes.</p>
+<p>Es tracta de la llibreria <strong>MOSHI</strong> , i aquest és el lloc on poder trobar-la:</p>
+<p><a href="https://github.com/square/moshi">https://github.com/square/moshi</a></p>
+<p>En el moment de fer aquestos apunts, va per la versió 1.14.0. Tanmateix en les
+últimes versions dóna un error de compatibilitat. Ens conformarem per tant amb
+una versió anterior. Podem trobar totes les versions en aquest enllaç:</p>
+<p><a href="https://jar-download.com/artifacts/com.squareup.moshi/moshi">https://jar-download.com/artifacts/com.squareup.moshi/moshi</a></p>
+<p>Podem agafar per exemple versió 1.8.0:</p>
+<p><a href="https://jar-download.com/artifacts/com.squareup.moshi/moshi/1.8.0/source-
+code">https://jar-download.com/artifacts/com.squareup.moshi/moshi/1.8.0/source-
+code</a></p>
+<p>Veureu que hi ha dos drivers, el propi de <strong>Moshi</strong> i un altre driver anomenat
+<strong>okio</strong>. Haurem d'incorporar els dos al nostre projecte.</p>
+<p>Recordeu que la manera d'incorporar els drivers al projecte IntelliJ és amb:</p>
+<p><strong>Sobre el projecte F4 (Project Structure) -- &gt; Modules --&gt; pestanya
+dependencies --&gt; +</strong></p>
+<h3 id="531-lectura">5.3.1 Lectura</h3>
+<p>Com comentàvem en la pregunta anterior, la llibreria Moshi permet passar d'un
+document JSON directament a objectes Java o Kotlin.</p>
+<p>Ho mostrarem en dos exemples:</p>
+<ul>
+<li>Primer per a poder llegir Empresa.json, en què l'element arrel és un objecte Json.</li>
+<li>Després per a llegir Bicicas,json, en què l'element arrel és un array Json, cosa que ens complica un poc la lectura</li>
+</ul>
+<p><code>Cas 1: l'arrel és un objecte</code></p>
+<p>Tant en un com en l'altre primer haurem de crear les classes Java o Kotlin on
+anirà la lectura del fitxer. Aquestes classes hauran de tenir la mateixa
+estructura que en JSON, però adaptades a Java o Kotlin.</p>
+<p>Anem per tant a analitzar <strong>Empresa.json</strong> , que ja el teníem creat i tenia
+aquesta estructura:</p>
+<pre><code>{ &quot;empresa&quot; :  
+    { &quot;empleats&quot;:  
+      [  
+        { &quot;num&quot;:1, &quot;nom&quot;: &quot;Andreu&quot;, &quot;departament&quot;: 10, &quot;edat&quot;: 32, &quot;sou&quot;: 1000.0} ,  
+        { &quot;num&quot;:2, &quot;nom&quot;: &quot;Bernat&quot;, &quot;departament&quot;: 20, &quot;edat&quot;: 28, &quot;sou&quot;: 1200.0} ,  
+        { &quot;num&quot;:3, &quot;nom&quot;: &quot;Clàudia&quot;, &quot;departament&quot;: 10, &quot;edat&quot;: 26, &quot;sou&quot;: 1100.0} ,  
+        { &quot;num&quot;:4, &quot;nom&quot;: &quot;Damià&quot;, &quot;departament&quot;: 10, &quot;edat&quot;: 40, &quot;sou&quot;: 1500.0}  
+            ]  
+    }  
+}
+</code></pre>
+<p>També teníem creada la classe Empleat, des de la pregunta 3 d'aquest tema, i
+tenia aquesta estructura. <strong>Empleat.kt</strong> :</p>
+<pre><code>    class Empleat (var num: Int, var nom: String, var departament: Int, var edat: Int, var sou: Double)
+</code></pre>
+<p>L'havíem fet <strong>Serializable</strong> , però això no importa en aquest exemple. El
+podem deixar tal qual estava.</p>
+<p>L'estuctura del fitxer JSON, ens marca que l'arrel és un <strong>objecte</strong> que té un
+únic membre que es diu <strong>empresa</strong> , que és un <strong>objecte</strong> que té un únic
+membre anomenat <strong>empleats</strong> , que és un <strong>array</strong> d'objectes (que
+coincideixen ja amb la classe <strong>Empleat</strong>).</p>
+<p>Per tant ens hem de construir una <strong>classe</strong> que que tinga una propietat
+anomenada <strong>empleats</strong> , que siga un conjunt de <strong>Empleat</strong>. Ens vindrà bé un
+<strong>List</strong>. Com que la utilitzarem en més d'un exemple, la guardem en el fitxer
+de classe <strong>Empleats.kt</strong> ;</p>
+<pre><code>    class Empleats(val empleats: List&lt;Empleat&gt; = listOf&lt;Empleat&gt;())
+</code></pre>
+<p>I a partir d'aquesta hem de construir una altra classe que tinga una única
+propietat anomenada <strong>empresa</strong> que siga de tipus <strong>Empleats</strong>. Com que la
+utilitzarem en més d'un exemple, la guardem en el fitxer de classe
+<strong>Empresa.kt</strong></p>
+<pre><code>    class Empresa(val empresa: Empleats)
+</code></pre>
+<p>La lectura del fitxer la fem a partir d'un objecte <strong>Moshi</strong> al qual per mig
+del mètode <strong>adapter</strong> definim quina classe volem llegir. Una vegada llegit ja
+podem utilitzar els objectes Java o Kotlin.</p>
+<p>Copieu el següent codi en el fitxer Kotlin
+<strong>Exemple_3_5_21_MOSHIAnalitzarEmpresa.kt</strong> :</p>
+<pre><code>package exemples
+
+import com.squareup.moshi.*
+import java.io.File
+
+fun main (args: Array&lt;String&gt;){
+    val json = File("Empresa.json").readText()
+
+    val moshi = Moshi.Builder().build()
+    val adapter = moshi.adapter(Empresa::class.java)
+    val empresa = adapter.fromJson(json)
+
+    val llEmpleats= empresa!!.empresa.empleats
+    println("Hi ha " + llEmpleats.size + " empleats:")
+    for (e in llEmpleats)
+        println(e.nom + " (" + e.sou  +")")
+}
+</code></pre>
+<p><code>Cas 2: l'arrel és un array</code></p>
+<p>En cas que l'arrel del fitxer JSON siga un array, se'ns complica un poc,
+perquè en el moment de definir quina classe volem llegir, no és en realitat
+una classe, sinó un col·lecció (un List havíem vist que és el que
+utilitzàvem).</p>
+<p>Moshi utilitza una tècnica per a poder fer la lectura de l'array, que
+consisteix a crear-se un tipus de dades que seria la concatenació d'un List i
+de la classe de la qual volem l'array. Ho veurem molt millor en l'exemple.</p>
+<p>L'exemple serà per a llegir el fitxer Bicicas.json, que recordem que començava
+per un array:</p>
+<pre><code>[  
+    {&quot;ocupacion&quot;:  
+      [ {&quot;id&quot;:&quot;01&quot;,&quot;punto&quot;:&quot;UJI - FCHS&quot;,&quot;puestos&quot;:28,&quot;ocupados&quot;:11,&quot;latitud&quot;:&quot;39.   99533&quot;,&quot;longitud&quot;:&quot;-0.06999&quot;,  
+        &quot;porcentajeAltaOcupacion&quot;:&quot;80&quot;,&quot;porcentajeBajaOcupacion&quot;:&quot;20&quot;},  
+        {&quot;id&quot;:&quot;02&quot;,&quot;punto&quot;:&quot;ESTACIÓN DE FERROCARRIL Y AUTOBUSES&quot;,&quot;puestos&quot;:28,&quot;ocupados&quot;:8,&quot;latitud&quot;:&quot;39.98765&quot;, &quot;longitud&quot;:&quot;-0.05281&quot;,&quot;porcentajeAltaOcupacion&quot;:&quot;80&quot;,&quot;porcentajeBajaOcupacion&quot;:&quot;20&quot;},  
+        {&quot;id&quot;:&quot;03&quot;,&quot;punto&quot;:&quot;PLAZA DE PESCADERÍA&quot;,&quot;puestos&quot;:28,&quot;ocupados&quot;:13,&quot;latitud&quot;:&quot;39.98580&quot;,&quot;longitud&quot;:&quot;-0.03798&quot;,  
+        &quot;porcentajeAltaOcupacion&quot;:&quot;80&quot;,&quot;porcentajeBajaOcupacion&quot;:&quot;20&quot;},  
+            ...  
+        ]  
+    }  
+]
+
+</code></pre>
+<p>Era un array d'un únic element , però en definitiva un array. Només ens
+interessa el primer element, que serà un objecte amb un únic membre anomenat
+<strong>ocupacion</strong> , que és un array on cada element és un objecte corresponent a
+una estació, amb les seues característiques com a parelles clau-valor.</p>
+<p>Definim per tant la classe <strong>Estacio.kt</strong> :</p>
+<pre><code>
+    class Estacio(
+        val id: Long, val punto: String, val puestos: Int,
+        val ocupados: Int, val latitud: Double, val longitud: Double,
+        val porcentajeAltaOcupacion: Int, val porcentajeBajaOcupacion: Int
+    )
+</code></pre>
+<p>I la classe <strong>Estacions.kt</strong>:</p>
+<pre><code>    class Estacions(val ocupacion: List&lt;Estacio&gt; = listOf&lt;Estacio&gt;())
+</code></pre>
+<p>Copieu el següent codi en un fitxer Kotlin anomenat
+<strong>Exemple_3_5_22_MOSHIAnalitzarBicicas.kt</strong> :</p>
+<pre><code>package exemples
+
+import com.squareup.moshi.*
+import java.io.File
+
+fun main(args: Array&lt;String&gt;) {
+    val json = File("Bicicas.json").readText()
+
+    val moshi = Moshi.Builder().build()
+    val llistaTipus = Types.newParameterizedType(List::class.java, Estacions::class.java)
+    val adapter: JsonAdapter&lt;List&lt;Estacions&gt;&gt; = moshi.adapter(llistaTipus)
+    val bicicas = adapter.fromJson(json)
+
+    val estacions = bicicas!!.get(0).ocupacion
+    println("Hi ha " + estacions.size + " estacions:")
+    for (e in estacions)
+        println("" + e.id + ": " + e.punto + " (" + e.ocupados + "/" + e.puestos + ")")
+}
+</code></pre>
+<h3 id="532-escriptura">5.3.2 Escriptura</h3>
+<p>També farem 2 exemples d'escriptura, el d'Empleats i el de Bicicas, els
+mateixos que en la pregunta 5.2.2</p>
+<p><code>Cas 1: Empleats</code></p>
+<p>Per a <strong>Empleats.json</strong> aquest és l'estructura que volem aconseguir:</p>
+<pre><code>{ &quot;empresa&quot;:  
+    { &quot;empleat&quot;:  
+        [  {  
+                &quot;num&quot;: &quot;1&quot;,  
+                &quot;nom&quot;: &quot;Andreu&quot;,  
+                &quot;departament&quot;: &quot;10&quot;,  
+                &quot;edat&quot;: &quot;32&quot;,  
+                &quot;sou&quot;: &quot;1000.0&quot;  
+            },  
+            {  
+                &quot;num&quot;: &quot;2&quot;,  
+                &quot;nom&quot;: &quot;Bernat&quot;,  
+                &quot;departament&quot;: &quot;20&quot;,  
+                &quot;edat&quot;: &quot;28&quot;,  
+                &quot;sou&quot;: &quot;1200.0&quot;  
+            },  
+            {  
+                &quot;num&quot;: &quot;3&quot;,  
+                &quot;nom&quot;: &quot;Clàudia&quot;,  
+                &quot;departament&quot;: &quot;10&quot;,  
+                &quot;edat&quot;: &quot;26&quot;,  
+                &quot;sou&quot;: &quot;1100.0&quot;  
+            },  
+            {  
+                &quot;num&quot;: &quot;4&quot;,  
+                &quot;nom&quot;: &quot;Damià&quot;,  
+                &quot;departament&quot;: &quot;10&quot;,  
+                &quot;edat&quot;: &quot;40&quot;,  
+                &quot;sou&quot;: &quot;1500.0&quot;  
+            }  
+        ]  
+    }  
+}
+</code></pre>
+<p>L'estructura de les classes serà la mateixa que en el cas de la lectura, però
+ara les dades estaran definides en 4 arrays. A partir dels arrays
+inicialitzarem els objectes Kotlin, i quan ho tinguem tot ple passarem a JSON.</p>
+<p>NO HEM DE DEFINIR LES CLASSES, ja que les tenim definides des punt 5.3.1. Les
+posem ací únicament per a il·lustrar:</p>
+<pre><code>    class Empleat (var num: Int, var nom: String, var departament: Int, var edat: Int, var sou: Double)
+
+
+    class Empleats(val empleats: List&lt;Empleat&gt; = listOf&lt;Empleat&gt;())
+
+
+    class Empresa(val empresa: Empleats)
+
+</code></pre>
+<p>Aleshores, inicialitzem els objectes a partir de les dades que tenim en els 4
+arrays, i després <strong>guardem</strong> en JSON. Mireu que la definició de les classes
+de <strong>Moshi</strong> és la mateixa, però ara utilitzem el mètode <strong>toJson()</strong> per a
+passar d'objectes Kotlin a JSON. Obtenim un String que és la cadena JSON, i
+senzillament l'escrivim en un fitxer.</p>
+<p>Copieu el següent codi en un fitxer Kotlin anomenat
+<strong>Exemple_3_5_23_MOSHIEscriureEmpleats.kt</strong> :</p>
+<pre><code>package exemples
+
+import com.squareup.moshi.*
+import java.io.File
+
+fun main (args: Array&lt;String&gt;){
+    val noms = arrayOf("Andreu", "Bernat", "Clàudia", "Damià")
+    val departaments = arrayOf(10, 20, 10, 10)
+    val edats = arrayOf(32, 28, 26, 40)
+    val sous = arrayOf(1000.0, 1200.0, 1100.0, 1500.0)
+
+    val empleats = arrayListOf&lt;Empleat&gt;()
+    for (i in 0..3)
+        empleats.add(Empleat((i+1),noms[i],departaments[i],edats[i],sous[i]))
+
+    val empresa = Empresa(Empleats(empleats))
+
+    val moshi = Moshi.Builder().build()
+    val adapter = moshi.adapter(Empresa::class.java)
+    val json = adapter.toJson(empresa)
+
+    File("Empleats2.json").writeText(json)
+
+}
+</code></pre>
+<p><code>Cas 2: Bicicas</code></p>
+<p>Farem el mateix exercici que en l'apartat 5.2.2, però ara utilitzant la
+llibreria <strong>Moshi</strong>.</p>
+<p>Voldrem aconseguir aquesta estructura i guardar-la en el fitxer</p>
+<pre><code>{ &quot;bicicas&quot;:  
+    [   {&quot;num&quot;:&quot;01&quot;,&quot;nom&quot;:&quot;UJI - FCHS&quot;,&quot;llocs&quot;:28,&quot;ocupats&quot;:11,&quot;lliures&quot;:17},  
+        {&quot;num&quot;:&quot;02&quot;,&quot;nom&quot;:&quot;ESTACIÓN DE FERROCARRIL Y AUTOBUSES&quot;,&quot;llocs&quot;:28,&quot;ocupats&quot;:8,&quot;lliures&quot;:20},  
+        {&quot;num&quot;:&quot;03&quot;,&quot;nom&quot;:&quot;PLAZA DE PESCADERÍA&quot;,&quot;llocs&quot;:28,&quot;ocupats&quot;:13,&quot;lliures&quot;:15},  
+        ...  
+    ]  
+}
+</code></pre>
+<p>Tindrem per una banda l'estructura d'origen, per a la qual utilitzem les
+classes ja definides en l'apartat 5.3.1, és a dir, per a llegir el fitxer
+Bicicas.json original fem el mateix que l'altra vegada, per tant serà copiar
+les primeres sentències del programa
+<strong>Exemple_3_5_22_MOSHIAnalitzarBicicas.kt</strong> .</p>
+<p>A partir dels objectes inicialitzats amb la lectura de Bicicas.json,
+construirem els objectes que ens serviran per a l'escriptura. L'estructura
+d'aquestes classes que ens serviran per a l'escriptura seran:</p>
+<pre><code>
+    class EstDesti (val num: Int, val nom: String, val llocs: Int, val ocupats: Int, val lliures: Int)
+
+    class Bicicas2 (val bicicas: List&lt;EstDesti&gt;)
+</code></pre>
+<p>Per comoditat, com que només anem a utilitzar-les en aquesta ocasió, les
+definirem en el mateix fitxer del programa.</p>
+<p>Observeu com senzillament llegim passant a les classes d'entrada, convertim a
+les classes d'eixida, i utilitzem aquestes últimes per escriure el fitxer.</p>
+<p>Copieu el següent codi en el fitxer Kotlin anomenat
+<strong>Exemple_3_5_24_MOSHIEscriureBicicas.kt</strong> :</p>
+<pre><code>package exemples
+
+import com.squareup.moshi.*
+import java.io.File
+
+class EstDesti (val num: Int, val nom: String, val llocs: Int, val ocupats: Int, val lliures: Int)
+
+class Bicicas2 (val bicicas: List&lt;EstDesti&gt;)
+
+fun main(args: Array&lt;String&gt;) {
+    val json = File("Bicicas.json").readText()
+
+    val moshi = Moshi.Builder().build()
+    val llistaTipus = Types.newParameterizedType(List::class.java, Estacions::class.java)
+    val adapter: JsonAdapter&lt;List&lt;Estacions&gt;&gt; = moshi.adapter(llistaTipus)
+    val estacions = adapter.fromJson(json).get(0).ocupacion
+
+    val llistaEstDesti = arrayListOf&lt;EstDesti&gt;()
+    val bicicas2 = Bicicas2(llistaEstDesti)
+    for (e in estacions)
+        llistaEstDesti.add(EstDesti(e.id.toInt(),e.punto,e.puestos,e.ocupados,e.puestos-e.ocupados))
+
+    val adapter2 = moshi.adapter(Bicicas2::class.java)
+    val json2 = adapter2.toJson(bicicas2)
+
+    File("Bicicas2.json").writeText(json2)
+}
+</code></pre>
+<p>Segurament aquesta estructura és la més coherent. Amb la finalitat únicament
+d'escriure un JSON que té com a arrel un array i no un objecte, anem a ferun
+altre exemple en el qual guardarem en un fitxer aquesta estructura:</p>
+<pre><code>[  
+    {&quot;num&quot;:&quot;01&quot;,&quot;nom&quot;:&quot;UJI - FCHS&quot;,&quot;llocs&quot;:28,&quot;ocupats&quot;:11,&quot;lliures&quot;:17},  
+    {&quot;num&quot;:&quot;02&quot;,&quot;nom&quot;:&quot;ESTACIÓN DE FERROCARRIL Y AUTOBUSES&quot;,&quot;llocs&quot;:28,&quot;ocupats&quot;:8,&quot;lliures&quot;:20},  
+    {&quot;num&quot;:&quot;03&quot;,&quot;nom&quot;:&quot;PLAZA DE PESCADERÍA&quot;,&quot;llocs&quot;:28,&quot;ocupats&quot;:13,&quot;lliures&quot;:15},  
+    ...  
+]
+</code></pre>
+<p>En aquesta ocasió tenim només un array d'objectes.</p>
+<p>L'única estructura d'eixida que ens cal és la classe <strong>EstDesti</strong> , ja
+definida en l'exercici anterior, i per tant ara no caldrà definir-la. Només
+hem d'anar amb compte amb l'estructura d'eixida, que ara no serà una classe
+sinó una combinació de <strong>List</strong> i <strong>EstDesti</strong>.</p>
+<p>Copieu el següent codi en el fitxer Kotlin
+<strong>Exemple_3_5_25_MOSHIEscriureBicicas3.kt</strong> :</p>
+<pre><code>package exemples
+
+import com.squareup.moshi.*
+import java.io.File
+
+fun main(args: Array&lt;String&gt;) {
+    val json = File("Bicicas.json").readText()
+
+    val moshi = Moshi.Builder().build()
+    val llistaTipus = Types.newParameterizedType(List::class.java, Estacions::class.java)
+    val adapter: JsonAdapter&lt;List&lt;Estacions&gt;&gt; = moshi.adapter(llistaTipus)
+    val estacions = adapter.fromJson(json).get(0).ocupacion
+
+    val llistaEstDesti = arrayListOf&lt;EstDesti&gt;()
+    for (e in estacions)
+        llistaEstDesti.add(EstDesti(e.id.toInt(),e.punto,e.puestos,e.ocupados,e.puestos-e.ocupados))
+
+    val llistaTipusDesti = Types.newParameterizedType(List::class.java, EstDesti::class.java)
+    val adapter2: JsonAdapter&lt;List&lt;EstDesti&gt;&gt; = moshi.adapter(llistaTipusDesti)
+    val json2 = adapter2.toJson(llistaEstDesti)
+
+    File("Bicicas3.json").writeText(json2)
+}
+</code></pre>
+<p>Llicenciat sota la  <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial
+CompartirIgual 2.5</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../4_documents_xml/" class="btn btn-neutral float-left" title="4.- Documents XML"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../exercicis/" class="btn btn-neutral float-right" title="Exercicis">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../4_documents_xml/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../exercicis/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://asalvadorc.github.io/AD_Ficheros/AD_T2_Gesti_del_contingut_de_fitxers/2__manipulaci_dels_fluxos_de_dades/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>2 - Manipulació dels fluxos de dades - AD - Accés a Dades</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "2 - Manipulaci\u00f3 dels fluxos de dades";
+        var mkdocs_page_input_path = "AD_T2_Gesti_del_contingut_de_fitxers/2__manipulaci_dels_fluxos_de_dades.md";
+        var mkdocs_page_url = "/AD_Ficheros/AD_T2_Gesti_del_contingut_de_fitxers/2__manipulaci_dels_fluxos_de_dades/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../assets/logocaminas.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">T1. Gestió del Sistema de fitxers</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T1_Sistema_de_fitxers/objectius/">Objectius</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T1_Sistema_de_fitxers/1_introducci/">1. Introducció</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T1_Sistema_de_fitxers/2_la_classe_file_generalitats/">2. La classe File. Generalitats.</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T1_Sistema_de_fitxers/3_funcionalitat_de_la_classe_file/">3. Funcionalitat de la classe File</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T1_Sistema_de_fitxers/exercicis/">Exercicis</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">T2. Gestió del contingut de fitxers</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../objectius/">Objectius</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1__magatzems_i_fluxos_de_dades/">1 - Magatzems i fluxos de dades</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">2 - Manipulació dels fluxos de dades</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#21-fluxos-orientats-a-bytes-classes">2.1 - Fluxos orientats a bytes - Classes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#211-metodes-del-inputstream">2.1.1 - Mètodes del InputStream</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#212-metodes-del-outputstream">2.1.2 - Mètodes del OutputStream</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#22-fluxos-orientats-a-caracters-classes">2.2 - Fluxos orientats a caràcters - Classes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#221-metodes-del-reader">2.2.1 - Mètodes del Reader</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#222-metodes-del-writer">2.2.2 - Mètodes del Writer</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3__fluxos_decoradors/">3 - Fluxos decoradors</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4__simplificaci_en_kotlin/">4 - Simplificació en Kotlin</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../exercicis/">Exercicis</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">T3. Fitxers de diferents formats</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T3_Fitxers_de_diferents_formats/objectius/">Objectius</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T3_Fitxers_de_diferents_formats/1_fitxers_binaris_amb_formats_especfics/">1.- Fitxers binaris amb formats específics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T3_Fitxers_de_diferents_formats/2_accs_directe_a_fitxers/">2.- Accés directe a fitxers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T3_Fitxers_de_diferents_formats/3_seriaci_dobjectes/">3.- Seriació d'objectes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T3_Fitxers_de_diferents_formats/4_documents_xml/">4.- Documents XML</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T3_Fitxers_de_diferents_formats/5_documents_json/">5.- Documents JSON</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T3_Fitxers_de_diferents_formats/exercicis/">Exercicis</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">AD - Accés a Dades</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">T2. Gestió del contingut de fitxers</li>
+      <li class="breadcrumb-item active">2 - Manipulació dels fluxos de dades</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="2-manipulacio-dels-fluxos-de-dades">2 - Manipulació dels fluxos de dades</h1>
+<p>En Java, i per tant també en Kotlin, no tindrem una única classe per a
+manipular els fluxos de dades i així arribar al contingut dels fitxers. És una
+cosa que de vegades se li critica a Java, que hi ha una jerarquia molt extensa
+de fluxos, i són moltes classes a recordar i utilitzar. Per contra fa que siga
+molt versàtil. En l'últim punt del tema veurem la simplificació que ens
+proposa Kotlin.</p>
+<p>Aquestes classes es trobaran en dues jerarquies, la dels <strong>fluxos orientats a
+bytes</strong> i la dels <strong>fluxos orientats a caràcters</strong>.</p>
+<ul>
+<li>Si les nostres dades són numèriques o de qualsevol altre tipus que puguem imaginar (imatges per exemple), ens convindran les primeres.</li>
+<li>Si la informació és de caràcters, haurem d'utilitzar la segona jerarquia.</li>
+</ul>
+<p>La raó de que existesca aquesta segona jerarquia orientada a caràcters és la
+multitud de sistemes de codificació existents. Com havíem comentat en la
+pregunta anterior, Java utilitza internament codificació UNICODE de 16 bits
+(UTF-16), on cada caràcter ocupa 16 bits i així poder suportar tots els
+llenguatges com el grec, àrab, ciríl·lic, xinès, .... Però UTF-8 està molt
+estés, i en aquesta codificació de vegades un caràcter ocupa 8 bits, i de
+vegades 16. I no podem oblidar altres sistemes de codificació, com ASCII,
+ISO-8859, ... La jerarquia de classes orientades a caràcter suportarà totes
+les codificacions.</p>
+<h2 id="21-fluxos-orientats-a-bytes-classes">2.1 - Fluxos orientats a bytes - Classes</h2>
+<p>L'arrel, la base de tota la jerarquia són <strong>InputStream</strong> i <strong>OutputStream</strong> ,
+respectivament per a fluxos d'entrada i d'eixida. Comentarem els fluxos
+d'entrada, i els d'eixida són totalment paral·lels.</p>
+<p>La super-classe <strong>InputStream</strong> servirà per a fer l'entrada des de qualsevol
+dispositiu: fitxer, array de bytes, una tuberia (per a dur dades des d'una
+altra aplicació)... Totes les classes d'entrada heretaran d'ella, i serviran
+per especificar exactament d'on (per exemple un fitxer: <strong>FileInputStream</strong>) o
+per a donar alguna altra funcionalitat, com anirem veient a poc a poc.
+D'aquesta manera, els mètodes que es defineixen s'hauran d'implementar per les
+classes que hereten de la super-classe i assegura una uniformitat, siga quina
+siga la font.</p>
+<p>Fem una ullada ràpida a la jerarquia de <strong>classes</strong> en la següent imatge:</p>
+<p><img alt="Jerarquia InputStream" src="../T2_2_1.png" /></p>
+<p>De moment mirem únicament les que estan en color <strong>taronja</strong> , que
+especificaran quina serà la font de dades:</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Explicació</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FileInputStream</strong></td>
+<td>Per a llegir informació d'un fitxer</td>
+</tr>
+<tr>
+<td><strong>PipedInputStream</strong></td>
+<td>Per a llegir des d'una tuberia (és a dir informació que ve d'un altre programa)</td>
+</tr>
+<tr>
+<td><strong>ByteArrayInputStream</strong></td>
+<td>L'entrada serà un array de bytes</td>
+</tr>
+<tr>
+<td><strong>SequenceInputStream</strong></td>
+<td>Servirà per enllaçar dues entrades en una de sola, seqüencialment</td>
+</tr>
+</tbody>
+</table>
+<p>Evidentment ens centrarem en la primera, que és la que més ens interessa per a
+la permanència de les dades, però posarem algun exemple de les altres
+(concretament <strong>ByteArrayInputStream</strong>).</p>
+<p>Els fluxos d'eixida són molt molt pareguts, tots ells heretaran de
+<strong>OutputStream</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Explicació</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FileOutputStream</strong></td>
+<td>Per a guardar informació en un fitxer</td>
+</tr>
+<tr>
+<td><strong>PipedOutputStream</strong></td>
+<td>Per a traure cap a una tuberia (és a dir informació que anirà a un altre programa)</td>
+</tr>
+<tr>
+<td><strong>ByteArrayOutputStream</strong></td>
+<td>L'eixida serà un array de bytes</td>
+</tr>
+</tbody>
+</table>
+<p><code>Constructors de FileInputStream</code></p>
+<p>Com hem comentat, qui més ens interessa de tots els InputStream és el
+<strong>FileInpuStream</strong> , per a poder accedir a la informació d'un fitxer. Dos són
+els constructors de FileInputStream:</p>
+<ul>
+<li><strong>FileInputStream (<em>f</em> : File)</strong>: en el paràmetre se li passa un File (dels vistos en el tema anterior), que ha de ser una referència al fitxer.</li>
+<li><strong>FileInputStream (<em>nom_f</em> : String)</strong>: en el paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer. Ens permetrà fer referència al fitxer de forma més ràpida, sense haver de passar per un File.</li>
+</ul>
+<p><code>Constructors del FileOutputStream</code></p>
+<p>Canviaran lleugerament respecte als d'entrada, ja que a més de fer referència
+al fitxer, opcionalment podrem d'especificar la manera d'escriure en el fitxer
+en cas que aquest ja existesca: bé afegint al final, o bé destruint la
+informació anterior. Aquestos són els constructors:</p>
+<ul>
+<li><strong>FileOutputStream (<em>f</em> : File)</strong>: en el paràmetre se li passa un File. Si no existia, el crearà; si ja existia esborrarà el contingut. En ambdós casos l'obrirà en mode escriptura.</li>
+<li><strong>FileOutputStream (<em>nom_f</em> : String)</strong>: igual que en l'anterior, però en el paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer.</li>
+<li><strong>FileOutputStream (<em>f</em> : File, </strong><em><strong>afegir</strong></em><strong>: Boolean)</strong> : és com el primer, però si en el segon paràmetre se li passa <strong>true</strong> , en cas que ja existira el fitxer, la informació s'afegirà al final, en compte de substituir el que ja hi havia. Si en aquest paràmetre se li passa <strong>false</strong> s'esborrarà el contingut anterior (com en el primer cas).</li>
+<li><strong>FileOutputStream (<em>nom_f</em> : String</strong>,<strong>__</strong>afegir<strong>__</strong><strong>: Boolean)</strong> : igual que en l'anterior, però en el primer paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer.</li>
+</ul>
+<h3 id="211-metodes-del-inputstream">2.1.1 - Mètodes del InputStream</h3>
+<p><u><strong>Nota</strong></u></p>
+<div style="background-color: #d6eaf8; color: black; padding: 5px;">
+Per a fer els primers exemples, i únicament per comoditat, utilitzarem fitxers
+de text, encara que estiguem en fluxos orientats a byte. Açò no és l'adequat,
+ja que per a fitxers de text hauríem d'utilitzar fluxos orientats a caràcter.
+Però com dic és per comoditat, perquè serà molt fàcil crear fitxers des de
+qualsevol editor de textos, i que després utilitzarem des de Java o Kotlin.
+L'inconvenient serà que no tots els caràcters eixiran de forma correcta,
+justament per utilitzar els fluxos de dades orientats a byte.
+</div>
+<p></p>
+<p>El primer mètode que hem de veure del <strong>InputStream</strong> és aquell que ens permet
+una lectura senzilla:</p>
+<ul>
+<li>int <strong>read()</strong> : llig el següent byte del flux d'entrada i el retorna com un <strong>enter</strong>. Si no hi ha cap byte disponible perquè s’ha arribat al final de la seqüència de bytes, es retornarà -1. Si no es pot llegir el següent byte per alguna causa (per exemple si després d'arribar al final intentem llegir un altre byte, o perquè es produeix un error en llegir l'entrada) es llançarà una excepció del tipus <strong><em>IOException</em></strong>. Es tracta d’un mètode abstracte, que les classes especifiques sobreescriuran adaptant-lo a una font de dades concreta (un fitxer, un array de bytes, ...). I observeu com es tracta d'una lectura seqüencial. Comencem pel primer byte del fitxer, i a cada <strong>read</strong> llig el següent byte fins arribar al final. Els tractaments que veurem en aquest tema seran sempre seqüencials.</li>
+</ul>
+<p>Abans de veure altres mètodes, mirem un exemple. Per a aquest exemple fa falta
+un fitxer anomenat <strong>f1.txt</strong> , que pot ser un fitxer de text creat amb
+qualsevol editor senzillet, com per exemple <strong>gedit</strong> o el <strong>Bloc de notes</strong>.
+Ha d'estar en el directori del projecte (el projecte <strong>Tema2</strong>), i així no
+caldrà posar la ruta. Per exemple podríem posar el següent contingut:</p>
+<pre><code>    Hola, què tal?
+</code></pre>
+<p>El que farà el programa és traure per pantalla caràcter a caràcter (en línies
+diferents). L'heu de copiar en un fitxer anomenat <strong>Exemple_2_01.kt</strong> dins
+d'un paquet anomenat <strong>exemples</strong> en el projecte del Tema 2:</p>
+<pre><code>package exemples
+
+import java.io.FileInputStream
+
+fun main(args: Array&lt;String&gt;){
+    val f_in = FileInputStream("f1.txt")
+    var c = f_in.read()
+    while (c!=-1){
+        println(c.toChar())
+        c = f_in.read()
+    }
+    f_in.close()
+}
+</code></pre>
+<p>El resultat en Ubuntu serà aquest:</p>
+<pre><code>  H  
+  o  
+  l  
+  a  
+  ,
+
+  q  
+  u  
+  Ã  
+  ¨
+
+  t  
+  a  
+  l  
+  ?  
+</code></pre>
+<p>Potser en Windows si que apareguen bé tots els caràcters, ja que utilitza per
+defecte una altra codificació. Però no li donarem ara importància al fet que
+no apareguen bé els caràcters especials. Observeu com estem utilitzant un
+<strong>InputStream</strong> , concretament un <strong>FileInputStream</strong> , per a llegir un fitxer
+de text. Açò no és el més apropiat, com ja havíem comentat abans, sinó que
+hauríem d'utilitzar algun flux orientat a caràcters, i no orientat a bytes. El
+programa funcionarà si utilitzem codificació ASCII (o ISO-8859) ja que cada
+caràcter es guarda en un byte. Si ens despistem i el fitxer el gaurdem en
+UTF-8, no eixiran bé els caràcters com ç, ñ o vocals accentuades (que es
+guarden en 2 bytes). I si el guardem en UTF-16, encara eixirà pitjor.</p>
+<p>Hem utilitzat el constructor que accepta un String com a paràmetre. Queda més
+curt, però seria totalment equivalent substituir la construcció anterior per
+aquestes dues línies</p>
+<pre><code>    val f = File("f1.txt")
+    val f_in = FileInputStream(f)
+</code></pre>
+<p>El <strong>read</strong> obté un enter, que després l'intentem convertir en caràcter.
+Finalitzem quan l'enter és -1.</p>
+<p>Aquest segon exemple té l'entrada no des d'un fitxer, sinó des d'un
+<strong>ByteArrayInputStream</strong>. A banda de que l'hem d'inicialitzar diferent, podem
+observar com el tractament posterior és idèntic. Copieu-lo en un fitxer
+anomenat <strong>Exemple_2_02.kt</strong> :</p>
+<pre><code>package exemples
+
+import java.io.ByteArrayInputStream
+
+fun main(args: Array&lt;String&gt;) {
+    val ent_1 = "Aquest és un byte array"
+    val f_in = ByteArrayInputStream(ent_1.toByteArray())
+    var c = f_in.read()
+    while (c != -1) {
+        println(c.toChar())
+        c = f_in.read()
+    }
+    f_in.close()
+}
+</code></pre>
+<p>Una altra vegada els caràcters especial eixiran malament, ja que en compte de
+un <strong>InputStream</strong> (en aquest cas <strong>ByteArrayInputStream</strong>) el més adequat
+seria un flux orientat a caràcters, però com a exemple sí que ens val.</p>
+<p>Mirem un tercer exemple, per veure el <strong>SequenceInputStream</strong> , on es poden
+enganxar de forma sequencial diferents InputStream. Després d'aquest exemple
+ja ens centrarem en els fitxers, que és el que ens interessa. Copieu-lo en un
+fitxer anomenat <strong>Exemple_2_03.kt</strong> :</p>
+<pre><code>package exemples
+
+import java.io.ByteArrayInputStream
+import java.io.FileInputStream
+import java.io.SequenceInputStream
+
+fun main(args: Array&lt;String&gt;) {
+    val f1 = FileInputStream("f1.txt")
+    val ent_1 = "Aquest és un byte array"
+    val f2 = ByteArrayInputStream(ent_1.toByteArray())
+    val f_in = SequenceInputStream(f1,f2)
+    var c = f_in.read()
+    while (c != -1) {
+        println(c.toChar())
+        c = f_in.read()
+    }
+    f_in.close()
+}
+</code></pre>
+<p>Altres mètodes del <strong>InputStream</strong> són:</p>
+<ul>
+<li>int <strong>read(<em>buffer</em> : ByteArray)</strong>: llig un número determinat de bytes de l'entrada, guardant-los en el paràmetre (que actuarà com un buffer). El número de bytes llegits serà com a màxim la grandària del buffer, encara que podria ser menor (si no hi ha prou bytes, per exemple). El mètode tornarà el número de bytes que realment s'han llegit com un enter. Si no hi haguera cap byte disponible, es retornarà -1.</li>
+<li>int <strong>available()</strong> : indica quants bytes hi ha disponibles per a la lectura. Sobretot serviria com a condició de final de bucle (si hi ha 0 bytes disponibles, és que ja hem acabat), encara que hi ha altres maneres de fer la condició de final de bucle.</li>
+<li>long <strong>skip(<em>despl</em> : Long)</strong>: salta, despreciant-los, tant bytes com indica el paràmetre. Podria ser que no puguera saltar el número de bytes especificat per diferents raons. Torna el número de bytes realment saltats.</li>
+<li>int <strong>close()</strong> : tanca el flux de dades.</li>
+</ul>
+<p>Mirem un altre exemple, utilitzant ara el buffer com a paràmetre del <strong>read</strong>.
+Fa falta que existesca un fitxer anomenat <strong>f2.txt</strong> en l'arrel del projecte,
+com es comenta després. Copieu-lo en un fitxer anomenat <strong>Exemple_2_04.kt</strong> :</p>
+<pre><code>package exemples
+
+import java.io.FileInputStream
+
+fun main(args: Array&lt;String&gt;) {
+    val f_in = FileInputStream("f2.txt")
+    var buffer = ByteArray(30)
+    var n = f_in.read(buffer)
+    while (n != -1) {
+        for (i in 0..n - 1)
+            print(buffer[i].toChar())
+        println("")
+        n = f_in.read(buffer)
+    }
+    f_in.close();
+}
+</code></pre>
+<p>Es llegiran els caràcters de 30 en 30, ja que el buffer és d'aquesta
+grandària. Com que es guarda en un buffer de bytes (bytes, no caràcters),
+haurem de recórrer aquest buffer (fins el número de caràcters llegits, que és
+<strong>n</strong>) convertint cada byte en caràcter. Hem suposat que en el fitxer
+<strong>f2.txt</strong> tenim un text prou llarg com per a veure el funcionament. Si per
+exemple el contingut de <strong>f2.txt</strong> és aquest:</p>
+<pre><code>Hola. Aquest és un text més llarg, per veure com gestiona els bytes amb un
+buffer de 30 caràcters.  
+Com que ho llegim des d'un InputStream, els caràcters especials potser no
+isquen bé.
+</code></pre>
+<p>Aquesta seria l'eixida:</p>
+<pre><code>Hola. Aquest ￃﾩs un text mￃﾩs  
+llarg, per veure com gestiona  
+els bytes amb un buffer de 30  
+carￃﾠcters.  
+Com que ho llegim  
+des d'un InputStream, els carￃ  
+ﾠcters especials potser no isq  
+uen bￃﾩ.
+</code></pre>
+<p>Recordeu que estem llegint un fitxer de text des d'un InputStream, cosa gens
+convenient ja que els caràcters com ç, ñ, o vocals accentuades difícilment
+podrem fer que apareguen bé. Ho arreglarem amb els fluxos orientats a
+caràcter.</p>
+<h3 id="212-metodes-del-outputstream">2.1.2 - Mètodes del OutputStream</h3>
+<p>Comencem també pel més senzill i primordial, el mètode que escriu un byte
+(recordeu que estem en fluxos orientats a bytes).</p>
+<ul>
+<li>void <strong>write(<em>byte</em> : Int) </strong>: escriu el byte passat com a paràmetre en el flux d'eixida. Encara que el paràmetre és de tipus int, només s'escriurà un byte. Si no es poguera fer l'escriptura per qualsevol motiu (per exemple, disc ple), es llançarà una excepció de tipus <strong>IOException</strong>.</li>
+</ul>
+<p>Igual que en l'apartat anterior, anem a veure un exemple senzill
+d'utilització, en què guardarem en un fitxer el contingut d'una cadena (encara
+que ja sabem que no és el més apropiat utilitzar fluxos orientats a bytes per
+a informació de caràcters).</p>
+<p>En aquest primer exemple del <strong>OutputStream</strong> treballarem sobre un fitxer
+inexistent. Es podrà comprovar que el resultat serà la creació del fitxer amb
+el contingut. Hem de fer constar que si no es tanca el fitxer (millor dit el
+flux d'eixida) podria ser que no es guardara res en el fitxer. Per tant
+<strong>tancar és una operació ben important que no hem d'oblidar</strong>.</p>
+<p>Copieu el següent codi en un fitxer anomenat <strong>Exemple_2_11.kt</strong> :</p>
+<pre><code>package exemples
+
+import java.io.FileOutputStream
+
+fun main(args: Array&lt;String&gt;) {
+    val text = "Contingut per al fitxer."
+    val f_out = FileOutputStream("f3.txt")
+    for (c in text) 
+        f_out.write(c.toInt())
+    f_out.close()
+}
+</code></pre>
+<p>Observeu com hem convertit cada caràcter a <strong>Int</strong> per a que puga funcionar,
+ja que el mètode <strong>write()</strong> accepta un enter.</p>
+<p>En el constructor del OutputStream no hem indicat el segon paràmetre, aquell
+que indicava si era per a afegir o no, i per tant si no existia el fitxer el
+crearà, però si ja existia el fitxer, destruirà el seu contingut i el
+substituirà pel nou contingut. Per això si tornem a executar el programa,
+tindrem el mateix resultat.</p>
+<pre><code>Contingut per al fitxer.
+</code></pre>
+<p>La codificació del fitxer haurà segut la que tinga per defecte el Sistema
+Operatiu, que en el cas d'Ubuntu és UTF-8, i en el cas de Windows és ISO-8859.</p>
+<p>Anem a provar a substituir el constructor, posant ara</p>
+<pre><code>val f_out = FileOutputStream("f3.txt",true)
+</code></pre>
+<p>Si l'executem una altra vegada, veurem que afegirà al final, sense destruir el
+que ja hi havia.</p>
+<pre><code>Contingut per al fitxer.Contingut per al fitxer.
+</code></pre>
+<p>Altres mètodes del OutputStream són:</p>
+<ul>
+<li>void <strong>write(<em>buffer</em> : ByteArray)</strong> : escriu el contingut de l'array de bytes al fitxer. Cal que buffer no siga nul, o provocarem un error.</li>
+<li>void <strong>write(<em>buffer</em> : ByteArray, <em>pos</em> : Int, <em>llarg</em> : Int)</strong> : escriu al fitxer el contingut de l'array que està a partir de la posició <strong>pos</strong> i tants bytes com assenyale <strong>llarg</strong>.</li>
+<li>void <strong>flush()</strong> : Guardar les dades en un fitxer és una operació relativament lenta, ja que és accedir a un dispositiu lent (millor dit, no tan ràpid com la memòria). És habitual que s'utilitze una memòria intermèdia per a que les coses no vagen tan lentes (com si fóra una caché). Però potser que les dades no estiguen guardades encara en el fitxer, sinó que encara estiguen en aquesta caché. El mètode <strong>flush</strong> obliga a escriure els bytes que queden encara a la caché físicament al fitxer d'eixida.</li>
+<li>void <strong>close()</strong> : tanca el flux d'eixida, alliberant els recursos. Si quedava alguna cosa en la caché, es guardarà al fitxer i es tancarà el flux.</li>
+</ul>
+<p>En aquest exemple es copia el contingut del fitxer <strong>f2.txt</strong> en el fitxer
+<strong>f4.txt</strong> , però en compte d'anar byte a byte, anirem de 30 en 30, amb un
+buffer de 30 posicions. Podríem cometre l'error de la línia 13 del següent
+programa, la del comentari, d'escriure sempre els 30 caràcters. Copieu el
+següent codi en un fitxer anomenat <strong>Exemple_2_12.kt</strong> :</p>
+<pre><code>package exemples
+
+import java.io.FileInputStream
+import java.io.FileOutputStream
+
+fun main(args: Array&lt;String&gt;) {
+    val f_in = FileInputStream("f2.txt")
+    val f_out = FileOutputStream("f4.txt")
+
+    var buffer = ByteArray(30)
+    var num = f_in.read(buffer)
+    while (num != -1) {
+        f_out.write(buffer)    // açò és un error
+        num = f_in.read(buffer)
+    }
+    f_in.close();
+    f_out.close();
+}
+</code></pre>
+<p>D'aquesta manera, l'última vegada que és llig és molt possible que no hi hagen
+exactament 30 caràcters. Si hi ha menys de 30 caràcters, només es llegiran els
+que queden al principi del buffer, i en la resta del buffer hi ha la
+informació anterior, la de la penúltima lectura. En definitiva, tenim
+"basura", i si no ho controlem el resultat no serà el correcte. Aquest ser`el
+contingut de <strong>f4.txt</strong> :</p>
+<pre><code>Hola. Aquest és un text més llarg, per veure com gestiona els bytes amb un
+buffer de 30 caràcters.  
+Com que ho llegim des d'un InputStream, els caràcters especials potser no
+isquen bé.  
+pecials potser no isq
+</code></pre>
+<p>Ha eixit d'aquesta manera perquè l'última vegada només s'han llegit 9 bytes.
+Els 21 restants tenen la informació encara de la penúltima lectura.</p>
+<p>Per a fer-lo de forma correcta, ens aprofitem de que <strong>read(buffer)</strong> torna el
+número de bytes realment llegits, per escriure exactament aquest número. Per
+tant substituirem la línia 13, la del comentari, per aquesta altra:</p>
+<pre><code>f_out.write(buffer,0,num)     // ara sí que funcionarà bé
+</code></pre>
+<p>Ara el contingut de <strong>f4.txt</strong> serà idèntic al de <strong>f2.txt</strong></p>
+<p><u><strong>Nota important</strong></u></p>
+<div style="background-color: #d6eaf8; color: black; padding: 5px;">
+Per a assegurar-nos que realment escrivim en el fitxer i no es queda res en la
+memòria intermèdia, <b>hem de tancar sempre els fluxos d'eixida</b>. Si ens
+oblidem de tancar-los, és molt fàcil que no s'acabe d'escriure físicament en
+el fitxer.
+</div>
+<p></p>
+
+<h2 id="22-fluxos-orientats-a-caracters-classes">2.2 - Fluxos orientats a caràcters - Classes</h2>
+<p>Treballar amb caràcters implica una dificultat apreciable, a causa sobretot de
+la diversitat de codificacions existents.</p>
+<p>Per poder solucionar-ho, Java disposa de dues jerarquies, una d'entrada i una
+d'eixida, diferents de les que ja hem vist per a bytes (que eren InputStream i
+OutputStream). Aquestes jerarquies per a caràcters seran molt semblants a les
+de bytes, però sempre orientades a caràcters. Kotlin, per heretar de Java,
+també les tindrà, encara que com veurem en l'última pregunta, podrem
+simplificar les coses.</p>
+<p>Igual que en els casos anteriors, tindrem unes classes abstractes, <strong>Reader</strong>
+i <strong>Writer</strong> , que no es poden instanciar directament (no podrem crear un
+objecte d'aquestes classes). Serviran per a homogeneïtzar tots els fluxos
+d'entrada i d'exida orientats a caràcter.</p>
+<p>La super-classe <strong>Reader</strong> servirà per a fer l'entrada des de qualsevol
+dispositiu: fitxer, array de caràcters, una canonada ("tuberia", per a dur
+dades des d'una altra aplicació). Totes les classes d'entrada heretaran
+d'ella, i serviran per especificar exactament d'on (per exemple un fitxer:
+<strong>FileReader</strong>) o per a donar alguna altra funcionalitat, com anirem veient a
+poc a poc. D'aquesta manera, els mètodes que es defineixen s'hauran
+d'implementar per les classes que hereten d'ella i assegura una uniformitat,
+siga quina siga la font.</p>
+<p>Fem una ullada ràpida a la jerarquia de <strong>classes</strong> en la següent imatge:</p>
+<p><img alt="Jerarquia Reader-Writer" src="../T2__2_2.png" /></p>
+<p>De moment mirem únicament les que estan en color <strong>taronja</strong> , que
+especificaran quina serà la font de dades:</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Explicació</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FileReader</strong></td>
+<td>Per a llegir caràcters d'un fitxer</td>
+</tr>
+<tr>
+<td><strong>PipedReader</strong></td>
+<td>Per a llegir des d'una tuberia (és a dir informació que ve d'un altre programa)</td>
+</tr>
+<tr>
+<td><strong>CharArrayReader</strong></td>
+<td>L'entrada serà un array de caràcters</td>
+</tr>
+<tr>
+<td><strong>StringReader</strong></td>
+<td>L'entrada serà un string</td>
+</tr>
+</tbody>
+</table>
+<p>Evidentment ens centrarem en la primera, que és la que més ens interessa per a
+la permanència de les dades.</p>
+<p>Els fluxos d'eixida són molt molt pareguts, tots ells heretaran de <strong>Writer</strong>
+:</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Explicació</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FileWriter</strong></td>
+<td>Per a guardar caràcters en un fitxer</td>
+</tr>
+<tr>
+<td><strong>Piped</strong></td>
+<td>Per a traure cap a una tuberia (és a dir informació que anirà a un altre programa)</td>
+</tr>
+<tr>
+<td><strong>CharArrayWriter</strong></td>
+<td>L'eixida serà un array de caràcters</td>
+</tr>
+<tr>
+<td><strong>StringWriter</strong></td>
+<td>L'eixida serà un string</td>
+</tr>
+</tbody>
+</table>
+<p>Hem de fer constar que les classes d’emmagatzematge intern (utilitzem Java o
+Kotlin), com ara <strong>CharArrayReader</strong> , <strong>CharArrayWriter</strong> , <strong>StringReader</strong>
+, <strong>StringWriter</strong> , <strong>PipedReader</strong> , <strong>PipedWriter</strong> utilitzen sempre la
+codificació pròpia de Java (unicode de 16 bits: <strong>UTF-16</strong>), ja que guarden
+les dades a la memòria basant-se en els tipus dades de tractament de caràcters
+de Java o Kotlin (C <em>har</em> i <em>String</em>).</p>
+<p>En canvi les classes <strong>FileReader</strong> o <strong>FileWriter</strong> agafen la codificació
+<strong>per defecte del sistema operatiu amfitrió</strong>. L’usuari no pot seleccionar
+diferents sistemes de codificació en crear les instàncies. Així, una màquina
+virtual Java sobre Windows utilitzarà, per defecte, la codificació ISO-8859-1,
+però si corre sobre Linux, la codificació serà UTF-8. De tota manera veurem
+que sí que podrem arribar a especificar quin és el joc de caràcters que volem
+utilitzar en la pregunta 3.3. Intentarem veure exemples de tot.</p>
+<p><code>Constructors de FileReader</code></p>
+<p>De forma totalment paral·lela als fluxos orientats a byte, el <strong>FileReader</strong>
+té dos constructors, acceptant com a paràmetre un File o un String (amb el nom
+del fitxer). La diferència ara és que la unitat de transferència serà el
+caràcter (en compte d'un byte):</p>
+<ul>
+<li><strong>FileReader (<em>f</em> : File)</strong>: en el paràmetre se li passa un File (dels vistos en el tema anterior), que ha de ser una referència al fitxer.</li>
+<li><strong>FileReader (<em>nom_f</em> : String)</strong>: en el paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer. Ens permetrà fer referència al fitxer de forma més ràpida, sense haver de passar per un File.</li>
+</ul>
+<p><code>Constructors del FileWriter</code></p>
+<p>També totalment paral·lel al FileOutputStream. Canviaran lleugerament respecte
+als d'entrada, ja que a més de fer referència al fitxer, opcionalment podrem
+d'especificar la manera d'escriure en el fitxer en cas que aquest ja
+existesca: bé afegint al final, o bé destruint la informació anterior.
+Aquestos són els constructors:</p>
+<ul>
+<li><strong>FileWriter (<em>f</em> : File)</strong>: en el paràmetre se li passa un File. Si no existia, el crearà; si ja existia esborrarà el contingut. En ambdós casos l'obrirà en mode escriptura.</li>
+<li><strong>FileWriter (<em>nom_f</em> : String)</strong>: igual que en l'anterior, però en el paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer.</li>
+<li><strong>File</strong>Writer<strong> <em>(f: File</em> , </strong><em><strong>afegir</strong></em><strong>: Boolean)</strong> : és com el primer, però si en el segon paràmetre se li passa <strong>true</strong> en compte de substituir el que ja hi havia, la informació s'afegirà al final. Si en aquest paràmetre se li passa <strong>false</strong> s'esborrarà el contingut anterior (com en el primer cas).</li>
+<li><strong>File</strong>Writer<strong> <em>(nom_f: String</em></strong>,<strong>__</strong>afegir<strong>__</strong><strong>: Boolean)</strong> : igual que en l'anterior, però en el primer paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer.</li>
+</ul>
+<h3 id="221-metodes-del-reader">2.2.1 - Mètodes del Reader</h3>
+<p>Els mètodes del <strong>Reader</strong> són absolutament similars als del <strong>InputStream</strong> .
+La diferència és que ara llegirà sempre un caràcter. I no ens haurem de
+preocupar pel format en què està guardat, i de i ocupa un o dos bytes. Sempre
+el llegirà bé, siga quina siga la codificació utilitzada, com ja havíem
+comentat abans:</p>
+<ul>
+<li>int <strong>read()</strong> : llig el següent caràcter del flux d'entrada i el retorna com un enter. Si no hi ha cap caràcter disponible perquè s’ha assolit el final de la seqüència, es retornarà -1. Si no es pot llegir el següent caràcter per alguna causa (per exemple si després d'arribar al final intentem llegir un altre caràcter, o perquè es produeix un error en llegir l'entrada) es llançarà una excepció del tipus <strong><em>IOException</em></strong>. Es tracta d’un mètode abstracte, que les classes especifiques sobreescriuran adaptant-lo a una font de dades concreta (un fitxer, un array de caràcters, ...).</li>
+</ul>
+<p>Abans de veure altres mètodes, mirem un exemple que és idèntic al primer
+exemple del InputStream, però canviant FileInputStream per FileReader. Llegirà
+el mateix fitxer anomenat <strong>f1.txt</strong> , utilitzat en aquell moment, però ara
+segurament llegirà tots els caràcters bé. El que farà és traure per pantalla
+caràcter a caràcter (en línies diferents). Copieu el següent codi en un fitxer
+anomenat <strong>Exemple_2_21.kt</strong> :</p>
+<pre><code>package exemples
+
+import java.io.FileReader
+
+fun main(args: Array&lt;String&gt;){
+    val f_in = FileReader("f1.txt")
+    var c = f_in.read()
+    while (c!=-1){
+        println(c.toChar())
+        c = f_in.read()
+    }
+    f_in.close()
+}
+</code></pre>
+<p>Ara segurament sí que haurà llegit bé tots els caràcters, incloent ñ, ç,
+vocals accentuades, etc. Si encara tenim el mateix contingut en <strong>f1.txt</strong> ,
+el resultat serà ara:</p>
+<pre><code>H  
+o  
+l  
+a  
+,  
+
+q  
+u  
+è  
+
+t  
+a  
+l  
+?  
+</code></pre>
+<p>El més normal és que en crear el fitxer <strong>f1.txt</strong> amb algun editor, el
+guardem amb la codificació per defecte, que en cas de Windows és ASCII (o
+ISO-8859) i en el cas de Linux és UTF-8. I després des de Java, el
+<strong>FileReader</strong> utilitzarà la codificació per defecte del Sistema Operatiu. És
+a dir que en Linux el fitxer ha d'estar guardat en UTF-8 per a que el puga
+llegir bé, i en Windows en ASCII.</p>
+<p>Mirem també l'exemple equivalent al segon. Allà utilitzàvem un
+<strong>ByteArrayInputStream</strong> com a entrada. Ara podríem utilitzar un
+<strong>CharArrayReader</strong> , però ho farem amb un <strong>StringReader</strong> , i quedarà més
+curt. A banda de que l'hem d'inicialitzar diferent, podem observar com el
+tractament posterior és idèntic. Copieu el següent codi en un fitxer anomenat
+<strong>Exemple_2_22.kt</strong> :</p>
+<pre><code>package exemples
+
+import java.io.CharArrayReader
+
+fun main(args: Array&lt;String&gt;) {
+    val ent_1 = "Aquest és un byte array"
+    val f_in = CharArrayReader(ent_1.toCharArray())
+    var c = f_in.read()
+    while (c != -1) {
+        println(c.toChar())
+        c = f_in.read()
+    }
+    f_in.close()
+}
+</code></pre>
+<p>Altres mètodes del <strong>Reader</strong> són:</p>
+<ul>
+<li>int <strong>read(char[ ]<em>buffer</em>)</strong>: llig un número determinat de caràcters de l'entrada, guardant-los en el paràmetre (que actuarà com un buffer). El número de caràcters llegits serà com a màxim la grandària del buffer, encara que podria ser menor (si no hi ha prou caràcters, per exemple). El mètode tornarà el número de caràcters que realment s'han llegit com un enter. Si no hi haguera cap caràcter disponible, es retornaria -1.</li>
+<li>int <strong>available()</strong> : indica quants caràcters hi ha disponibles per a la lectura. Sobretot serviria com a condició de final de bucle: si hi ha 0 caràcters disponibles, és que ja hem acabat. Tot i això, hi ha altres maneres de fer la condició de final de bucle.</li>
+<li>long <strong>skip(long <em>despl</em>)</strong>: salta, despreciant-los, tants caràcters com indica el paràmetre. Podria ser que no puguera saltar el número de caràcters especificat per diferents raons. Torna el número de caràcters realment saltats.</li>
+<li>int <strong>close()</strong> : tanca el flux de dades.</li>
+</ul>
+<p>Mirem un altre exemple, utilitzant ara el buffer com a paràmetre del <strong>read</strong>.
+És idèntic al de l'apartat del InputStream. La diferència és que ara s'haurien
+de llegir bé tots els caràcters. Copieu el següent codi en un fitxer anomenat
+<strong>Exemple_2_23.kt</strong> :</p>
+<pre><code>package exemples
+
+import java.io.FileReader
+
+fun main(args: Array&lt;String&gt;) {
+    val f_in = FileReader("f2.txt")
+    var buffer = CharArray(30)
+    var n = f_in.read(buffer)
+    while (n != -1) {
+        for (i in 0..n - 1)
+            print(buffer[i].toChar())
+        println("")
+        n = f_in.read(buffer)
+    }
+    f_in.close();
+}
+</code></pre>
+<p>Es llegiran els caràcters de 30 en 30, ja que el buffer és d'aquesta
+grandària. Com que ara es guarda en un buffer de caràcters, haurem de recórrer
+aquest buffer (fins el número de caràcters llegits, que és <strong>n</strong>) . Hem
+suposat que en el fitxer <strong>f2.txt</strong> tenim un text prou llarg com per a veure
+el funcionament.</p>
+<p>Aquesta seria l'eixida:</p>
+<pre><code>Hola. Aquest és un text més ll  
+arg, per veure com gestiona el  
+s bytes amb un buffer de 30 ca  
+ràcters.  
+Com que ho llegim des  
+d'un InputStream, els caràcte  
+rs especials potser no isquen  
+bé.
+</code></pre>
+<p>Efectivament, s'han llegit tots els caràcters perfectament.</p>
+<h3 id="222-metodes-del-writer">2.2.2 - Mètodes del Writer</h3>
+<p>Comencem també pel més senzill i primordial, el mètode que escriu un caràcter.</p>
+<ul>
+<li>void <strong>write(<em>car</em> : Int) </strong>: escriu el caràcter passat com a paràmetre en el flux d'eixida. En cas que siga un FileWriter, escriurà el caràcter amb la codificació per defecte del S.O. : en Windows ISO-8839 i en Linux UTF-8. Si no es poguera fer l'escriptura per qualsevol motiu (per exemple, disc ple), es llançarà una excepció de tipus <strong>IOException</strong>.</li>
+</ul>
+<p>Igual que en l'apartat anterior, anem a veure un exemple senzill
+d'utilització, en el qual guardarem en un fitxer el contingut d'una cadena,
+ara ja sense por als caràcters estranys.</p>
+<p>En aquest primer exemple del <strong>Writer</strong> treballarem sobre un fitxer
+inexistent. Es podrà comprovar que el resultat serà la creació del fitxer amb
+el contingut. Copieu el següent codi en un fitxer anomenat <strong>Exemple_2_31.kt</strong>
+:</p>
+<p><u><strong>Nota</strong></u></p>
+<div style="background-color: #d6eaf8; color: black; padding: 5px;">
+Hem de fer constar que si no es tanca el fitxer (millor dit el flux d'eixida)
+podria ser que no es guardara res en el fitxer. Per tant és una operació ben
+important que no hem d'oblidar.
+</div>
+<p></p>
+
+<pre><code>package exemples
+
+import java.io.FileWriter
+
+fun main(args: Array&lt;String&gt;) {
+    val text = "Contingut per al fitxer. Ara ja sense por a caràcters especials: ç, à, ú, ..."
+    val f_out = FileWriter ("f5.txt")
+    for (c in text) {
+        f_out.write(c.toInt())
+    }
+    f_out.close()
+}
+</code></pre>
+<p>En el constructor del <strong>Writer</strong> no hem indicat el segon paràmetre, aquell que
+indicava si era per a afegir o no, i per tant si no existia el fitxer el
+crearà, però si ja existia el fitxer, destruirà el seu contingut i el
+substituirà pel nou contingut. Per això si tornem a executar el programa,
+tindrem el mateix resultat en <strong>f5.txt</strong></p>
+<pre><code>Contingut per al fitxer. Ara ja sense por a caràcters especials: ç, à, ú, ...
+</code></pre>
+<p>Anem a provar a substituir el constructor, posant ara</p>
+<pre><code>val f_out = FileWriter ("f5.txt", true)
+</code></pre>
+<p>Si l'executem, veurem que afegirà al final, sense destruir el que ja hi havia.</p>
+<pre><code>Contingut per al fitxer. Ara ja sense por a caràcters especials: ç, à, ú, ...Contingut per al fitxer. Ara ja sense por a caràcters especials: ç, à, ú, ...
+</code></pre>
+<p>Altres mètodes del <strong>Writer</strong> són:</p>
+<ul>
+<li>void <strong>write(<em>buffer</em> : CharArray)</strong> : escriu el contingut de l'array de caràcters al fitxer. Cal que buffer no siga nul, o provocarem un error.</li>
+<li>void <strong>write(<em>buffer: CharArray</em> , <em>pos</em> : Int, <em>llarg</em> : Int)</strong> : escriu al fitxer el contingut de l'array que està a partir de la posició <strong>pos</strong> i tants caràcters com assenyale <strong>llarg</strong>.</li>
+<li>void <strong>flush()</strong> : Guardar les dades en un fitxer és una operació relativament lenta, ja que és accedir a un dispositiu lent (millor dit, no tan ràpid com la memòria). És habitual que s'utilitze una memòria intermèdia per a que les coses no vagen tan lentes (com si fóra una caché). Però potser que les dades no estiguen guardades encara en el fitxer, sinó que encara estiguen en aquesta caché. El mètode <strong>flush</strong> obliga a escriure els caràcters que queden encara a la caché físicament al fitxer d'eixida.</li>
+<li>void <strong>close()</strong> : tanca el flux d'eixida, alliberant els recursos. Si quedava alguna cosa en la caché, es guardarà al fitxer i es tancarà el flux.</li>
+</ul>
+<p>Aquestos mètodes són totalment similars als del OutputStream. A banda
+d'aquestos, el <strong>Writer</strong> té un altre, que pot ser especialment útil per a
+caràcters:</p>
+<ul>
+<li>void <strong>write(<em>text</em> : String)</strong> : escriu tot el contingut del String en el fitxer.</li>
+</ul>
+<p>Llicenciat sota la  <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial
+CompartirIgual 2.5</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../1__magatzems_i_fluxos_de_dades/" class="btn btn-neutral float-left" title="1 - Magatzems i fluxos de dades"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../3__fluxos_decoradors/" class="btn btn-neutral float-right" title="3 - Fluxos decoradors">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../1__magatzems_i_fluxos_de_dades/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../3__fluxos_decoradors/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://asalvadorc.github.io/AD_Ficheros/AD_T2_Gesti_del_contingut_de_fitxers/3__fluxos_decoradors/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>3 - Fluxos decoradors - AD - Accés a Dades</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "3 - Fluxos decoradors";
+        var mkdocs_page_input_path = "AD_T2_Gesti_del_contingut_de_fitxers/3__fluxos_decoradors.md";
+        var mkdocs_page_url = "/AD_Ficheros/AD_T2_Gesti_del_contingut_de_fitxers/3__fluxos_decoradors/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../assets/logocaminas.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">T1. Gestió del Sistema de fitxers</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T1_Sistema_de_fitxers/objectius/">Objectius</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T1_Sistema_de_fitxers/1_introducci/">1. Introducció</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T1_Sistema_de_fitxers/2_la_classe_file_generalitats/">2. La classe File. Generalitats.</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T1_Sistema_de_fitxers/3_funcionalitat_de_la_classe_file/">3. Funcionalitat de la classe File</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T1_Sistema_de_fitxers/exercicis/">Exercicis</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">T2. Gestió del contingut de fitxers</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../objectius/">Objectius</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1__magatzems_i_fluxos_de_dades/">1 - Magatzems i fluxos de dades</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2__manipulaci_dels_fluxos_de_dades/">2 - Manipulació dels fluxos de dades</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">3 - Fluxos decoradors</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#31-decoradors-de-inputstream-i-otputstream">3.1 - Decoradors de InputStream i OtputStream</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#32-decoradors-de-reader-i-writer">3.2 - Decoradors de Reader i Writer</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#33-conversors-inputstreamreader-i-outputstreamwriter">3.3 - Conversors: InputStreamReader i OutputStreamWriter</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4__simplificaci_en_kotlin/">4 - Simplificació en Kotlin</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../exercicis/">Exercicis</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">T3. Fitxers de diferents formats</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T3_Fitxers_de_diferents_formats/objectius/">Objectius</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T3_Fitxers_de_diferents_formats/1_fitxers_binaris_amb_formats_especfics/">1.- Fitxers binaris amb formats específics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T3_Fitxers_de_diferents_formats/2_accs_directe_a_fitxers/">2.- Accés directe a fitxers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T3_Fitxers_de_diferents_formats/3_seriaci_dobjectes/">3.- Seriació d'objectes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T3_Fitxers_de_diferents_formats/4_documents_xml/">4.- Documents XML</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T3_Fitxers_de_diferents_formats/5_documents_json/">5.- Documents JSON</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T3_Fitxers_de_diferents_formats/exercicis/">Exercicis</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">AD - Accés a Dades</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">T2. Gestió del contingut de fitxers</li>
+      <li class="breadcrumb-item active">3 - Fluxos decoradors</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="3-fluxos-decoradors">3 - Fluxos decoradors</h1>
+<p>Anomenem classes "<strong>decoradores</strong> " a aquelles que hereten d'una classe
+determinada i serveixen per a dotar d'una funcionalitat extra que no tenia la
+classe original.</p>
+<p>En els fluxos, en els d'entrada i en els d'eixida, veurem uns quants
+"decoradors" que ens permetran una funcionalitat extra: llegir o escriure una
+línia sencera (en compte de byte a byte, o caràcter a caràcter), o guardar amb
+determinat format de dades, ... En el cas de caràcters també ens permetran
+triar la codificació (ISO-8859-1, UTF-8, UTF-16, ...).</p>
+<p>Anirem veient-los poc a poc, classificats per la classe arrel, és a dir, per
+una banda els decoradors del InputStream i OutputStream (orientats a byte), i
+per una altra banda els de Reader i Writer (orientats a caràcter)</p>
+<h2 id="31-decoradors-de-inputstream-i-otputstream">3.1 - Decoradors de InputStream i OtputStream</h2>
+<p>Com hem comentat ens serviran per a donar una funcionalitat extra. Són els que
+estan de verd en la següent imatge:</p>
+<p><img alt="T2_2_1.png" src="../T2_2_1.png" /></p>
+<p>Fixem-nos primers en els decoradors de <strong>InputStream</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Explicació</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FilterInputStream</strong></td>
+<td>No és instanciable, únicament està per a que les altres depenguen d'ella (no la veurem)</td>
+</tr>
+<tr>
+<td><strong>LineNumberInputStream</strong></td>
+<td>Afegeix el número de línia de cada línia del InputStream (no la veurem)</td>
+</tr>
+<tr>
+<td><strong>DataInputStream</strong></td>
+<td>Permet llegir dades de qualsevol tipus de dades: enter, real, booleà, ...</td>
+</tr>
+<tr>
+<td><strong>BufferedInputStream</strong></td>
+<td>Munta un buffer d'entrada (no la veurem)</td>
+</tr>
+<tr>
+<td><strong>PushBackInputStream</strong></td>
+<td>Permet retrocedir un byte en la lectura, i per tant permet anar cap arrere (no la veurem)</td>
+</tr>
+<tr>
+<td><strong>ObjectInputStream</strong></td>
+<td>Permet llegir tot un objecte</td>
+</tr>
+</tbody>
+</table>
+<p>I de forma quasi paral·lela tenim els decoradors de <strong>OutputStream</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Explicació</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FilterOutputStream</strong></td>
+<td>No és instanciable, únicament està per a que les altres depenguen d'ella (no la veurem)</td>
+</tr>
+<tr>
+<td><strong>Data</strong>Out<strong> putStream</strong></td>
+<td>Permet guardar al flux de dades d'eixida dades de qualsevol tipus: enter, real, booleà, ...</td>
+</tr>
+<tr>
+<td><strong>Buffered</strong>Out<strong> putStream</strong></td>
+<td>Munta un buffer d'eixida (no la veurem)</td>
+</tr>
+<tr>
+<td><strong>PrintStream</strong></td>
+<td>Permet escriure dades de diferents tipus, i té també els mètodes <em>printf</em> i <em>println</em></td>
+</tr>
+<tr>
+<td><strong>Object</strong>Out<strong> putStream</strong></td>
+<td>Permet escriure (serialitzar) tot un objecte</td>
+</tr>
+</tbody>
+</table>
+<p>Comentem-los un poquet més.</p>
+<p><strong>BufferedInputStream</strong> i <strong>BufferedOutputStream</strong> ens ofereixen un buffer
+d'entrada i d'eixida respectivament, per a fer la transferència més efectiva.
+En la pràctica ens oferirà poques funcionalitats útils (a banda de
+l'eficiència en la transferència, clar). Quan anem als decoradors de fluxos
+orientats a caràcters, sí que trobarem utilitats als decoradors semblants a
+aquestos, com per exemple llegir o escriure una línia sencera de caràcters.
+Però aquestos orientats a bytes, no els veurem.</p>
+<p><strong>DataInputStream</strong> i <strong>DataOutputStream</strong> ens oferiran la possibilitat de
+llegir o escriure còmodament dades de diferents tipus: enter, real, booleà,
+strings, ... Els veurem en detall en el proper <strong>Tema 3</strong></p>
+<p><strong>ObjectInputStream</strong> i <strong>ObjectOutputStream</strong> (que curiosament són els únics
+que no depenen de <strong>FilterInputStream</strong> i <strong>FilterOutputStream</strong>) ens
+permetran guardar o recuperar de cop tot un objecte, és a dir totes les seues
+propietats (les dades de l'objecte). No ens haurem de preocupar ni de l'ordre
+ni del tipus de les propietats de l'objecte: quan escrivim l'objecte, es
+guardaran totes les dades de forma compacta; i quan llegim es recuperaran de
+forma correcta. És per tant una parella de classes d'extrema utilitat per a
+guardar objectes, que en definitiva són l'essència de la programació en Java.
+Els veurem en detall en el proper <strong>Tema 3</strong>.</p>
+<p><code>PrintStream</code></p>
+<p>L'únic que ens queda és el que veurem ara amb un poquet més de detall, el
+<strong>PrintStream</strong>. Ens permetrà bàsicament 3 coses:</p>
+<ul>
+<li>Escriure dades de més d'un tipus de dades. Per exemple <strong>print(5.25)</strong> escriu un número real, i <strong>print("Hola")</strong> escriu tot un string.</li>
+<li>Donar un determinat format a l'eixida, amb tota la funcionalitat a què estem acostumats amb <strong>printf</strong></li>
+<li>Escriure tota una línia amb <strong>println</strong> , és a dir, acabar una dada amb el retorn de carro, per a baixar de línia.</li>
+</ul>
+<p>Mirem un exemple que ens pot donar idea de la seua funcionalitat. Copieu el
+següent codi en un fitxer anomenat <strong>Exemple_2_41.kt</strong> :</p>
+<pre><code>package exemples
+
+import java.io.PrintStream
+import java.io.FileOutputStream
+
+fun main(args: Array&lt;String&gt;) {
+    val f_out = PrintStream(FileOutputStream ("f6.txt"))
+
+    val a = 5.25.toFloat()
+    val b = "Hola."
+    f_out.print(b)
+    f_out.println("Què tal?")
+    f_out.println(a + 3)
+    f_out.printf("El número %d en hexadecimal és %x", 27, 27)
+
+    f_out.close();
+}
+</code></pre>
+<p>Es crearà el fitxer <strong>f6.txt</strong> (si ja existia esborrarà el contingut anterior)
+amb el següent contingut:</p>
+<pre><code>Hola.Què tal?
+8.25
+El número 27 en hexadecimal és 1b
+</code></pre>
+<p>En realitat el <strong>PrintStream</strong> , a banda del constructor que accepta un
+<strong>OutputStream</strong> , també té un altre que accepta un <strong>File</strong> i fins i tot un
+altre que accepta un <strong>String</strong> amb el nom del fitxer. Per tant, la següent
+sentència també ens funcionaria:</p>
+<pre><code>    val f_out = PrintStream("f6.txt")
+</code></pre>
+<h2 id="32-decoradors-de-reader-i-writer">3.2 - Decoradors de Reader i Writer</h2>
+<p>Mirem ara els decoradors de la jerarquia <strong>Reader</strong> i <strong>Writer</strong> . Tornen a
+ser els de color verd. Els de color gris <strong>InputStreamReader</strong> i
+<strong>OutputStreamWriter</strong> són conversors que permeten passar un <strong>InputStream</strong> a
+un <strong>Reader</strong> i un <strong>OutputStream</strong> a <strong>Writer</strong>. Els veurem en la següent
+pregunta.</p>
+<p><img alt="T2_2_2.png" src="../T2__2_2.png" /></p>
+<p>Fixem-nos primers en els decoradors de <strong>Reader</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Explicació</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FilterReader</strong></td>
+<td>No és instanciable, únicament està per a que les altres depenguen d'ella (no la veurem)</td>
+</tr>
+<tr>
+<td><strong>PushBackInputStream</strong></td>
+<td>Permet retrocedir un caràcter en la lectura, i per tant permet anar cap arrere (no la veurem)</td>
+</tr>
+<tr>
+<td><strong>Buffered</strong>Reader****</td>
+<td>Munta un buffer d'entrada, i permet entre altres coses llegir una línia sencera</td>
+</tr>
+<tr>
+<td><strong>LineNumber</strong>Reader****</td>
+<td>Afegeix el número de línia de cada línia del fitxer (no la veurem)</td>
+</tr>
+</tbody>
+</table>
+<p>I de forma quasi paral·lela tenim els decoradors de <strong>Writer</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Explicació</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FilterWriter</strong></td>
+<td>No és instanciable, únicament està per a que les altres depenguen d'ella (no la veurem)</td>
+</tr>
+<tr>
+<td><strong>Buffered</strong>Writer****</td>
+<td>Munta un buffer d'eixida, i permet entre altres coses escriure una línia sencera</td>
+</tr>
+<tr>
+<td><strong>Print</strong>Writer****</td>
+<td>Permet escriure dades de diferents tipus, i té també els mètodes <em>printf</em> i <em>println</em></td>
+</tr>
+</tbody>
+</table>
+<p>El <strong>PrintWriter</strong> funciona quasi exactament igual que el <strong>PrintStream</strong> , i
+per a caràcters és més útil que l'altre (per ser <strong>Writer</strong>), per tant és el
+candidat a recordar.</p>
+<p>El <strong>BufferedReader</strong> sí que ens oferirà facilitats interessants, com llegir
+una línia sencera. En canvi el <strong>BufferedWriter</strong> no ens ofereix tantes
+facilitats com el <strong>PrintWriter</strong> , és un poc més incòmode.</p>
+<p><code>BufferedReader i BufferedWriter. PrintWriter</code></p>
+<p>BufferedReader i BufferedWriter munten un buffer (d'entrada i d'eixida
+respectivament) de caràcters per a fer més eficient la transferència. A banda
+d'això tindran uns mètodes que ens seran molt útils.</p>
+<p><u><strong>BufferedReader</strong></u></p>
+<ul>
+<li>mètode <strong>readLine()</strong> que ens permet llegir una línia sencera del fitxer (fins al final de línia). Açò és de molta utilitat en els fitxers de text.</li>
+</ul>
+<p><u><strong>BufferedWriter</strong></u></p>
+<ul>
+<li>mètode <strong>newLine()</strong> que permet introduir el caràcter de baixada de línia</li>
+<li>mètode <strong>write(<em>cad</em> : String, <em>com</em> : Int, <em>llarg</em> : Int)</strong> que permet escriure tot un string, o una part d'ell, especificant on comença el que volem escriure i la llargària</li>
+</ul>
+<p>Com veieu el <strong>BufferedReader</strong> sí que ens ofereix la possibilitat de llegir
+una línia sencera, però en canvi el <strong>BufferedWriter</strong> es queda un poc curt.
+Per això preferirem el <strong>PrintWriter</strong>.</p>
+<p><u><strong>PrintWriter</strong></u></p>
+<ul>
+<li>mètodes <strong>print(<em>qualsevol_tipu</em> <em>s</em>)</strong> , que permeten imprimir una dada de qualsevol tipus: booleà, char, tots els numèrics, string, ... Serà segurament el que més utilitzarem.</li>
+<li>mètodes <strong>println</strong>(<em>qualsevol_tipu</em> <em>s</em>)<strong><em>* , a banda de tot el de </em>*print</strong> , baixen de línia</li>
+<li>mètode <strong>printf()</strong> , que permet donar un format</li>
+</ul>
+<p>Veiem un senzill exemple per a copiar el contingut d'un fitxer de text i
+modificar-lo lleugerament. El més còmode serà anar línia a línia. Per tant
+utilitzarem el <strong>BufferedReader</strong> per a llegir línies, i el <strong>PrintWriter</strong>
+per a escriure línies. La lleugera modificació consistirà en posar el número
+de línia davant. Copieu el següent codi en un fitxer anomenat
+<strong>Exemple_2_51.kt</strong> :</p>
+<pre><code>package exemples
+
+import java.io.BufferedReader
+import java.io.FileReader
+import java.io.PrintWriter
+import java.io.FileWriter
+
+fun main(args: Array&lt;String&gt;) {
+    val f_ent = BufferedReader(FileReader ("f7_ent.txt"))
+    val f_eix = PrintWriter(FileWriter ("f7_eix.txt"))
+    var cad = f_ent.readLine();
+    var i = 0
+    while (cad != null) {
+        i++
+        f_eix.println("" + i + ".- " + cad)
+        cad = f_ent.readLine()
+    }
+    f_eix.close()
+    f_ent.close()
+}
+</code></pre>
+<p>Si en el fitxer d'entrada (<strong>f7_ent.txt</strong>) tenim guardada la següent
+informació (introduïda amb el notepad o gedit):</p>
+<pre><code>Primera
+Segona
+Tercera
+</code></pre>
+<p>En el fitxer d'eixida (<strong>f7_eix.txt</strong>) tindrem:</p>
+<pre><code>1.- Primera
+2.- Segona
+3.- Tercera
+</code></pre>
+<h2 id="33-conversors-inputstreamreader-i-outputstreamwriter">3.3 - Conversors: InputStreamReader i OutputStreamWriter</h2>
+<p>Una vegada vistes les jerarquies de les classes <strong>InputStream-OutputStream</strong>
+per una banda, i <strong>Reader-Writer</strong> per una altra, veurem ara unes classes que
+serviran per a passar d'una jeraquia a una altra. És a dir, poder passar un
+<strong>InputStream</strong> a <strong>Reader</strong> , o el que és el mateix, un flux orientat a bytes
+en un flux orientat a caràcters. I el mateix amb el OutputStream i el Writer.</p>
+<ul>
+<li><strong>InputStreamReader</strong> : passa un <strong>InputStream</strong> a <strong>Reader</strong>. Accepta com a paràmetre el <strong>InputStream</strong> i dóna com a resultat un <strong>Reader</strong>.</li>
+<li><strong>OutputStreamWriter</strong> : passa un <strong>OutputStream</strong> a <strong>Writer</strong>. Accepta com a paràmetre el <strong>OutputStream</strong> i dóna com a resultat un <strong>Writer</strong>.</li>
+</ul>
+<p>A més en el constructor dels dos, <strong>InputStreamReader</strong> i
+<strong>OutputStreamWriter</strong> , tenim la possibilitat d'especificar el tipus de
+codificació, a més del InputStream o OutputStream. Açò ens serà molt útil,
+perquè fins el moment no podíem triar el tipus de codificació d'un
+<strong>FileReader</strong> o <strong>FileWriter</strong> que era UTF-8 en el cas de Linux, i ASCII
+(millor dit la seua extensió ISO-8859-1) en el cas de Windows.</p>
+<p>Mirem aquest exemple, en el qual transformem el mateix fitxer d'una
+configuració a una altra. Aprofitem algun dels fitxers que ja disposem (per
+exemple f5.txt, que tenia caràcters especials com vocals accentuades). En
+l'exemple el tindrem en codificació UTF-8, ja que està provat en Linux. El
+transformarem a ISO-8859-1. Copieu el següent codi en un fitxer anomenat
+<strong>Exemple_2_61.kt</strong> :</p>
+<pre><code>package exemples
+
+import java.io.InputStreamReader
+import java.io.FileInputStream
+import java.io.OutputStreamWriter
+import java.io.FileOutputStream
+
+fun main(args: Array&lt;String&gt;) {
+    val f_ent = InputStreamReader(FileInputStream("f5.txt"), "UTF-8")
+    val f_eix = OutputStreamWriter(FileOutputStream("f5_ISO.txt"), "ISO-8859-1")
+
+    var car = f_ent.read()
+    while (car != -1) {
+        f_eix.write(car)
+        car = f_ent.read()
+    }
+    f_eix.close()
+    f_ent.close()
+}
+</code></pre>
+<p>Hem posat l'entrada explícitament que siga de UTF-8. En realitat no faria
+falta, ja que si treballem en Linux, aquesta serà la codificació per defecte,
+i per tant seria la que utilitzaria un FileReader.</p>
+<pre><code>FileReader f_ent = new FileReader("f5.txt")
+</code></pre>
+<p>Anem a fer una altra versió del mateix programa. A banda de no especificar la
+codificació del fitxer d'entrada, utilitzarem els decoradors
+<strong>BufferedReader</strong> i <strong>PrintWriter</strong> per a poder anar còmodament línia a
+línia. Copieu el següent codi en un fitxer anomenat <strong>Exemple_2_62.kt</strong> :</p>
+<pre><code>package exemples
+
+import java.io.FileReader
+import java.io.BufferedReader
+import java.io.FileOutputStream
+import java.io.OutputStreamWriter
+import java.io.PrintWriter
+
+fun main(args: Array&lt;String&gt;) {
+    val f_ent = BufferedReader(FileReader ("f5.txt"))
+    val f_eix = PrintWriter(OutputStreamWriter(FileOutputStream ("f5_ISO.txt"), "ISO-8859-1"))
+
+    var cad = f_ent.readLine()
+    while (cad != null) {
+        f_eix.println(cad)
+        cad = f_ent.readLine()
+    }
+    f_eix.close()
+    f_ent.close()
+}
+</code></pre>
+<p>Llicenciat sota la  <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial
+CompartirIgual 2.5</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../2__manipulaci_dels_fluxos_de_dades/" class="btn btn-neutral float-left" title="2 - Manipulació dels fluxos de dades"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../4__simplificaci_en_kotlin/" class="btn btn-neutral float-right" title="4 - Simplificació en Kotlin">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../2__manipulaci_dels_fluxos_de_dades/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../4__simplificaci_en_kotlin/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
