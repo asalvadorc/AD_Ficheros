@@ -127,7 +127,7 @@ PESCADERÍA","puestos":28,"ocupados":4,"latitud":"39.98580","longitud":"-0.03798
 ```
 Com podeu comprovar, l'arrel no és un objecte, sinó un **Array**. En l'array
 només ens interessa el primer element que és un objecte amb un únic membre,
-**ocupacion**(en l'exemple no hi ha més elements, però en poden haver més en
+**ocupacion** (en l'exemple no hi ha més elements, però en poden haver més en
 un moment determinat, quan volen fer avisos). I **ocupacion és un array** ,
 amb **un objecte per cada estació de bicicas** , amb les parelles clau valor
 **id** , **punto** , **puestos** (les bicicletes que caben), **ocupados**
@@ -228,9 +228,8 @@ Però nosaltres anem a utilitzar dues altres llibreries
   * Una altra, la de **Moshi** , que ens permetrà elaborar més el resultat ja que podrem fer una conversió entre Json i objectes de Java o de Kotlin
 
 Pel que fa a la primera, en el moment de fer aquestos apunts l'última versió
-estable és la **20210307** , és a dir, de juliol de 2018. En aquest enllaç
-teniu d'on us la podeu baixar: <https://jar-
-download.com/artifacts/org.json/json/20210307>. Una vegada baixada l'haurem
+estable és la **20240303** , és a dir, de març de 2024. En aquest enllaç
+teniu d'on us la podeu baixar: <https://jar-download.com/artifacts/org.json/json>. Una vegada baixada l'haurem
 d'incorporar al nostre projecte (sobre el projecte **F4 -- > Modules -->
 pestanya dependencies --> +**)
 
@@ -457,9 +456,9 @@ l'estructura:
 ```
 [  
     {"ocupacion":  
-        [   {"id":"01","punto":"UJI - FCHS","puestos":28,"ocupados":11,"latitud":"39.99533",       "longitud":"-0.06999", "porcentajeAltaOcupacion":"80","porcentajeBajaOcupacion":"20"},  
-            {"id":"02","punto":"ESTACIÓN DE FERROCARRIL Y AUTOBUSES","puestos":28,"ocupados":8,"latitud":"39.98765", "longitud":"-0.05281","porcentajeAltaOcupacion":"80",  porcentajeBajaOcupacion":"20"},  
-            {"id":"03","punto":"PLAZA DE PESCADERÍA","puestos":28,"ocupados":13,"latitud":"39.98580","longitud":"-0.03798", porcentajeAltaOcupacion":"80","porcentajeBajaOcupacion":"20"},  
+        [{"id":"01","punto":"UJI - FCHS","puestos":28,"ocupados":11,"latitud":"39.99533",       "longitud":"-0.06999", "porcentajeAltaOcupacion":"80","porcentajeBajaOcupacion":"20"},  
+         {"id":"02","punto":"ESTACIÓN DE FERROCARRIL Y AUTOBUSES","puestos":28,"ocupados":8,"latitud":"39.98765", "longitud":"-0.05281","porcentajeAltaOcupacion":"80",  porcentajeBajaOcupacion":"20"},  
+         {"id":"03","punto":"PLAZA DE PESCADERÍA","puestos":28,"ocupados":13,"latitud":"39.98580","longitud":"-0.03798", porcentajeAltaOcupacion":"80","porcentajeBajaOcupacion":"20"},  
     ...  
         ]  
     }  
@@ -512,7 +511,7 @@ i al **JSONArray**.
 
 **<b>Nota</b>**
 <div style="background-color: #d6eaf8; color: black; padding: 5px;">
-La major part de drivers utilitzen <b>add(element)<b> per a afegir un element a
+La major part de drivers utilitzen <b>add(element)</b> per a afegir un element a
 un JSONArray, en compte de <b>put</b>
 </div>
 <p></p>
@@ -778,7 +777,7 @@ aquesta estructura:
 ```
 { "empresa" :  
     { "empleats":  
-            [  
+      [  
         { "num":1, "nom": "Andreu", "departament": 10, "edat": 32, "sou": 1000.0} ,  
         { "num":2, "nom": "Bernat", "departament": 20, "edat": 28, "sou": 1200.0} ,  
         { "num":3, "nom": "Clàudia", "departament": 10, "edat": 26, "sou": 1100.0} ,  
@@ -862,11 +861,11 @@ per un array:
 ```
 [  
     {"ocupacion":  
-        [   {"id":"01","punto":"UJI - FCHS","puestos":28,"ocupados":11,"latitud":"39.99533",      "longitud":"-0.06999",  
-            "porcentajeAltaOcupacion":"80","porcentajeBajaOcupacion":"20"},  
-            {"id":"02","punto":"ESTACIÓN DE FERROCARRIL Y AUTOBUSES","puestos":28,"ocupados":8,"latitud":"39.98765", "longitud":"-0.05281","porcentajeAltaOcupacion":"80","porcentajeBajaOcupacion":"20"},  
-            {"id":"03","punto":"PLAZA DE PESCADERÍA","puestos":28,"ocupados":13,"latitud":"39.98580","longitud":"-0.03798",  
-            "porcentajeAltaOcupacion":"80","porcentajeBajaOcupacion":"20"},  
+      [ {"id":"01","punto":"UJI - FCHS","puestos":28,"ocupados":11,"latitud":"39.   99533","longitud":"-0.06999",  
+        "porcentajeAltaOcupacion":"80","porcentajeBajaOcupacion":"20"},  
+        {"id":"02","punto":"ESTACIÓN DE FERROCARRIL Y AUTOBUSES","puestos":28,"ocupados":8,"latitud":"39.98765", "longitud":"-0.05281","porcentajeAltaOcupacion":"80","porcentajeBajaOcupacion":"20"},  
+        {"id":"03","punto":"PLAZA DE PESCADERÍA","puestos":28,"ocupados":13,"latitud":"39.98580","longitud":"-0.03798",  
+        "porcentajeAltaOcupacion":"80","porcentajeBajaOcupacion":"20"},  
             ...  
         ]  
     }  
