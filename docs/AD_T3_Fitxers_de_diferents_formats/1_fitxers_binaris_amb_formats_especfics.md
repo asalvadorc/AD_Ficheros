@@ -22,7 +22,7 @@ pertany, l'edat i el sou.
 2 | Bernat | 20 | 28 | 1200.00  
 3 | Claudia | 10 | 26 | 1100.00  
 4 | Damià | 10 | 40 | 1500.00  
-  
+ 
 Ja es veu que les dades són de difrents tipus. Si tot fóra de text no hi
 hauria problema. Però si considerem les dades com a numèriques enteres o reals
 no ens serveixen els Stream de caràcters (Reader i Writer). Per tant hem

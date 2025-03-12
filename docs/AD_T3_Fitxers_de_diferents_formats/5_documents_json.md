@@ -1,6 +1,6 @@
 # 5.- Documents JSON
 
-**JSON** vol dir **J** ava**S** cript **O** bject **N****otation** , és a dir
+**JSON** vol dir **J** ava**S** cript **O** bject **N**otation , és a dir
 Notació d'Objectes de JavaScript. És una manera de representar objectes
 inicialment per a JavaScript, però per la seua senzillesa, i com és en text
 pla, serveix per a qualsevol entorn. Permet representar estructures de dades
