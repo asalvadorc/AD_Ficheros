@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://asalvadorc.github.io/AD_Ficheros/AD_T1_Sistema_de_fitxers/3_funcionalitat_de_la_classe_file/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>3. Funcionalitat de la classe File - AD - Accés a Dades</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "3. Funcionalitat de la classe File";
+        var mkdocs_page_input_path = "AD_T1_Sistema_de_fitxers/3_funcionalitat_de_la_classe_file.md";
+        var mkdocs_page_url = "/AD_Ficheros/AD_T1_Sistema_de_fitxers/3_funcionalitat_de_la_classe_file/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../assets/logocaminas.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">T1. Gestió del Sistema de fitxers</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../objectius/">Objectius</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1_introducci/">1. Introducció</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_la_classe_file_generalitats/">2. La classe File. Generalitats.</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">3. Funcionalitat de la classe File</a>
+    <ul class="current">
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../exercicis/">Exercicis</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">T2. Gestió del contingut de fitxers</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T2_Gesti_del_contingut_de_fitxers/objectius/">Objectius</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T2_Gesti_del_contingut_de_fitxers/1__magatzems_i_fluxos_de_dades/">1 - Magatzems i fluxos de dades</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T2_Gesti_del_contingut_de_fitxers/2__manipulaci_dels_fluxos_de_dades/">2 - Manipulació dels fluxos de dades</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T2_Gesti_del_contingut_de_fitxers/3__fluxos_decoradors/">3 - Fluxos decoradors</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T2_Gesti_del_contingut_de_fitxers/4__simplificaci_en_kotlin/">4 - Simplificació en Kotlin</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T2_Gesti_del_contingut_de_fitxers/exercicis/">Exercicis</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">T3. Fitxers de diferents formats</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T3_Fitxers_de_diferents_formats/objectius/">Objectius</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T3_Fitxers_de_diferents_formats/1_fitxers_binaris_amb_formats_especfics/">1.- Fitxers binaris amb formats específics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T3_Fitxers_de_diferents_formats/2_accs_directe_a_fitxers/">2.- Accés directe a fitxers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T3_Fitxers_de_diferents_formats/3_seriaci_dobjectes/">3.- Seriació d'objectes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T3_Fitxers_de_diferents_formats/4_documents_xml/">4.- Documents XML</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T3_Fitxers_de_diferents_formats/5_documents_json/">5.- Documents JSON</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T3_Fitxers_de_diferents_formats/exercicis/">Exercicis</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">AD - Accés a Dades</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">T1. Gestió del Sistema de fitxers</li>
+      <li class="breadcrumb-item active">3. Funcionalitat de la classe File</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="3-funcionalitat-de-la-classe-file">3.- Funcionalitat de la classe File</h1>
+<p>La classe <strong>File</strong> conté una sèrie de mètodes que ens permeten traure
+informació relativa al fitxer o directori al que apunta, així com poder
+navegar (obtenint el pare o accedint a algun dels directoris fills). També ens
+permetran manipular ambdues coses, modificant la informació i l'estructura de
+directoris (crear directoris nous, esborrar, canviar el nom, ...). Veurem
+alguns d'ells, agrupats per categories.</p>
+<p>Per cert, com que ens interessa fer les aplicacions sense haver de dependre de
+la plataforma, ens serà molt útil poder situar-nos en l'arrel del dispositiu
+sense haver de posar-lo a mà. Això s'aconsegueix amb el mètode <em>static</em> de
+File anomenat <strong>listRoots()</strong>. En sistemes Linux tornarà un únic element, però
+en sistemes Windows tornarà l'arrel de cada unitat del sistema, per això és un
+array. Aquesta és una manera d'obtenir un File que apunta a l'arrel (i en el
+cas de Windows a l'arrel de C:):</p>
+<pre><code>val f = File.listRoots()[0]
+</code></pre>
+<p>Si en Windows vulguérem anar a l'arrel de <strong>D:</strong> , hauríem de posar
+<strong>File.listRoots() [1]</strong> , i així successivament.</p>
+<p>Una altra cosa que pot dur a engany és que perfectament <strong>pot no existir</strong> el
+fitxer o directori especificat en la creació del File. Recordeu que no estem
+accedint encara al contingut dels fitxers. I perfectament podem crear un File
+d'un fitxer o directori que no existeix, justament per a crear-lo.</p>
+<p><code>Mètodes per a obtenir el nom o la ruta</code></p>
+<table>
+<thead>
+<tr>
+<th><strong>getName()</strong></th>
+<th>Torna el nom del fitxer o directori</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>getPath()</strong></td>
+<td>Torna la ruta (relativa)</td>
+</tr>
+<tr>
+<td><strong>getAbsolutePath()</strong></td>
+<td>Torna la ruta absoluta</td>
+</tr>
+<tr>
+<td><strong>getCanonicalPath()</strong></td>
+<td>Torna la ruta absoluta sense possibles redundàncies</td>
+</tr>
+</tbody>
+</table>
+<p><strong>getPath()</strong> dóna la ruta fins arribar al fitxer, però relativa, tal i com
+s'especifica en el moment de crear el File.</p>
+<p><strong>getAbsolutePath()</strong> dóna la ruta absoluta, des de l'arrel. En determinades
+ocasions poden haver redundàncies en la ruta</p>
+<p><strong>getCanonicalPath()</strong> dóna la ruta absoluta, des de l'arrel, i sense
+redundàncies. Té com a inconvenient una utilització més complicada que
+getAbsolutePath.</p>
+<p>En el següent exemple s'intenta mostrar això de les redundàncies, que
+<strong>getCanonicalPath()</strong> resol completament. Observeu com per a il·lustrar
+l'exemple fem referència a un fitxer d'una forma complicada. Suposem que el
+directori actiu és <strong>/home/usuari/workspace/Tema1</strong> , i volem fer referència a
+un fitxer situat en un subdirectori anomenat <strong>fitxers</strong>. Si copiem el següent
+codi en el fitxer <strong>Exemple_1_3.kt</strong> :</p>
+<pre><code>package exemples
+
+import java.io.File
+
+fun main(args: Array&lt;String&gt;) {
+    val f = File("fitxers/../fitxers/f1.txt")
+    println("Nom del fitxer: " + f.getName())
+    println("Ruta del fitxer: " + f.getPath())
+    println("Ruta absoluta del fitxer: " + f.getAbsolutePath())
+    println("Ruta canònica del fitxer: " + f.getCanonicalPath())
+}
+</code></pre>
+<p>Si suposem que el directori actiu és
+<strong>/home/usuari/IdeaProjects/Tema1</strong> (recordeu que per defecte el directori
+actiu és el directori on està el projecte), el resultat serà:</p>
+<pre><code>Nom del fitxer: f1.txt
+Ruta del fitxer: fitxers/../fitxers/f1.txt
+Ruta absoluta del fitxer: /home/usuari/IdeaProjects/Tema1/fitxers/../fitxers/f1.txt
+Ruta absoluta del fitxer: /home/usuari/IdeaProjects/Tema1/fitxers/f1.txt
+</code></pre>
+<p>Recordeu que no cal que existesca el fitxer <strong>f1.txt</strong> , o el subdirectori
+<strong>fitxers</strong>.</p>
+<p><code>Mètodes per a obtenir els fills o el pare</code></p>
+<table>
+<thead>
+<tr>
+<th><strong>list()</strong></th>
+<th>Torna un <strong>array de Strings</strong> amb els noms de tots els elements continguts en el File</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>listFiles()</strong></td>
+<td>Torna un <strong>array de Files</strong> amb tots els elements continguts en el File</td>
+</tr>
+<tr>
+<td><strong>getParent()</strong></td>
+<td>Torna el <strong>nom</strong> (string) del pare (si no existeix per ser l'arrel, tornarà nul)</td>
+</tr>
+<tr>
+<td><strong>getParentFile()</strong></td>
+<td>Torna el <strong>pare com un File</strong> (si no existeix per ser l'arrel, tornarà nul)</td>
+</tr>
+</tbody>
+</table>
+<p>Ja hem vist la utilitat de <strong>list()</strong> , que torna un array de strings. En
+ocasions ens serà de moltíssima utilitat <strong>listFiles()</strong> , ja que torna un
+array de Files. Si a açò adjuntem els mètodes <strong>getParent()</strong> i
+<strong>getParentFile()</strong> , veiem que podrem navegar pel sistema de fitxers.</p>
+<p><code>Mètodes per veure l'existència i característiques</code></p>
+<table>
+<thead>
+<tr>
+<th><strong>exists()</strong></th>
+<th>Torna true si el fitxer o directori existeix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>isDirectory()</strong></td>
+<td>Torna true si és un directori</td>
+</tr>
+<tr>
+<td><strong>isFile()</strong></td>
+<td>Torna true si és un fitxer</td>
+</tr>
+<tr>
+<td><strong>length()</strong></td>
+<td>Torna la grandària del fitxer en bytes</td>
+</tr>
+<tr>
+<td><strong>lastModified()</strong></td>
+<td>Torna la data de modificació del fitxer o directori</td>
+</tr>
+<tr>
+<td><strong>setLastModified()</strong></td>
+<td>Actualitza la data de modificació del fitxer o directori</td>
+</tr>
+</tbody>
+</table>
+<p>Com ja havíem comentat abans, en el moment de crear el File, pot ser existesca
+o no el fitxer o directori, és a dir, que potser es corresponga o no amb un
+fitxer real. Si volem comprovar l'existència podem utilitzar el mètode
+<strong>exists()</strong>.</p>
+<p>Anem a modificar l'exemple 2, on tornàvem tots els fitxers i directoris d'un
+directori introduït per teclat. Primer ens assegurem que existeix i és un
+directori. Després el millorarem tornant la grandària de cada fitxer si és un
+fitxer, i especificant que és un directori, si ho és. Ens convindrà
+<strong>listFiles()</strong> per a poder mirar si és un fitxer o directori, la grandària,
+... També hem aprofitat per crear el mètode estàtic <strong>llistat(File)</strong> , que
+mostrarà el contingut del directori on apunta el File, i així estructurar-lo
+un poc millor. Copieu el següent codi en un fitxer anomenat <strong>Exemple_1_4.kt</strong></p>
+<pre><code>package exemples
+
+import java.io.BufferedReader
+import java.io.File
+import java.io.InputStreamReader
+
+fun main(args: Array&lt;String&gt;) {
+    println("Introdueix un directori:")
+    val ent = BufferedReader(InputStreamReader(System.`in`)).readLine()
+    val f = File(ent)
+    if (f.exists()) {
+        if (f.isDirectory()) {
+            llistaDirectori(f)
+        } else
+            println("No és un directori")
+    } else
+        println("No existeix el directori")
+}
+
+fun llistaDirectori(f: File) {
+    val s = "Llista de fitxers i directoris del directori " + f.getCanonicalPath()
+    println(s)
+    println("-".repeat(s.length))
+    for (e in f.listFiles().sorted()) {
+        if (e.isFile())
+            println(e.getName() + "\t " + e.length())
+        if (e.isDirectory())
+            println(e.getName() + "\t &lt;Directori&gt;")
+    }
+}
+</code></pre>
+<p>I aquest seria el resultat si introduïm el directori actual ( . )</p>
+<p><img alt="" src="../T1_3_1.png" /></p>
+<p><code>Mètodes per als permisos</code></p>
+<p>Els següents mètodes ens permeten consultar i modificar els permisos del File,
+al més pur estil Linux</p>
+<table>
+<thead>
+<tr>
+<th><strong>canRead()</strong></th>
+<th>Torna true si es té permís de lectura sobre el fitxer o directori</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>canWrite()</strong></td>
+<td>Torna true si es té permís d'escriptura sobre el fitxer o directori</td>
+</tr>
+<tr>
+<td><strong>canExecute()</strong></td>
+<td>Torna true si és executable</td>
+</tr>
+<tr>
+<td><strong>setReadable(Boolean,Boolean)</strong></td>
+<td>Dóna permís o no de lectura sobre el fitxer, segons el primer paràmetre. En el segon indiquem si afecta només al propietari (true) o a tot el món (false)</td>
+</tr>
+<tr>
+<td><strong>setWritable(Boolean,Boolean)</strong></td>
+<td>Dóna permís d'escriptura o no, segons el valor del primer paràmetre. El segon actua igual que abans</td>
+</tr>
+<tr>
+<td><strong>setExecutable(Boolean,Boolean)</strong></td>
+<td>Dóna permís d'execució, segons el valor del primer paràmetre. El segon actua igual que abans</td>
+</tr>
+</tbody>
+</table>
+<p><code>Mètodes de creació i esborrat</code></p>
+<p>Ens permetran crear diectoris, fitxers buits i esborrar-los</p>
+<table>
+<thead>
+<tr>
+<th><strong>createNewFile()</strong></th>
+<th>Crea un fitxer nou buit associat al File, sempre que no existesca ja un amb el mateix nom</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>delete()</strong></td>
+<td>Esborra el fitxer o directori</td>
+</tr>
+<tr>
+<td><strong>mkdir()</strong></td>
+<td>Crea un directori amb el nom indicat en la creació del File. Ha d'existir el directori pare</td>
+</tr>
+<tr>
+<td><strong>mkdirs()</strong></td>
+<td>Com l'anterior, però si cal crea tots els directoris de la ruta necessaris</td>
+</tr>
+<tr>
+<td><strong>renameTo(String nou_nom)</strong></td>
+<td>Canvia el nom del fitxer o directori</td>
+</tr>
+</tbody>
+</table>
+<p><code>Mètodes sobre l'espai del dispositiu</code></p>
+<p>També disposem de mètodes que ens diuen l'espai total i lliure del dispositiu
+on està situat el File</p>
+<table>
+<thead>
+<tr>
+<th><strong>getFreeSpace()</strong></th>
+<th>Torna l'espai lliure del dispositiu on està situat el File</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>getUsableSpace()</strong></td>
+<td>Torna l'espai utilitzable per l'aplicació (menor que l'espai lliure)</td>
+</tr>
+<tr>
+<td><strong>getTotalSpace()</strong></td>
+<td>Torna l'espai total del dispositiu on està situat el File</td>
+</tr>
+</tbody>
+</table>
+<div style="background-color: #d6eaf8; color: black; padding: 5px;">  
+<b> Mètodes específics de Kotlin</b>
+</div>
+<p></p>
+
+<p>Kotlin afegeix funcionalitat a la classe File. Així el següents mètodes són
+específics de Kotlin, i no els trobaríem en Java</p>
+<table>
+<thead>
+<tr>
+<th><strong>walk()</strong></th>
+<th>Torna una seqüència per a visitar tots els fitxers i subdirectoris, i els seus continguts. Es pot indicar la manera d'accedir als subdirectoris amb paràmentres. La manera d'actuar per defecte és primer mostrar el propi directori, i després els descendents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>walkTopDown()</strong></td>
+<td>El mateix que l'anterior en l'opció per defecte</td>
+</tr>
+<tr>
+<td><strong>walkBottomUp()</strong></td>
+<td>Igual que l'anterior, però mostrant abans els descendents i després el propi directori</td>
+</tr>
+</tbody>
+</table>
+<p>Per tant són una forma còmoda per a accedir a tota l'estructura de directoris
+i fitxers que pengen de l'actual directori.</p>
+<p>Modificarem l'exemple 2, per a mostrar ara tots els descendents del directori
+intruït per teclat. Copieu el següent codi en en un fitxer anomenat
+<strong>Exemple_1_5.kt</strong></p>
+<pre><code>package exemples
+
+import java.io.File
+import java.io.BufferedReader
+import java.io.InputStreamReader
+
+fun main(args: Array&lt;String&gt;) {
+    println("Introdueix un directori:")
+    val ent = BufferedReader(InputStreamReader(System.`in`)).readLine()
+    val f = File(ent)
+    System.out.println("Llista de fitxers i directoris del directori " + ent)
+    System.out.println("---------------------------------------------------")
+    for (e in f.walk().sorted())
+        System.out.println(e);
+}
+</code></pre>
+<p>I el resultat seria, si introduïm el directori actual ( . ):</p>
+<p><img alt="" src="../T1_3_2.png" /></p>
+<p>Es pot observar que primer mostra un determinat directori i després tot el seu
+contingut. Per exemple <strong>./src</strong> està abans que tots els seus descendents. Amb
+<strong>walkBottomUp()</strong> seria a l'inrevès, per exemple primer tots els descendents
+de <strong>./src</strong> , i després el propi <strong>./src</strong></p>
+<hr />
+<p>Llicenciat sota la  <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial
+CompartirIgual 2.5</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../2_la_classe_file_generalitats/" class="btn btn-neutral float-left" title="2. La classe File. Generalitats."><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../exercicis/" class="btn btn-neutral float-right" title="Exercicis">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../2_la_classe_file_generalitats/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../exercicis/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://asalvadorc.github.io/AD_Ficheros/AD_T3_Fitxers_de_diferents_formats/4_documents_xml/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>4.- Documents XML - AD - Accés a Dades</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "4.- Documents XML";
+        var mkdocs_page_input_path = "AD_T3_Fitxers_de_diferents_formats/4_documents_xml.md";
+        var mkdocs_page_url = "/AD_Ficheros/AD_T3_Fitxers_de_diferents_formats/4_documents_xml/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../assets/logocaminas.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">T1. Gestió del Sistema de fitxers</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T1_Sistema_de_fitxers/objectius/">Objectius</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T1_Sistema_de_fitxers/1_introducci/">1. Introducció</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T1_Sistema_de_fitxers/2_la_classe_file_generalitats/">2. La classe File. Generalitats.</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T1_Sistema_de_fitxers/3_funcionalitat_de_la_classe_file/">3. Funcionalitat de la classe File</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T1_Sistema_de_fitxers/exercicis/">Exercicis</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">T2. Gestió del contingut de fitxers</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T2_Gesti_del_contingut_de_fitxers/objectius/">Objectius</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T2_Gesti_del_contingut_de_fitxers/1__magatzems_i_fluxos_de_dades/">1 - Magatzems i fluxos de dades</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T2_Gesti_del_contingut_de_fitxers/2__manipulaci_dels_fluxos_de_dades/">2 - Manipulació dels fluxos de dades</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T2_Gesti_del_contingut_de_fitxers/3__fluxos_decoradors/">3 - Fluxos decoradors</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T2_Gesti_del_contingut_de_fitxers/4__simplificaci_en_kotlin/">4 - Simplificació en Kotlin</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AD_T2_Gesti_del_contingut_de_fitxers/exercicis/">Exercicis</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">T3. Fitxers de diferents formats</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../objectius/">Objectius</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1_fitxers_binaris_amb_formats_especfics/">1.- Fitxers binaris amb formats específics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_accs_directe_a_fitxers/">2.- Accés directe a fitxers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3_seriaci_dobjectes/">3.- Seriació d'objectes</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">4.- Documents XML</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#41-parser-o-analitzador-xml">4.1 - Parser o analitzador XML</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#42-lestructura-dom">4.2 - L'estructura DOM</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#421-lectura">4.2.1 Lectura</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#422-escriptura">4.2.2 Escriptura</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_documents_json/">5.- Documents JSON</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../exercicis/">Exercicis</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">AD - Accés a Dades</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">T3. Fitxers de diferents formats</li>
+      <li class="breadcrumb-item active">4.- Documents XML</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="4-documents-xml">4.- Documents XML</h1>
+<p>Hem vist que la manera més còmoda de guardar objectes és amb la seriació, per
+mig del <strong>ObjectInputStream</strong> i <strong>ObjectOutputStream</strong> , però que <strong>fora</strong> de
+Java o de Kotlin <strong>no és possible</strong> l'accés a aquestes dades. I com havíem
+comentat en l'última nota de la pregunta anterior, també dins de Kotlin podem
+tenir problemes, perquè el nom de la classe amb el nom del paquet es guarda en
+el fitxer com a metades, i en un altre programa haurem de tenir la classe
+creada en un paquet amb el mateix nom, sinó no es podran recuperar les dades.
+I fins i tot dient-se exactament igual, poden haver problemes si el
+<strong>serialVersionUID</strong> de la classe no és el mateix.</p>
+<p>També hem vist que per a guardar dades individuals de diferents tipus ens van
+molt bé les classes <strong>DataInputStream</strong> i <strong>DataOutputStream</strong> , però haurem
+de saber molt bé l'ordre i tipus de dades que estan guardades, sinó, no les
+podrem recuperar.</p>
+<p>I no entrem ja en la possibilitat que diferents Sistemes Operatius representen
+la informació de forma diferent (per exemple, hi ha Sistemes Operatius que
+representen els números amb BCD i altres que utilitzen complement a 2).</p>
+<p>Per tant, quan vulguem guardar dades que puguen ser llegides per aplicacions
+fetes en diferents llenguatges i/o executades en diferents plataformes, ens
+farà falta un format estàndar que tots el puguen entendre i reconéixer, i
+millor si és autoexplicatiu com és el cas dels <strong>llenguatges de marques</strong>.</p>
+<p>El llenguatge de marques més conegut i més utilitzat és el <strong>XML</strong>
+(<em><strong>eXtensible Markup Language</strong></em>)</p>
+<p>Els documents XML aconsegueixen estructurar la informació intercalant unes
+marques anomenades etiquetes, cada etiqueta amb un principi i un final, i que
+poden anar unes dins d'unes altres, i també contenir informació de text.
+D’aquesta manera, es podrà subdividir la informació estructurant-la de forma
+que puga ser fàcilment interpretada.</p>
+<p>Tota la informació serà de text, i per tant no hi haurà el problema mencionat
+abans de representar les dades de diferent manera. Qualsevol dada, ja siga
+numèrica, booleana o com siga, es posarà en mode text, i per tant sempre es
+podrà llegir i interpretar correctament tota la informació continguda en un
+fitxer XML.</p>
+<p>És cert que els caràcters es poden escriure utilitzant diferents sistemes de
+codificació, però XML ofereix diverses tècniques per evitar que això siga un
+problema, com per exemple, incloent a la capçalera del fitxer quina
+codificació s’ha fet servir en el moment de guardar-lo.</p>
+<p>Amb les etiquetes, XML aconsegueix estructurar qualsevol tipus d’informació
+jeràrquica. Es pot establir certa similitud entre la forma com la informació
+es guarda en els objectes d’una aplicació i la forma com es guardaria en un
+document XML. La informació, en les aplicacions orientades a objectes,
+s’estructura, agrupa i jerarquitza en classes, i en els documents XML
+s’estructura, organitza i jerarquitza en etiquetes contingudes unes dins les
+altres i atributs de les etiquetes.</p>
+<p><img alt="" src="../u1_import_image_14.png" /></p>
+<p>Imaginem que volem representar les dades dels empleats com els de l’aparat
+anterior utilitzant un format XML. No existeix una única solució, però és
+obligatori que totes respecten la jerarquia del model. Un possible format
+podria ser el següent:</p>
+<pre><code class="language-xml">&lt;empresa&gt;  
+    &lt;empleat&gt;  
+        &lt;num&gt;1&lt;/num&gt;
+        &lt;nom&gt;Andreu&lt;/nom&gt;  
+        &lt;departament&gt;10&lt;/departament&gt;  
+        &lt;edat&gt;32&lt;/edat&gt;  
+        &lt;sou&gt;1000.0&lt;/sou&gt;
+    &lt;/empleat&gt;
+
+    &lt;empleat&gt;  
+        &lt;num&gt;2&lt;/num&gt;
+        &lt;nom&gt;Bernat&lt;/nom&gt;  
+        &lt;departament&gt;20&lt;/departament&gt;  
+        &lt;edat&gt;28&lt;/edat&gt;  
+        &lt;sou&gt;1200.0&lt;/sou&gt;
+    &lt;/empleat&gt;
+
+    &lt;empleat&gt;  
+        &lt;num&gt;3&lt;/num&gt;
+        &lt;nom&gt;Clàudia&lt;/nom&gt;  
+        &lt;departament&gt;10&lt;/departament&gt;  
+        &lt;edat&gt;26&lt;/edat&gt;  
+        &lt;sou&gt;1100.0&lt;/sou&gt;
+    &lt;/empleat&gt;
+
+    &lt;empleat&gt;  
+        &lt;num&gt;4&lt;/num&gt;
+        &lt;nom&gt;Damià&lt;/nom&gt;  
+        &lt;departament&gt;10&lt;/departament&gt;  
+        &lt;edat&gt;40&lt;/edat&gt;  
+        &lt;sou&gt;1500.0&lt;/sou&gt;
+    &lt;/empleat&gt;
+&lt;/empresa&gt;
+</code></pre>
+<p>Però aquesta també podria ser una manera de representar-lo:</p>
+<pre><code class="language-xml">&lt;empresa&gt;  
+    &lt;empleat num='1' nom='Andreu' departament='10' edat='32' sou='1000.0'/&gt;
+    &lt;empleat num='2' nom='Bernat' departament='20' edat='28' sou='1200.0'/&gt;
+    &lt;empleat num='3' nom='Clàudia' departament='10' edat='26' sou='1100.0'/&gt;
+    &lt;empleat num='4' nom='Damià' departament='10' edat='40' sou='1500.0'/&gt;
+&lt;/empresa&gt;
+</code></pre>
+<p>I podem imaginar moltes altres solucions, combinant considerant com atributs o
+subetiquetes les diferents característiques dels empleats que volem guardar.
+Aquest seria el problema principal del XML, les múltiples solucions. Però
+també és veritat que totes elles són fàcils d'entendre.</p>
+<h2 id="41-parser-o-analitzador-xml">4.1 - Parser o analitzador XML</h2>
+<p>Un <strong><em>Parser</em> XML</strong> és una classe que ens permet analitzar i classificar el
+contingut d’un arxiu XML extraient la informació continguda en cada una de les
+etiquetes, i relacionar-la d’acord amb la seua posició dins la jerarquia.</p>
+<p>Hi ha dos tipus d'analitzadors depenent de la manera de funcionar.</p>
+<p><code>Analitzadors seqüencials</code></p>
+<p>Els <strong>analitzadors seqüencials</strong> permeten extreure el contingut a mida que es
+van descobrint les etiquetes d’obertura i tancament. També s’anomenen
+<strong>analitzadors sintàctics</strong>. Són analitzadors molt ràpids, però presenten el
+problema que cada vegada que es necessita accedir a una part del contingut,
+s'ha de rellegir tot el document de dalt a baix.</p>
+<p>En Java, l’analitzador sintàctic més popular s’anomena <strong>SAX</strong> , que vol dir
+<strong>Simple API for XML</strong>. És una analitzador molt utilitzat en diverses
+biblioteques de tractament de dades XML, però no sol utilitzar-se en
+aplicacions finals, pel problema abans comentat d'haver de llegir-se tot el
+document XML a cada consulta. Per aquesta raó no els veurem en aquest curs.</p>
+<p><code>Analitzadors jeràrquics</code></p>
+<p>Generalment, les aplicacions finals que han de treballar amb dades XML solen
+utilitzar analitzadors jeràrquics.</p>
+<p>Els <strong>analitzadors jeràrquics</strong> guarden totes les dades del document XML en
+memòria dins una estructura jeràrquica, a mida que van analitzant el seu
+contingut. I per això són ideals per a aplicacions que requereixen una
+consulta contínua de les dades.</p>
+<p>El<strong>format de l’estructura</strong> on es guarda la informació en memòria ha estat
+especificat per l’organisme internacional W3C (World Wide Web Consortium) i es
+coneix com a <strong>DOM</strong> (<em><strong>Document Object Model</strong></em>). És una estructura que HTML
+i javascript han popularitzat molt i es tracta d’una especificació que Java
+materialitza en forma d’interfícies. La principal s’anomena <strong><em>Document</em></strong> i
+representa tot un document XML. En tractar-se d’una interfície, pot ser
+implementada per diverses classes.</p>
+<p>L’estàndard W3C defineix la classe <strong>DocumentBuilder</strong> (constructor de
+documents) per a poder crear estructures DOM a partir d’un XML. Aquesta classe
+<strong>DocumentBuilder</strong> és una classe abstracta, i per tal que es puga adaptar a
+les diferents plataformes, pot necessitar fonts de dades o requeriments
+diversos. Recordeu que les classes abstractes no es poden instanciar de forma
+directa. Per aquest motiu, el consorci W3 especifica també la classe
+<strong>DocumentBuilderFactory</strong> , és a dir, el  <em>fabricador</em> de  <em>DocumentBuilder</em>.</p>
+<p>Les llibreries des d'on importarem les classes comentades són:</p>
+<ul>
+<li><strong>DocumentBuilderFactory</strong> i <strong>DocumentBuilder</strong> les importarem de la llibreria <strong>javax.xml.parsers.</strong>*</li>
+<li><strong>Document</strong> l'importarem de <strong>org.w3c.dom.</strong>*</li>
+</ul>
+<p>Hem de cuidar sobretot aquesta última importació, perquè per defecte Java ens
+ofereix moltes llibreries des d'on importar <strong>Document</strong>. I si no la importem
+de la llibreria correcta, evidentment després tindrem errors.</p>
+<p>Les instruccions necessàries per llegir un fitxer XML i crear un objecte
+<strong>Document</strong> serien les següents:</p>
+<pre><code>import java.io.FileInputStream
+
+import javax.xml.parsers.DocumentBuilder
+import javax.xml.parsers.DocumentBuilderFactory
+
+import org.w3c.dom.Document
+
+...
+
+    val dbFactory = DocumentBuilderFactory.newInstance()
+
+    val dBuilder = dbFactory.newDocumentBuilder()
+
+    val doc = dBuilder.parse(File(“fitxer.xml”))
+</code></pre>
+<p>Tornem a insistir en la necessitat d'importar <strong>Document</strong> de la llibreria
+<strong>org.w3c.dom.</strong>*</p>
+<p>Anem a basar-nos en un exemple per poder veure a poc a poc la manera
+d'utilitzar el parser. És un exemple que possiblement es va veure en primer,
+en el mòdul de Llenguatge de Marques. Suposarem que està en el fitxer
+<strong>cotxes.xml</strong> , i que està en el directori del projecte on farem les proves.</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;oferta&gt;
+    &lt;vehiculo&gt;
+        &lt;marca&gt;ford&lt;/marca&gt;
+        &lt;modelo color=&quot;gris&quot;&gt;focus&lt;/modelo&gt;
+        &lt;motor combustible=&quot;gasolina&quot;&gt;duratorc 1.4&lt;/motor&gt;
+        &lt;matricula&gt;1234AAA&lt;/matricula&gt;
+        &lt;kilometros&gt;12500&lt;/kilometros&gt;
+        &lt;precio_inicial&gt;12000&lt;/precio_inicial&gt;
+        &lt;precio_oferta&gt;10000&lt;/precio_oferta&gt;
+        &lt;extra valor=&quot;250&quot;&gt;pintura metalizada&lt;/extra&gt;
+        &lt;extra valor=&quot;300&quot;&gt;llantas&lt;/extra&gt;
+        &lt;foto&gt;11325.jpg&lt;/foto&gt;
+        &lt;foto&gt;11326.jpg&lt;/foto&gt;
+    &lt;/vehiculo&gt;
+    &lt;vehiculo&gt;
+        &lt;marca&gt;ford&lt;/marca&gt;
+        &lt;modelo color=&quot;gris&quot;&gt;focus&lt;/modelo&gt;
+        &lt;motor combustible=&quot;diesel&quot;&gt;duratorc 2.0&lt;/motor&gt;
+        &lt;matricula&gt;1235AAA&lt;/matricula&gt;
+        &lt;kilometros&gt;125000&lt;/kilometros&gt;
+        &lt;precio_inicial&gt;10000&lt;/precio_inicial&gt;
+        &lt;precio_oferta&gt;9000&lt;/precio_oferta&gt;
+        &lt;extra valor=&quot;250&quot;&gt;pintura metalizada&lt;/extra&gt;
+        &lt;extra valor=&quot;200&quot;&gt;spoiler trasero&lt;/extra&gt;
+        &lt;extra valor=&quot;500&quot;&gt;climatizador&lt;/extra&gt;
+        &lt;foto&gt;11327.jpg&lt;/foto&gt;
+        &lt;foto&gt;11328.jpg&lt;/foto&gt;
+    &lt;/vehiculo&gt;
+&lt;/oferta&gt;
+</code></pre>
+<p>El primer que farem serà intentar connectar amb aquest fitxer, però d'una
+forma un poc més reduïda que abans, sense definir objectes del
+<strong>DocumentBuilderFactory</strong> ni <strong>DocumentBuilder</strong>. Tampoc ens caldrà definir-
+nos el <strong>File</strong> (<strong>FileInputStream</strong>) ja que el mètode <strong>parse</strong> també agafa
+un <strong>String</strong> com a paràmetre:</p>
+<pre><code>import javax.xml.parsers.DocumentBuilderFactory
+
+import org.w3c.dom.Document
+
+...
+
+val doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse("cotxes.xml")
+</code></pre>
+<p>Però, i si el procés que necessitem és l'invers? És a dir, i si el que volem
+és guardar una estructura DOM en un fitxer XML?</p>
+<p>En aquest cas el que haurem de fer serà construir un <strong>document buit</strong> , anar
+posant els elements i atributs (amb els seus valors) d'alguna manera, i
+posteriorment guardar-lo en un fitxer. Deixem per a un poc més avant com anar
+construint els nodes del document i centrem-nos en el fet de crear el document
+buit i guardar-lo en un fitxer. Podem construir un document nou a partir del
+<strong>DocumentBuilder</strong> , utilitzant el mètode <strong>newDocument()</strong> :</p>
+<pre><code>import javax.xml.parsers.DocumentBuilderFactory
+
+import org.w3c.dom.Document
+
+...
+
+  val doc1 = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument()
+</code></pre>
+<p>Per a escriure la informació continguda al DOM a un fitxer, es pot fer
+utilitzant una altra utilitat de Java anomenada <strong><em>Transformer</em></strong>. Es tracta
+d’una utilitat que permet realitzar fàcilment conversions entre diferents
+representacions d’informació jeràrquica. És capaç, per exemple, de passar la
+informació continguda en un objecte <strong>Document a un fitxer de text en format
+XML</strong>. També seria capaç de fer l’operació inversa, però no val la pena perquè
+el mateix <em>DocumentBuilder</em> ja s’encarrega d’això.</p>
+<p><strong><em>Transformer</em></strong> és també una classe abstracta i requereix d’una <em>factory</em>
+per poder ser instanciada. La classe <strong>Transformer</strong> pot treballar amb
+multitud de contenidors d’informació perquè en realitat treballa amb un parell
+de tipus adaptadors (classes que fan compatibles jerarquies diferents) que
+s’anomenen <strong>Source</strong> i <strong>Result</strong>. Les classes que implementen aquestes
+interfícies s’encarregaran de fer compatible un tipus de contenidor específic
+al requeriment de la classe <strong>Transformer</strong>. Així, disposem de les classes
+<strong>DOMSource</strong> , <strong>SAXSource</strong> o <strong>StreamSource</strong> com a adaptadors del
+contenidor de la font d’informació (DOM, SAX o Stream respectivament).
+<strong>DOMResult</strong> , <strong>SAXResult</strong> o <strong>StreamResult</strong> són els adaptadors
+equivalents del contenidor destí. A nosaltres ara, com que volem passar un
+document DOM a un fitxer, ens convindrà un <strong>DOMSource</strong> i un <strong>StreamResult</strong></p>
+<p>El codi bàsic per realitzar una transformació de DOM a fitxer de text XML
+seria el següent:</p>
+<pre><code>val trans = TransformerFactory.newInstance().newTransformer()
+
+val source = DOMSource(doc)
+val result = StreamResult(file)
+
+trans.transform(source, result)
+</code></pre>
+<p>De tota manera, veurem més avant un exemple on ens guardarem una estructura
+DOM en un fitxer XML.</p>
+<h2 id="42-lestructura-dom">4.2 - L'estructura DOM</h2>
+<p>L’estructura DOM pren la forma d’un arbre, on cada part del XML es trobarà
+representada en forma de <strong>node</strong>. En funció de la posició en el document XML,
+parlarem de diferents tipus de nodes:</p>
+<ul>
+<li>El node principal que representa tot el XML sencer s’anomena <strong>Document.</strong></li>
+<li>Les diverses etiquetes, inclosa l’etiqueta arrel, es coneixen com a nodes <strong>Element</strong>.</li>
+<li>El contingut d’una etiqueta de tipus text, serà un node de tipus <strong>TextElement</strong></li>
+<li>Els atributs seran nodes de tipus <strong>Attribute</strong>.</li>
+</ul>
+<p>En l'exemple de la pàgina anterior, el fitxer <strong>cotxes.xml</strong> , que té aquesta
+estructura:</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;oferta&gt;
+    &lt;vehiculo&gt;
+        &lt;marca&gt;ford&lt;/marca&gt;
+        &lt;modelo color=&quot;gris&quot;&gt;focus&lt;/modelo&gt;
+        &lt;motor combustible=&quot;gasolina&quot;&gt;duratorc 1.4&lt;/motor&gt;
+        &lt;matricula&gt;1234AAA&lt;/matricula&gt;
+        &lt;kilometros&gt;12500&lt;/kilometros&gt;
+        &lt;precio_inicial&gt;12000&lt;/precio_inicial&gt;
+        &lt;precio_oferta&gt;10000&lt;/precio_oferta&gt;
+        &lt;extra valor=&quot;250&quot;&gt;pintura metalizada&lt;/extra&gt;
+        &lt;extra valor=&quot;300&quot;&gt;llantas&lt;/extra&gt;
+        &lt;foto&gt;11325.jpg&lt;/foto&gt;
+        &lt;foto&gt;11326.jpg&lt;/foto&gt;
+    &lt;/vehiculo&gt;
+    &lt;vehiculo&gt;
+        &lt;marca&gt;ford&lt;/marca&gt;
+        &lt;modelo color=&quot;gris&quot;&gt;focus&lt;/modelo&gt;
+        &lt;motor combustible=&quot;diesel&quot;&gt;duratorc 2.0&lt;/motor&gt;
+        &lt;matricula&gt;1235AAA&lt;/matricula&gt;
+        &lt;kilometros&gt;125000&lt;/kilometros&gt;
+        &lt;precio_inicial&gt;10000&lt;/precio_inicial&gt;
+        &lt;precio_oferta&gt;9000&lt;/precio_oferta&gt;
+        &lt;extra valor=&quot;250&quot;&gt;pintura metalizada&lt;/extra&gt;
+        &lt;extra valor=&quot;200&quot;&gt;spoiler trasero&lt;/extra&gt;
+        &lt;extra valor=&quot;500&quot;&gt;climatizador&lt;/extra&gt;
+        &lt;foto&gt;11327.jpg&lt;/foto&gt;
+        &lt;foto&gt;11328.jpg&lt;/foto&gt;
+    &lt;/vehiculo&gt;
+&lt;/oferta&gt;
+</code></pre>
+<p>Veient-lo com una estructura jeràrquica ens quedaria així:</p>
+<p><img alt="" src="../T3_4_2_1.jpg" /></p>
+<p>On:</p>
+<ul>
+<li>El node <strong>Document</strong> és el rombe</li>
+<li>Els nodes <strong>Element</strong> són els cercles</li>
+<li>Els nodes <strong>TextElement</strong> són els rectàngles de fons taronja.</li>
+<li>Els nodes <strong>Attribute</strong> són els rectàngles arrodonits de color groc</li>
+</ul>
+<p>Cada node específic disposa de mètodes per accedir a les seues dades concretes
+(nom, valor, nodes fills, node pare, etc.). És a dir, que el <strong>node</strong> serveix
+per a situar-se en una determinada posició (element, atribut, element de text,
+...). Tindrà uns mètodes, sobretot per a navegar, encara que també alguns per
+a traure el contingut. <strong>Element</strong> és un classe derivada de <strong>Node</strong> (per tant
+hereta tots els seus mètodes), i proporciona algunes coses més, sobretot per a
+accedir còmodament a les seues parts. Mirem els mètodes més importants, tant
+de <strong>Node</strong> com de <strong>Element</strong> i <strong>Document</strong></p>
+<p><strong>Mètodes de NODE</strong></p>
+<table>
+<thead>
+<tr>
+<th>Valor tornat</th>
+<th>Mètode</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>String</td>
+<td><strong>getNodeName()</strong></td>
+<td>torna el nom d'aquest node</td>
+</tr>
+<tr>
+<td>short</td>
+<td><strong>getNodeType()</strong></td>
+<td>torna el tipus d'aquest node (ELEMENT_NODE, ATTRIBUTE_NODE, <br> TEXT_NODE, ...</td>
+</tr>
+<tr>
+<td>String</td>
+<td><strong>getNodeValue()</strong></td>
+<td>torna el valor del node, si en té</td>
+</tr>
+<tr>
+<td>NodeList</td>
+<td><strong>getChildNodes()</strong></td>
+<td>torna una llista amb els nodes fills</td>
+</tr>
+<tr>
+<td>Node</td>
+<td><strong>getFirstChild()</strong></td>
+<td>torna el primer fill</td>
+</tr>
+<tr>
+<td>Node</td>
+<td><strong>getLastChild()</strong></td>
+<td>torna l'últim fill</td>
+</tr>
+<tr>
+<td>NamedNodeMap</td>
+<td><strong>getAttributes()</strong></td>
+<td>torna una llista amb els atributs del node (null si no en té cap)</td>
+</tr>
+<tr>
+<td>Node</td>
+<td><strong>getParentNode()</strong></td>
+<td>torna el pare</td>
+</tr>
+<tr>
+<td>String</td>
+<td><strong>getTextContent()</strong></td>
+<td>torna el text contingut en l'element i el de tots els seus descendents, si en té</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td><strong>hasChildNodes()</strong></td>
+<td>torna cert si el node té algun fill</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td><strong>hasAttributes()</strong></td>
+<td>torna cert si el node té algun atribut</td>
+</tr>
+</tbody>
+</table>
+<p>Mètodes d' <strong>ELEMENT</strong></p>
+<table>
+<thead>
+<tr>
+<th>Valor tornat</th>
+<th>Mètode</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>String</td>
+<td><strong>getAttribute(</strong> String nom<strong>)</strong></td>
+<td>torna el valor de l'atribut que té aquest nom</td>
+</tr>
+<tr>
+<td>NodeList</td>
+<td><strong>getElementsByTagName(</strong> String nom<strong>)</strong></td>
+<td>torna una llista de nodes amb tots els descendents que tenen<br>  aquest nom</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td><strong>hasAttribute(</strong> String nom<strong>)</strong></td>
+<td>torna cert si l'element té aquest atribut</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mètodes de DOCUMENT</strong></p>
+<table>
+<thead>
+<tr>
+<th>Valor tornat</th>
+<th>Mètode</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Element</td>
+<td><strong>getDocumentElement()</strong></td>
+<td>torna l'element arrel del document</td>
+</tr>
+<tr>
+<td>NodeList</td>
+<td><strong>getElementsByTagName(</strong> String nom<strong>)</strong></td>
+<td>torna una llista de nodes amb tots els descendents que tenen <br> aquest nom</td>
+</tr>
+</tbody>
+</table>
+<p><u><strong>Nota</strong></u></p>
+<div style="background-color: #d6eaf8; color: black; padding: 5px;">
+Kotlin ens "suggerirà" canviar molts dels mètodes anteriors per propietats.
+Per exemple per al mètode <b>getNodeName()</b> ens suggerirà de canviar-lo per la
+propietat <b>nodeName</b>. Podeu substituir per la propietat o deixar el mètode,
+el que vulgueu.
+</div>
+<p></p>
+<p>Sempre que tinguem una <strong>llista de nodes</strong>, podrem accedir a cadascun dels
+membres de la llista amb el mètode <strong>item</strong> especificant el número d'ordre.
+Així, si volem accedir al primer posarem <strong>item(0)</strong></p>
+<p>Posterioment posarem els mètodes que serveixen per anar posant contingut a un
+document: crear fills, crear atributs, posar contingut, ...</p>
+<p>El DOM resultant obtingut des d’un XML acaba sent un còpia exacta del fitxer,
+però disposat de diferent manera. Tant al XML com al DOM hi haurà informació
+no visible, com ara els <strong><em>retorns de carro</em></strong> , que cal tenir en compte per tal
+de saber processar correctament el contingut i evitar sorpreses poc
+comprensibles.</p>
+<p>Per a il·lustrar el problema que poden suposar els <strong>retorn de carro</strong>, imaginem
+que disposem d’un document XML amb el següent contingut:</p>
+<pre><code class="language-xml">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+<p>Veurem més clar si representem els retorn de carro en el mateix document:</p>
+<pre><code class="language-xml">&lt;table&gt;¶
+  &lt;tr&gt;¶
+    &lt;td&gt; &lt;/td&gt;¶
+    &lt;td&gt; &lt;/td&gt;¶
+  &lt;/tr&gt;¶
+&lt;/table&gt;
+</code></pre>
+<p>A la següent figura es mostra la representació que tindria l’objecte DOM, un
+vegada estiga ja copiat en memòria. Observeu com l’element <strong>table</strong> tindrà
+tres fills. En un es guardarà el <strong>retorn de carro</strong> que situa l’etiqueta 
+<strong><em>&lt; tr &gt;</em></strong> a la següent línia, en el segon trobarem l’etiqueta <strong><em>&lt; tr &gt;</em></strong>, i en
+el tercer el retorn de carro que fa que <strong><em>&lt;/ table &gt;</em></strong> estiga en la línia de
+baix. El mateix passa amb els fills de <strong><em>&lt; tr &gt;</em></strong>, abans i després de cada
+node <strong><em>&lt; td &gt;</em></strong> trobarem un <strong>retorn de carro</strong>.</p>
+<p><img alt="" src="../T3_4_2_1.png" /></p>
+<p>En canvi, si haguérem partit d'un XML equivalent però sense retorns de carro,
+el resultat hauria estat diferent:</p>
+<pre><code class="language-xml">&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+</code></pre>
+<p><img alt="" src="../T3_4_2_2.png" /></p>
+<p>L’absència de retorns de carro en el fitxer implica també l’absència de nodes
+contenint els retorns de carro en l’estructura DOM.</p>
+<p>Un altre aspecte a tenir en compte és que el contingut de les etiquetes es
+plasma en el DOM com un node fill de l’etiqueta contenidora. És a dir, per
+obtenir el text d’una etiqueta cal obtenir el primer fill d’aquesta.</p>
+<pre><code class="language-xml">&lt;aaa&gt;
+  &lt;bbb&gt;
+    text de l'etiqueta bbb
+  &lt;/bbb&gt;
+&lt;/aaa&gt;
+</code></pre>
+<p><img alt="" src="../T3_4_2_3.png" /></p>
+<h3 id="421-lectura">4.2.1 Lectura</h3>
+<p>Anem a fer proves per poder comprovar el funcionament. Ens basem en el
+document <strong>cotxes.xml</strong> esmentat en la pregunta 4.1</p>
+<p><strong><u>Nota</u></strong></p>
+<div style="background-color: #d6eaf8; color: black; padding: 5px;">
+Aneu amb compte, perquè en el document <b>cotxes.xml</b> davant de la primera
+etiqueta no pot haver ni retorn de carro ni un espai en blanc ni res.
+</div>
+<p></p>
+<p>Copieu el següent codi en un fitxer Kotlin anomenat
+<strong>Exemple_3_4_1_XMLMirar.kt</strong></p>
+<pre><code>package exemples
+
+import javax.xml.parsers.DocumentBuilderFactory
+
+fun main(args: Array&lt;String&gt;){
+
+    val doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse("cotxes.xml")
+    println(doc.getNodeName())              // torna el nom del document. No és l'element arrel. Ens dirà #document
+    val arrel = doc.getDocumentElement()    // apuntarà a l'element arrel
+    println(arrel.getNodeName())            // torna el nom de l'element. Ens dirà oferta
+    println(arrel.getNodeValue())           // torna el valor de l'element. Com és un element que conté altres elements, el valor és null
+}
+</code></pre>
+<p>Tal i com està documentat, aquesta serà l'eixida:</p>
+<pre><code>#document  
+oferta  
+null
+</code></pre>
+<p>Anem a comprovar ara que el primer fill de <strong>oferta</strong> no és <strong>vehiculo</strong> sinó
+el retorn de carro. Els element <strong>vehiculo</strong> són el segon i el quart (índex 1
+i 3). Copieu el següent codi en un fitxer Kotlin anomenat
+<strong>Exemple_3_4_2_XMLMirar2.kt</strong></p>
+<pre><code>package exemples
+
+import javax.xml.parsers.DocumentBuilderFactory
+
+fun main(args: Array&lt;String&gt;) {
+
+    val doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse("cotxes.xml")
+    val arrel = doc.getDocumentElement()  // apuntarà a l'element arrel
+    val fills = arrel.getChildNodes()
+    println(fills.item(0).getNodeName())   // el primer fill és el retorn de carro; ens dirà que és de text
+    println(fills.item(1).getNodeName())   // el segon fill sí que és vehiculo
+    println(fills.item(2).getNodeName())   // el tercer fill és el retorn de carro; ens dirà que és de text
+    println(fills.item(3).getNodeName())   // el quart fill sí que és vehiculo
+    println(fills.item(4).getNodeName())   // el cinquè fill és el retorn de carro; ens dirà que és de text
+    println(fills.item(5).getNodeName())   // no existeix el sisè fill. Donarà error
+}
+</code></pre>
+<p>Observeu que en l'última sentència estem provocant un error:</p>
+<pre><code>#text  
+vehiculo  
+#text  
+vehiculo  
+#text  
+Exception in thread &quot;main&quot; java.lang.NullPointerException  
+      at exemples.Exemple_4_2_MirarXML2.main(Exemple_4_2_MirarXML2.kt:15)
+</code></pre>
+<p>Per tant, hem d'anar molt en compte amb els <em><strong>retorns de carro</strong></em>.</p>
+<ul>
+<li>
+<p>Per a poder esquivar els <em>retorn de carro</em> podríem mirar el tipus de cada node ( <strong>getNodeType()</strong> ), menysprear els els de tipus  <em><strong>TEXT_NODE</strong></em> i considerar només els de tipus  <em><strong>ELEMENT_NODE</strong></em>.</p>
+</li>
+<li>
+<p>Però normalment l'accés que farem serà un poc més directe i més fàcil. Agafarem la llista de tots els element que tinguen un determinat nom amb <strong>getElementsByTagName(<em>nom</em>)</strong>. Evidentment en la llista no estaran els <strong>retorns de carro</strong> i així no tindrem problemes amb ells.</p>
+</li>
+</ul>
+<p>En el següent exemple recorrerem tots els element <strong>vehiculo</strong>. De cadascun
+agafarem el contingut dels elements <strong>marca</strong> i <strong>matricula</strong>. També agafem el
+contingut de l'atribut <strong>combustible</strong> de l'element <strong>motor</strong>. Guardeu el
+següent codi en un fitxer Kotlin anomenat <strong>Exemple_3_4_3_XMLMirarCotxes.kt</strong>
+:</p>
+<pre><code>package exemples
+
+import javax.xml.parsers.DocumentBuilderFactory
+import org.w3c.dom.Element
+
+fun main(args: Array&lt;String&gt;) {
+
+    val doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse("cotxes.xml")
+    val arrel = doc.getDocumentElement()  // apuntarà a l'element arrel
+    val llista = arrel.getElementsByTagName("vehiculo")
+
+    for (i in 0 until llista.getLength()) {
+        val el = llista.item(i) as Element
+        println(el.getNodeName() + " " + (i + 1))
+        println("Marca: " + el.getElementsByTagName("marca").item(0).getChildNodes().item(0).getNodeValue())
+        println("Matrícula: " + el.getElementsByTagName("matricula").item(0).getFirstChild().getNodeValue())
+        println("Motor: " + el.getElementsByTagName("motor").item(0).getTextContent())
+        println("Combustible: " + el.getElementsByTagName("motor").item(0).getAttributes().item(0).getNodeValue())
+        val m = el . getElementsByTagName ("motor").item(0) as Element
+        println("Combustible: " + m.getAttribute("combustible"))
+        println()
+    }
+    println(arrel.getTextContent())
+}
+</code></pre>
+<p>És molt important observar que quan tenim un element que ja té contingut, la
+informació no és accessible, sinó que hem d'anar al primer fill, que aquest ja
+és de tips  <em><strong>TEXT_NODE</strong></em> , per agafar el seu valor.</p>
+<p>En l'exemple:</p>
+<ul>
+<li>Per a <strong>marca</strong> hem agafat de tota la llista de fills el primer, per traure el seu valor.</li>
+<li>En <strong>matricula</strong> en compte d'agafar tota la llista de fills, només hem agafat el primer, i per tant és més ràpid.</li>
+<li>I per a <strong>motor</strong> utilitzem el mètode <strong>getTextContent</strong> , que agafa el congingut de text de l'element i de tots els seus descendents. Com és un node de text ja sabem a priori que ens anirà bé, i per tant <strong>és la forma més ràpida</strong>.</li>
+</ul>
+<p>L'atribut <strong>combustible</strong> de l'element <strong>motor</strong> l'hem tret de 2 maneres:</p>
+<ul>
+<li>La primera agafant la llista d'atributs, i després el primer d'aquesta llista.</li>
+<li>En la segona manera s'ha fet més elegant, anat a buscar la propietat en qüestió. Per això hem convertit el node en l'<strong>element</strong> <strong>m</strong> , per a poder utilitzar <strong>getAttribute</strong>.</li>
+</ul>
+<p>Al final fem el <strong>getTextContent()</strong> sobre l'arrel per a comprovar que trau el
+seu contingut i el de tots els seus fills, per això apareix la informació
+duplicada</p>
+<p>Aquest serà el resultat de l'exemple anterior:</p>
+<pre><code>vehiculo 1  
+Marca: ford  
+Matrícula: 1234AAA  
+Motor: duratorc 1.4  
+Combustible: gasolina  
+Combustible: gasolina  
+
+vehiculo 2  
+Marca: ford  
+Matrícula: 1235AAA  
+Motor: duratorc 2.0  
+Combustible: diesel  
+Combustible: diesel  
+
+
+    ford  
+    focus  
+    duratorc 1.4  
+    1234AAA  
+    12500  
+    12000  
+    10000  
+    pintura metalizada  
+    llantas  
+    11325.jpg  
+    11326.jpg  
+
+    ford  
+    focus  
+    duratorc 2.0  
+    1235AAA  
+    125000  
+    10000  
+    9000  
+    pintura metalizada  
+    spoiler trasero  
+    climatizador  
+    11327.jpg  
+    11328.jpg  
+</code></pre>
+<h3 id="422-escriptura">4.2.2 Escriptura</h3>
+<p>Anem ara a crear un nou document XML i a guardar-lo en un fitxer. Utilitzarem
+com a exemple <strong>Empleats</strong>. Al final de tot convertirem el fitxer
+<strong>Empleats.obj</strong> , generat en la pregunta 3, en el fitxer <strong>Empleats.xml</strong>.</p>
+<p>La primera consideració a fer és que partirem d'un document buit. Anirem
+construint els elements i posant els atributs, i quan tinguem un element creat
+del tot, l'afegirem a l'estructura, és a dir farem que siga el fill d'un que
+ja està en l'estructura. Podríem fer-ho també al revés, és a dir, primer
+penjar-lo de l'estructura i després anar omplint-lo.</p>
+<p>Els principals mètodes per anar construint l'estructura són:</p>
+<p><strong>Mètodes de DOCUMENT</strong></p>
+<table>
+<thead>
+<tr>
+<th>Valor tornat</th>
+<th>Mètode</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Element</td>
+<td><strong>createElement(</strong> String nom<strong>)</strong></td>
+<td>crea un nou element amb el nom indicat (s'haurà de penjar en <br>l'estructura)</td>
+</tr>
+<tr>
+<td>Text</td>
+<td><strong>createTextNode(</strong> String dades<strong>)</strong></td>
+<td>crea un nou element de text (amb contingut)</td>
+</tr>
+<tr>
+<td>Node</td>
+<td><strong>appendChild(</strong> Node nou<strong>)</strong></td>
+<td>afegeix el node nou, que serà l'arrel</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mètodes de NODE</strong></p>
+<table>
+<thead>
+<tr>
+<th>Valor tornat</th>
+<th>Mètode</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Node</td>
+<td><strong>appendChild(</strong> Node nou<strong>)</strong></td>
+<td>afegeix el node nou com a l'últim fill fins el moment</td>
+</tr>
+<tr>
+<td>void</td>
+<td><strong>removeChild(</strong> Node vell<strong>)</strong></td>
+<td>lleva el node vell com a fill</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mètodes de ELEMENT</strong></p>
+<table>
+<thead>
+<tr>
+<th>Valor tornat</th>
+<th>Mètode</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>void</td>
+<td><strong>setAttribute(</strong> String nom,String valor<strong>)</strong></td>
+<td>afegeix un nou atribut a l'element, amb el nom i valor indicats</td>
+</tr>
+<tr>
+<td>void</td>
+<td><strong>removeAttribute(</strong> String nom<strong>)</strong></td>
+<td>lleva l'atribut de l'element</td>
+</tr>
+<tr>
+<td>void</td>
+<td><strong>setTextContent(</strong> String dades<strong>)</strong></td>
+<td>afegeix un fill que serà de text, amb el contingut passat com <br>a paràmetre</td>
+</tr>
+</tbody>
+</table>
+<p>Anem a fer directament ja l'exemple dels empleats. Totes les dades seran
+elements, excepte el número d'empleat, que farem que siga un atribut d'empleat
+per a practicar. A l'element arrel li direm <strong>empleats.</strong> El resultat ha de
+ser el fitxer <strong>Empleats.xml</strong>. Copieu el següent codi en el fitxer Kotlin
+<strong>Exemple_3_4_4_XMLCrearEmpleats.kt</strong> :</p>
+<pre><code>import java.io.ObjectInputStream
+import java.io.FileInputStream
+import javax.xml.parsers.DocumentBuilderFactory
+import java.io.EOFException
+import javax.xml.transform.TransformerFactory
+import javax.xml.transform.dom.DOMSource
+import javax.xml.transform.stream.StreamResult
+import javax.xml.transform.OutputKeys
+
+fun main(args: Array&lt;String&gt;) {
+    val f = ObjectInputStream(FileInputStream ("Empleats.obj"))
+
+    val doc = DocumentBuilderFactory.newInstance ().newDocumentBuilder().newDocument()
+    val arrel = doc.createElement ("empleats")
+    doc.appendChild(arrel)
+
+    try {
+        while (true) {
+            val e = f.readObject () as Empleat
+            val emp = doc.createElement ("empleat")
+            emp.setAttribute("numero", Integer.toString(e.num))
+
+            val nom = doc.createElement ("nom")
+            nom.appendChild(doc.createTextNode(e.nom)) // forma llarga: afegim un fill que és un node de text
+            emp.appendChild(nom)
+
+            val dep = doc.createElement("departament")
+            dep.setTextContent(e.departament.toString()) // forma curta: amb setTextContent() li posem contingut
+            emp.appendChild(dep)
+
+            val edat = doc.createElement("edat")
+            edat.setTextContent(e.edat.toString())
+            emp.appendChild(edat)
+
+            val sou = doc.createElement("sou");
+            sou.setTextContent(e.sou.toString())
+            emp.appendChild(sou)
+
+            arrel.appendChild(emp)
+        }
+
+    } catch (eof: EOFException) {
+        f.close();
+    }
+    val trans = TransformerFactory.newInstance().newTransformer()
+
+    trans.transform(DOMSource(doc), StreamResult("Empleats.xml"))
+}
+</code></pre>
+<p>En el fitxer XML generat, observareu que no hi ha retorns de carro, tot està
+en una mateixa línia. Si voleu veure'l bé, el podeu obrir per exemple amb un
+navegador web, que interpreta bé el format XML.</p>
+<p>Però també podem crear el fitxer donant-li un aspecte agradable incorporant
+aquestes dues línies immediatament abans de crear el fitxer, és a dir,
+immediatament abans de la línia 49:</p>
+<pre><code>    trans.setOutputProperty(OutputKeys.INDENT, "yes")
+    trans.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2")
+</code></pre>
+<p>I el fitxer quedarà així:</p>
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
+&lt;empleats&gt;
+  &lt;empleat numero="1"&gt;
+    &lt;nom&gt;Andreu&lt;/nom&gt;
+    &lt;departament&gt;10&lt;/departament&gt;
+    &lt;edat&gt;32&lt;/edat&gt;
+    &lt;sou&gt;1000.0&lt;/sou&gt;
+  &lt;/empleat&gt;
+  &lt;empleat numero="2"&gt;
+    &lt;nom&gt;Bernat&lt;/nom&gt;
+    &lt;departament&gt;20&lt;/departament&gt;
+    &lt;edat&gt;28&lt;/edat&gt;
+    &lt;sou&gt;1200.0&lt;/sou&gt;
+  &lt;/empleat&gt;
+  &lt;empleat numero="3"&gt;
+    &lt;nom&gt;Clàudia&lt;/nom&gt;
+    &lt;departament&gt;10&lt;/departament&gt;
+    &lt;edat&gt;26&lt;/edat&gt;
+    &lt;sou&gt;1100.0&lt;/sou&gt;
+  &lt;/empleat&gt;
+  &lt;empleat numero="4"&gt;
+    &lt;nom&gt;Damià&lt;/nom&gt;
+    &lt;departament&gt;10&lt;/departament&gt;
+    &lt;edat&gt;40&lt;/edat&gt;
+    &lt;sou&gt;1500.0&lt;/sou&gt;
+  &lt;/empleat&gt;
+&lt;/empleats&gt;
+</code></pre>
+<p>Llicenciat sota la  <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial
+CompartirIgual 2.5</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../3_seriaci_dobjectes/" class="btn btn-neutral float-left" title="3.- Seriació d'objectes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../5_documents_json/" class="btn btn-neutral float-right" title="5.- Documents JSON">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../3_seriaci_dobjectes/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../5_documents_json/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
